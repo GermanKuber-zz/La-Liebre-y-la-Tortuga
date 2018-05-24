@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.Factories;
@@ -10,9 +8,6 @@ using Xunit;
 
 namespace TurtleGame.Domain.Tests
 {
-
-
-
     public class BoardGameShould
     {
         private BoardGame _sut;
