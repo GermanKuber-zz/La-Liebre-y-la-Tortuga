@@ -57,8 +57,6 @@ namespace TurtleGame.Domain.Tests
             _sut.PlaceTrack(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
 
             _sut.Track.Should().Contain(x => x.Side == resultSide);
-
-
         }
     }
 }

@@ -5,7 +5,7 @@ namespace TurtleGame.Domain
     public class TrackContainerToPlay : ITrackContainerToPlay
     {
         public SideOfTrack SideToPlay { get; private set; }
-        public  ITrack CurrentTrack { get; private set; }
+        public ITrack CurrentTrack { get; private set; }
         public SideOfTrackEnum Side { get; }
         public ITrackContainerToPlay Next { get; private set; }
 

@@ -24,12 +24,26 @@ namespace TurtleGame.Domain.Tests
 
             call.Should().Throw<ArgumentException>();
         }
-
+        [Fact]
+        public void Create_With_Up_Side()
+        {
+            var called = false;
+            _mockTrack.Setup(x => x.UpSide).Callback(() => called = true);
+            _sut.SetNext(_mockTrack.Object, SideOfTrackEnum.UpSide);
+            called.Should().Be(true);
+        }
+        [Fact]
+        public void Create_With_Down_Side()
+        {
+            var called = false;
+            _mockTrack.Setup(x => x.DownSide).Callback(() => called = true);
+            _sut.SetNext(_mockTrack.Object, SideOfTrackEnum.DownSide);
+            called.Should().Be(true);
+        }
         [Fact]
         public void Create_Next_Container()
         {
             _sut.SetNext(_mockTrack.Object, SideOfTrackEnum.UpSide);
-
             _sut.Next.Should().NotBeNull();
         }
     }
