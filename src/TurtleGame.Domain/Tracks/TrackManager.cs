@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace TurtleGame.Domain
 {
@@ -23,7 +22,7 @@ namespace TurtleGame.Domain
             var tracks = placeTrackStrategy.PlaceTracks(_allTracks);
             var listTmp = new List<ITrackContainerToPlay>();
 
-            listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(new StartingLineTrack(), new SideOfTrackDown(), new RoundBorderTrack())));
+            InsertStartLine(listTmp);
 
             foreach (var track in tracks)
             {
@@ -41,49 +40,10 @@ namespace TurtleGame.Domain
 
             Track = new ReadOnlyCollection<ITrackContainerToPlay>(listTmp);
         }
-    }
-    public abstract class DecideSideChain
-    {
-        protected DecideSideChain successor;
 
-        public void SetSuccessor(DecideSideChain successor)
+        private static void InsertStartLine(List<ITrackContainerToPlay> listTmp)
         {
-            this.successor = successor;
-        }
-
-        public abstract ISideOfTrack Decide(IReadOnlyCollection<SideOfTrackEnum> decisionList);
-    }
-    public class DecideMaxCountUpSideChain : DecideSideChain
-    {
-        public override ISideOfTrack Decide(IReadOnlyCollection<SideOfTrackEnum> decisionList)
-        {
-            if (decisionList.Where(x => x == SideOfTrackEnum.DownSide).Count()
-                < decisionList.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                return new SideOfTrackUp();
-            else
-                return successor.Decide(decisionList);
-        }
-    }
-    public class DecideMaxCountDownSideChain : DecideSideChain
-    {
-        public override ISideOfTrack Decide(IReadOnlyCollection<SideOfTrackEnum> decisionList)
-        {
-            if (decisionList.Where(x => x == SideOfTrackEnum.DownSide).Count()
-                > decisionList.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                return new SideOfTrackDown();
-            else
-                return successor.Decide(decisionList);
-        }
-    }
-    public class DecideSameCountSideChain : DecideSideChain
-    {
-        public override ISideOfTrack Decide(IReadOnlyCollection<SideOfTrackEnum> decisionList)
-        {
-            if (decisionList.Where(x => x == SideOfTrackEnum.DownSide).Count()
-                == decisionList.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                return new SideOfTrackUp();
-            else
-                return successor.Decide(decisionList);
+            listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(new StartingLineTrack(), new SideOfTrackDown(), new RoundBorderTrack())));
         }
     }
 }

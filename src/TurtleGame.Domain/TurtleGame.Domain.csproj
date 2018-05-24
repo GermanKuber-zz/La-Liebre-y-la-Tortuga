@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Roslynator" Version="0.2.10" />
+    <PackageReference Include="Roslynator.Analyzers" Version="1.8.0" />
+    <PackageReference Include="Roslynator.CodeFixes" Version="1.8.0" />
+  </ItemGroup>
+
 </Project>
