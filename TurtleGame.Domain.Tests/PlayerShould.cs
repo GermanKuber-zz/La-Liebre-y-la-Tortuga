@@ -1,4 +1,5 @@
 using System;
+using Xunit;
 
 namespace TurtleGame.Domain.Tests
 {
@@ -9,14 +10,23 @@ namespace TurtleGame.Domain.Tests
         {
             _sut = new Player();
         }
+    }
 
-        //[Fact]
-        //public void Keep_BetCard_Without_See_It()
-        //{
-        //    var mockCard = new Mock<IBetCard>();
-        //    _sut.GiveCard(mockCard.Object);
-        //    _sut.Should().Throw<ArgumentException>();
-        //}
+    public class TrackShoud
+    {
+        private TrackBase _sut;
 
+        public TrackShoud()
+        {
+            var lineWay = new SideOfTrack(true, true, false, false);
+            var lineToLeftWay = new SideOfTrack(true, false, true, false);
+            _sut = new CommonTrack(lineWay, lineToLeftWay);
+        }
+
+        [Fact]
+        public void Choose_Side()
+        {
+
+        }
     }
 }

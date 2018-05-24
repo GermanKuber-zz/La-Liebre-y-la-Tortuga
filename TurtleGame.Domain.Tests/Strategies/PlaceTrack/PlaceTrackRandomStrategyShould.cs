@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using FluentAssertions;
 using Moq;
@@ -17,7 +18,7 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
         }
 
         [Fact]
-        public void Returns_Same_Quantity_Of_Track_That_Recived()
+        public void Returns_Same_Quantity_Plus_One_Of_Track_That_Recived()
         {
             var resultThreeTracks = _sut.PlaceTrack(new List<ITrack>
             {
@@ -25,18 +26,19 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
                 new Mock<ITrack>().Object,
                 new Mock<ITrack>().Object
             });
-            resultThreeTracks.Count.Should().Be(3);
+            resultThreeTracks.Count.Should().Be(4);
         }
+
         [Fact]
-        public void Returns_List_In_Diferent_Orden_Always()
+        public void First_Track_Be_Starting_Track()
         {
             var resultThreeTracks = _sut.PlaceTrack(new List<ITrack>
             {
-                new CommonTrack(),
-                new CommonTrack(),
-                new TrackWithStream()
+                new Mock<ITrack>().Object,
+                new Mock<ITrack>().Object,
+                new Mock<ITrack>().Object
             });
-            resultThreeTracks.Count.Should().Be(3);
+            resultThreeTracks.First().Should().BeOfType<StartingLineTrack>();
         }
     }
 }
