@@ -14,7 +14,7 @@ namespace TurtleGame.Domain.Tests
         public TrackContainerToPlayShould()
         {
             _mockCurrentSide.SetupAllProperties();
-            _sut = new TrackContainerToPlay(new SideBoderSelect(_mockTrack.Object, _mockSideOfTrack.Object, new Mock<IBorderOfTrack>().Object));
+            _sut = new TrackContainerToPlay(new SideBoderSelected(_mockTrack.Object, _mockSideOfTrack.Object, new Mock<IBorderOfTrack>().Object));
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace TurtleGame.Domain.Tests
         [Fact]
         public void Create_Next_Container()
         {
-            _sut.SetNext(new SideBoderSelect(_mockTrack.Object, _mockSideOfTrack.Object, new Mock<IBorderOfTrack>().Object));
+            _sut.SetNext(new SideBoderSelected(_mockTrack.Object, _mockSideOfTrack.Object, new Mock<IBorderOfTrack>().Object));
             _sut.Next.Should().NotBeNull();
         }
     }

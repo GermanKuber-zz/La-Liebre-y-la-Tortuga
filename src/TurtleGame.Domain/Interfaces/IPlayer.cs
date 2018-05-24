@@ -3,6 +3,6 @@
     public interface IPlayer
     {
         void GiveCard(IBetCard betCard);
-        SideOfTrackEnum ChooseSideOfTrack(ITrack track);
+        ISideBoderSelected ChooseSideOfTrack(ITrack track);
     }
 }

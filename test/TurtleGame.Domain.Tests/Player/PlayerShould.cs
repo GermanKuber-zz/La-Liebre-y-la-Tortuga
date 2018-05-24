@@ -9,9 +9,11 @@ namespace TurtleGame.Domain.Tests
     public class PlayerShould
     {
         private Player _sut;
-        private Func<ITrack, SideOfTrackEnum> _choseSideOfTrack = (track) => SideOfTrackEnum.UpSide;
+        private Mock<ISideBoderSelected> _mockSideBorderSelected = new Mock<ISideBoderSelected>();
+        private Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
         public PlayerShould()
         {
+            _choseSideOfTrack = (track) => _mockSideBorderSelected.Object;
             _sut = new Player(_choseSideOfTrack);
         }
         [Fact]
@@ -29,7 +31,7 @@ namespace TurtleGame.Domain.Tests
             _choseSideOfTrack = (x) =>
             {
                 call = true;
-                return SideOfTrackEnum.DownSide;
+                return _mockSideBorderSelected.Object;
             };
             _sut = new Player(_choseSideOfTrack);
             _sut.ChooseSideOfTrack(mockTrack.Object);
@@ -42,9 +44,12 @@ namespace TurtleGame.Domain.Tests
         public void Notify_Return_Same_Value_That_I_Returned(SideOfTrackEnum sideChoosed)
         {
             var mockTrack = new Mock<ITrack>();
-            _choseSideOfTrack = (x) => sideChoosed;
+            _choseSideOfTrack = (x) => _mockSideBorderSelected.Object;
+
+            _mockSideBorderSelected.Setup(x => x.SideOfTrack.SideType).Returns(sideChoosed);
+
             _sut = new Player(_choseSideOfTrack);
-            _sut.ChooseSideOfTrack(mockTrack.Object).Should().Be(sideChoosed);
+            _sut.ChooseSideOfTrack(mockTrack.Object).SideOfTrack.SideType.Should().Be(sideChoosed);
         }
     }
 }

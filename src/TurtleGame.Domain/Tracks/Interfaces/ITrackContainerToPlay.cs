@@ -2,8 +2,8 @@
 {
     public interface ITrackContainerToPlay
     {
-        SideBoderSelect SideBoder { get; }
+        SideBoderSelected SideBoder { get; }
         ITrackContainerToPlay Next { get; }
-        void SetNext(SideBoderSelect sideBoderSelect);
+        void SetNext(SideBoderSelected sideBoderSelect);
     }
 }

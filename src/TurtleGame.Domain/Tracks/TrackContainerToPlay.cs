@@ -4,10 +4,10 @@ namespace TurtleGame.Domain
 {
     public class TrackContainerToPlay : ITrackContainerToPlay
     {
-        public SideBoderSelect SideBoder { get; private set; }
+        public SideBoderSelected SideBoder { get; private set; }
         public ITrackContainerToPlay Next { get; private set; }
 
-        public TrackContainerToPlay(SideBoderSelect sideBoderSelect)
+        public TrackContainerToPlay(SideBoderSelected sideBoderSelect)
         {
             if (sideBoderSelect == null)
                 throw new ArgumentException(nameof(sideBoderSelect));
@@ -15,7 +15,7 @@ namespace TurtleGame.Domain
             this.SideBoder = sideBoderSelect;
         }
 
-        public void SetNext(SideBoderSelect sideBoderSelect)
+        public void SetNext(SideBoderSelected sideBoderSelect)
         {
             if (sideBoderSelect == null)
                 throw new ArgumentException(nameof(sideBoderSelect));

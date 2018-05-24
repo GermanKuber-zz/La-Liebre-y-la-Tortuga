@@ -24,17 +24,17 @@ namespace TurtleGame.Domain
             {
                 var listOfDesicions = new List<SideOfTrackEnum>();
                 foreach (var player in players)
-                    listOfDesicions.Add(player.ChooseSideOfTrack(track));
+                    listOfDesicions.Add(player.ChooseSideOfTrack(track).SideOfTrack.SideType);
 
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() >
                     listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackDown(), new BorderOfTracFirstAssert())));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(track, new SideOfTrackDown(), new BorderOfTracFirstAssert())));
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() <
                    listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() ==
                    listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
             }
 
             Track = new ReadOnlyCollection<ITrackContainerToPlay>(listTmp);

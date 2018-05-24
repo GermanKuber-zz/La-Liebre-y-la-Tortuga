@@ -7,9 +7,9 @@ namespace TurtleGame.Domain
     public class Player : IPlayer
     {
         private readonly List<IBetCard> _betCards = new List<IBetCard>();
-        private readonly Func<ITrack, SideOfTrackEnum> _choseSideOfTrack;
+        private readonly Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
 
-        public Player(Func<ITrack, SideOfTrackEnum> choseSideOfTrack)
+        public Player(Func<ITrack, ISideBoderSelected> choseSideOfTrack)
         {
             if (choseSideOfTrack == null)
                 throw new ArgumentException(nameof(choseSideOfTrack));
@@ -17,6 +17,6 @@ namespace TurtleGame.Domain
         }
         public void GiveCard(IBetCard betCard) => _betCards.Add(betCard);
 
-        public SideOfTrackEnum ChooseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
+        public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
     }
 }

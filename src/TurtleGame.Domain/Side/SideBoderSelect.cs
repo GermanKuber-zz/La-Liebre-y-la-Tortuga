@@ -1,11 +1,11 @@
 ﻿namespace TurtleGame.Domain
 {
-    public class SideBoderSelect
+    public class SideBoderSelected : ISideBoderSelected
     {
         public ITrack Track { get; }
         public ISideOfTrack SideOfTrack { get; }
         public IBorderOfTrack BorderOfTrack { get; }
-        public SideBoderSelect(ITrack track,
+        public SideBoderSelected(ITrack track,
             ISideOfTrack sideOfTrack,
             IBorderOfTrack borderOfTrack)
         {
@@ -13,6 +13,9 @@
             SideOfTrack = sideOfTrack;
             BorderOfTrack = borderOfTrack;
         }
+        protected SideBoderSelected()
+        {
 
+        }
     }
 }
