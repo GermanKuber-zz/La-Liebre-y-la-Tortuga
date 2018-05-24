@@ -7,6 +7,10 @@ namespace TurtleGame.Domain
         public bool VerticalLeftEnable { get; }
         public bool VerticalRigthEnable { get; }
 
+        protected SideOfTrack()
+        {
+
+        }
         public SideOfTrack(bool verticalDownEnable,
             bool verticalUpEnable,
             bool verticalLeftEnable,

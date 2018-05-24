@@ -32,7 +32,7 @@ namespace TurtleGame.Domain.Tests
                 return SideOfTrackEnum.DownSide;
             };
             _sut = new Player(_choseSideOfTrack);
-            _sut.ChoseSideOfTrack(mockTrack.Object);
+            _sut.ChooseSideOfTrack(mockTrack.Object);
             call.Should().Be(true);
         }
 
@@ -44,7 +44,7 @@ namespace TurtleGame.Domain.Tests
             var mockTrack = new Mock<ITrack>();
             _choseSideOfTrack = (x) => sideChoosed;
             _sut = new Player(_choseSideOfTrack);
-            _sut.ChoseSideOfTrack(mockTrack.Object).Should().Be(sideChoosed);
+            _sut.ChooseSideOfTrack(mockTrack.Object).Should().Be(sideChoosed);
         }
     }
 }

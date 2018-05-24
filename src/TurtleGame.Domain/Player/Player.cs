@@ -17,6 +17,6 @@ namespace TurtleGame.Domain
         }
         public void GiveCard(IBetCard betCard) => _betCards.Add(betCard);
 
-        public SideOfTrackEnum ChoseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
+        public SideOfTrackEnum ChooseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
     }
 }
