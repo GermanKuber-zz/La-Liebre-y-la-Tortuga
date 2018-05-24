@@ -1,19 +1,22 @@
 using System;
-using FluentAssertions;
-using Xunit;
 
 namespace TurtleGame.Domain.Tests
 {
     public class PlayerShould
     {
         private Player _sut;
-
-        [Fact]
-        public void Not_Allow_Create_Without_Parameters()
+        public PlayerShould()
         {
-            Action act = () => { _sut = new Player(null); };
-
-            act.Should().Throw<ArgumentException>();
+            _sut = new Player();
         }
+
+        //[Fact]
+        //public void Keep_BetCard_Without_See_It()
+        //{
+        //    var mockCard = new Mock<IBetCard>();
+        //    _sut.GiveCard(mockCard.Object);
+        //    _sut.Should().Throw<ArgumentException>();
+        //}
+
     }
 }
