@@ -9,13 +9,20 @@ namespace TurtleGame.Domain
         private readonly List<IBetCard> _betCards = new List<IBetCard>();
         private readonly Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
 
+        public int BetCardsQuantity => _betCards.Count;
+
         public Player(Func<ITrack, ISideBoderSelected> choseSideOfTrack)
         {
             if (choseSideOfTrack == null)
                 throw new ArgumentException(nameof(choseSideOfTrack));
             this._choseSideOfTrack = choseSideOfTrack;
         }
-        public void GiveCard(IBetCard betCard) => _betCards.Add(betCard);
+        public void GiveCard(IBetCard betCard)
+        {
+            if (_betCards.Count >= 2)
+                throw new ArgumentException(nameof(betCard));
+            _betCards.Add(betCard);
+        }
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
     }

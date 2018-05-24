@@ -51,5 +51,31 @@ namespace TurtleGame.Domain.Tests
             _sut = new Player(_choseSideOfTrack);
             _sut.ChooseSideOfTrack(mockTrack.Object).SideOfTrack.SideType.Should().Be(sideChoosed);
         }
+        [Fact]
+        public void Accept_One_Bet_Card()
+        {
+            _sut.GiveCard(new Mock<IBetCard>().Object);
+
+            _sut.BetCardsQuantity.Should().Be(1);
+        }
+        [Fact]
+        public void Accept_Two_Bet_Card()
+        {
+            _sut.GiveCard(new Mock<IBetCard>().Object);
+            _sut.GiveCard(new Mock<IBetCard>().Object);
+
+            _sut.BetCardsQuantity.Should().Be(2);
+        }
+        [Fact]
+        public void Produced_Error_Doest_Not_Accept_More_Than_Two_BetCards()
+        {
+            _sut.GiveCard(new Mock<IBetCard>().Object);
+            _sut.GiveCard(new Mock<IBetCard>().Object);
+
+            Action act = () => _sut.GiveCard(new Mock<IBetCard>().Object);
+
+            act.Should().Throw<ArgumentException>();
+        }
+
     }
 }

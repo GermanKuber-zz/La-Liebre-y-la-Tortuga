@@ -7,4 +7,5 @@ namespace TurtleGame.Domain
     {
         ReadOnlyCollection<ITrack> PlaceTracks(List<ITrack> tracksToPlace);
     }
+
 }
