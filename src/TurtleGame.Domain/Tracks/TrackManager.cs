@@ -15,9 +15,9 @@ namespace TurtleGame.Domain
             _allTracks = tracksFactory.GetTracks();
         }
 
-        public void PlaceTrack(IEnumerable<IPlayer> players, IPlaceTrackStrategy placeTrackStrategy)
+        public void PlaceTracks(IEnumerable<IPlayer> players, IPlaceTrackStrategy placeTrackStrategy)
         {
-            var tracks = placeTrackStrategy.PlaceTrack(_allTracks);
+            var tracks = placeTrackStrategy.PlaceTracks(_allTracks);
             var listTmp = new List<ITrackContainerToPlay>();
 
             foreach (var track in tracks)
@@ -28,13 +28,13 @@ namespace TurtleGame.Domain
 
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() >
                     listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(track, SideOfTrackEnum.DownSide));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackDown(), new BorderOfTracFirstAssert())));
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() <
                    listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(track, SideOfTrackEnum.UpSide));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
                 if (listOfDesicions.Where(x => x == SideOfTrackEnum.DownSide).Count() ==
                    listOfDesicions.Where(x => x == SideOfTrackEnum.UpSide).Count())
-                    listTmp.Add(new TrackContainerToPlay(track, SideOfTrackEnum.UpSide));
+                    listTmp.Add(new TrackContainerToPlay(new SideBoderSelect(track, new SideOfTrackUp(), new BorderOfTracFirstAssert())));
             }
 
             Track = new ReadOnlyCollection<ITrackContainerToPlay>(listTmp);

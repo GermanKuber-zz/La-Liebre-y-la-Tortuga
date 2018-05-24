@@ -2,7 +2,7 @@ namespace TurtleGame.Domain
 {
     public class TrackWithStream : TrackBase
     {
-        public TrackWithStream(SideOfTrack upSide, SideOfTrack downSide) : base(upSide, downSide)
+        public TrackWithStream(SideOfTrackSelector upSide, SideOfTrackSelector downSide) : base(upSide, downSide)
         {
         }
     }

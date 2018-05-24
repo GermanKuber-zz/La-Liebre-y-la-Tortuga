@@ -5,6 +5,6 @@ namespace TurtleGame.Domain
 {
     public interface IPlaceTrackStrategy
     {
-        ReadOnlyCollection<ITrack> PlaceTrack(List<ITrack> tracksToPlace);
+        ReadOnlyCollection<ITrack> PlaceTracks(List<ITrack> tracksToPlace);
     }
 }

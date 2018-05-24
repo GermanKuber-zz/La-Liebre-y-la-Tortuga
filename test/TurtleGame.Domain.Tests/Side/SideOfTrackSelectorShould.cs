@@ -6,12 +6,9 @@ using Xunit;
 
 namespace TurtleGame.Domain.Tests.Side
 {
-    public class SideOfTrackShould
+    public class SideOfTrackSelectorShould
     {
-        public SideOfTrackShould()
-        {
-
-        }
+       
         [Theory]
         [InlineData(false, true, true, true)]
         [InlineData(true, false, true, true)]
@@ -22,7 +19,7 @@ namespace TurtleGame.Domain.Tests.Side
             bool verticalLeftEnable,
             bool verticalRigthEnable)
         {
-            var sut = new SideOfTrack(verticalDownEnable, verticalUpEnable, verticalLeftEnable, verticalRigthEnable);
+            var sut = new SideOfTrackSelector(verticalDownEnable, verticalUpEnable, verticalLeftEnable, verticalRigthEnable);
             sut.VerticalDownEnable.Should().Be(verticalDownEnable);
             sut.VerticalUpEnable.Should().Be(verticalUpEnable);
             sut.VerticalLeftEnable.Should().Be(verticalLeftEnable);

@@ -3,13 +3,13 @@ namespace TurtleGame.Domain.Tests
     public class TrackShoud
     {
         private readonly TrackBase _sut;
-        private readonly SideOfTrack _lineWayUpSide;
-        private readonly SideOfTrack _lineToLeftWaySide;
+        private readonly SideOfTrackSelector _lineWayUpSide;
+        private readonly SideOfTrackSelector _lineToLeftWaySide;
 
         public TrackShoud()
         {
-            _lineWayUpSide = new SideOfTrack(true, true, false, false);
-            _lineToLeftWaySide = new SideOfTrack(true, false, true, false);
+            _lineWayUpSide = new SideOfTrackSelector(true, true, false, false);
+            _lineToLeftWaySide = new SideOfTrackSelector(true, false, true, false);
             _sut = new CommonTrack(_lineWayUpSide, _lineToLeftWaySide);
         }
 

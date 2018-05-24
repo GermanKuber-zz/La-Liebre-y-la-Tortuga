@@ -4,34 +4,23 @@ namespace TurtleGame.Domain
 {
     public class TrackContainerToPlay : ITrackContainerToPlay
     {
-        public SideOfTrack SideToPlay { get; private set; }
-        public ITrack CurrentTrack { get; private set; }
-        public SideOfTrackEnum Side { get; }
+        public SideBoderSelect SideBoder { get; private set; }
         public ITrackContainerToPlay Next { get; private set; }
 
-        public TrackContainerToPlay(ITrack track, SideOfTrackEnum side)
+        public TrackContainerToPlay(SideBoderSelect sideBoderSelect)
         {
-            if (track == null)
-                throw new ArgumentException(nameof(track));
-            if (side == null)
-                throw new ArgumentException(nameof(side));
+            if (sideBoderSelect == null)
+                throw new ArgumentException(nameof(sideBoderSelect));
 
-            if (side == SideOfTrackEnum.UpSide)
-                SideToPlay = track.UpSide;
-            if (side == SideOfTrackEnum.DownSide)
-                SideToPlay = track.DownSide;
-            CurrentTrack = track;
-            Side = side;
+            this.SideBoder = sideBoderSelect;
         }
 
-        public void SetNext(ITrack track, SideOfTrackEnum side)
+        public void SetNext(SideBoderSelect sideBoderSelect)
         {
-            if (track == null)
-                throw new ArgumentException(nameof(track));
-            if (side == null)
-                throw new ArgumentException(nameof(side));
+            if (sideBoderSelect == null)
+                throw new ArgumentException(nameof(sideBoderSelect));
 
-            Next = new TrackContainerToPlay(track, side);
+            Next = new TrackContainerToPlay(sideBoderSelect);
         }
     }
 }

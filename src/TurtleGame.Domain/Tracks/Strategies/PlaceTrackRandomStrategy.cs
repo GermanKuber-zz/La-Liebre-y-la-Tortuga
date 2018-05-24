@@ -7,7 +7,7 @@ namespace TurtleGame.Domain
 {
     public class PlaceTrackRandomStrategy : IPlaceTrackStrategy
     {
-        public ReadOnlyCollection<ITrack> PlaceTrack(List<ITrack> tracksToPlace)
+        public ReadOnlyCollection<ITrack> PlaceTracks(List<ITrack> tracksToPlace)
         {
             var random = new Random();
             var localCount = Enumerable.Range(0, tracksToPlace.Count).ToList();

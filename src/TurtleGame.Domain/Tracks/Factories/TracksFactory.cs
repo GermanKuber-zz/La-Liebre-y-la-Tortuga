@@ -6,8 +6,8 @@ namespace TurtleGame.Domain
     {
         public List<ITrack> GetTracks()
         {
-            var lineWay = new SideOfTrack(true, true, false, false);
-            var lineToLeftWay = new SideOfTrack(true, false, true, false);
+            var lineWay = new SideOfTrackSelector(true, true, false, false);
+            var lineToLeftWay = new SideOfTrackSelector(true, false, true, false);
             return new List<ITrack>
             {
                 new CommonTrack(lineWay, lineToLeftWay),

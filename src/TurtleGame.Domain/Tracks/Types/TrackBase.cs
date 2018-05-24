@@ -4,10 +4,10 @@ namespace TurtleGame.Domain
 {
     public abstract class TrackBase : Entity, ITrack
     {
-        public SideOfTrack DownSide { get; private set; }
-        public SideOfTrack UpSide { get; private set; }
+        public SideOfTrackSelector DownSide { get; private set; }
+        public SideOfTrackSelector UpSide { get; private set; }
 
-        public TrackBase(SideOfTrack upSide, SideOfTrack downSide)
+        public TrackBase(SideOfTrackSelector upSide, SideOfTrackSelector downSide)
         {
             DownSide = downSide;
             UpSide = upSide;

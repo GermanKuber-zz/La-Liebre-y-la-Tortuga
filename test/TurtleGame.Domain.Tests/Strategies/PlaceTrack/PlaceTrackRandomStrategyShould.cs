@@ -18,7 +18,7 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
         [Fact]
         public void Returns_Same_Quantity_Plus_One_Of_Track_That_Recived()
         {
-            var resultThreeTracks = _sut.PlaceTrack(new List<ITrack>
+            var resultThreeTracks = _sut.PlaceTracks(new List<ITrack>
             {
                 new Mock<ITrack>().Object,
                 new Mock<ITrack>().Object,
@@ -30,7 +30,7 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
         [Fact]
         public void First_Track_Be_Starting_Track()
         {
-            var resultThreeTracks = _sut.PlaceTrack(new List<ITrack>
+            var resultThreeTracks = _sut.PlaceTracks(new List<ITrack>
             {
                 new Mock<ITrack>().Object,
                 new Mock<ITrack>().Object,

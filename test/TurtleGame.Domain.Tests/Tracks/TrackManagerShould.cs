@@ -17,7 +17,7 @@ namespace TurtleGame.Domain.Tests
         public TrackManagerShould()
         {
             _mockTrackFactory = new Mock<ITracksFactory>();
-            _mockPlaceTrackStrategy.Setup(x => x.PlaceTrack(It.IsAny<List<ITrack>>()))
+            _mockPlaceTrackStrategy.Setup(x => x.PlaceTracks(It.IsAny<List<ITrack>>()))
                 .Returns(() => new ReadOnlyCollection<ITrack>(new List<ITrack> { new Mock<ITrack>().Object, new Mock<ITrack>().Object }));
 
             _sut = new TrackManager(_mockTrackFactory.Object);
@@ -26,7 +26,7 @@ namespace TurtleGame.Domain.Tests
         [Fact]
         public void Put_All_Track_In_A_List()
         {
-            _sut.PlaceTrack(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
+            _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
             _sut.Track.Should().NotBeNull();
         }
 
@@ -37,7 +37,7 @@ namespace TurtleGame.Domain.Tests
             var secondPlayerCall = 0;
             _mockFirstPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>())).Callback(() => ++firstPlayerCall);
             _mockSecondPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>())).Callback(() => ++secondPlayerCall);
-            _sut.PlaceTrack(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
+            _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
 
             firstPlayerCall.Should().Be(2);
             secondPlayerCall.Should().Be(2);
@@ -54,9 +54,9 @@ namespace TurtleGame.Domain.Tests
             _mockSecondPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>()))
                 .Returns(playerTwoSide);
 
-            _sut.PlaceTrack(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
+            _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
 
-            _sut.Track.Should().Contain(x => x.Side == resultSide);
+            _sut.Track.Should().Contain(x => x.SideBoder.SideOfTrack.SideType == resultSide);
         }
     }
 }

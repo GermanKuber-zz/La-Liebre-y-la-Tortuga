@@ -1,17 +1,17 @@
 namespace TurtleGame.Domain
 {
-    public class SideOfTrack
+    public class SideOfTrackSelector
     {
         public bool VerticalDownEnable { get; }
         public bool VerticalUpEnable { get; }
         public bool VerticalLeftEnable { get; }
         public bool VerticalRigthEnable { get; }
 
-        protected SideOfTrack()
+        protected SideOfTrackSelector()
         {
 
         }
-        public SideOfTrack(bool verticalDownEnable,
+        public SideOfTrackSelector(bool verticalDownEnable,
             bool verticalUpEnable,
             bool verticalLeftEnable,
             bool verticalRigthEnable)
