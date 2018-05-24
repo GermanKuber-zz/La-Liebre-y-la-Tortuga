@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using FluentAssertions;
 using Moq;
 using Xunit;
@@ -10,6 +11,8 @@ namespace TurtleGame.Domain.Tests
     {
         private readonly TrackManager _sut;
         private readonly Mock<ITracksFactory> _mockTrackFactory;
+        private readonly Mock<IDecideSideFactory> _mockDecideSideFactory = new Mock<IDecideSideFactory>();
+        private readonly Mock<DecideSideChain> _mockDecideSideChain = new Mock<DecideSideChain>();
         private readonly Mock<IPlayer> _mockFirstPlayer = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _mockSecondPlayer = new Mock<IPlayer>();
         private readonly Mock<IPlaceTrackStrategy> _mockPlaceTrackStrategy = new Mock<IPlaceTrackStrategy>();
@@ -26,7 +29,10 @@ namespace TurtleGame.Domain.Tests
             _mockPlaceTrackStrategy.Setup(x => x.PlaceTracks(It.IsAny<List<ITrack>>()))
                 .Returns(() => new ReadOnlyCollection<ITrack>(new List<ITrack> { new Mock<ITrack>().Object, new Mock<ITrack>().Object }));
 
-            _sut = new TrackManager(_mockTrackFactory.Object);
+            _mockDecideSideChain.Setup(x => x.Decide(It.IsAny<IReadOnlyCollection<SideOfTrackEnum>>())).Returns(_mockSideOfTrack.Object);
+            _mockDecideSideFactory.Setup(x => x.Create()).Returns(_mockDecideSideChain.Object);
+
+            _sut = new TrackManager(_mockTrackFactory.Object, _mockDecideSideFactory.Object);
         }
 
         [Fact]
@@ -35,7 +41,12 @@ namespace TurtleGame.Domain.Tests
             _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
             _sut.Track.Should().NotBeNull();
         }
-
+        [Fact]
+        public void First_Track_Be_Starting_Track()
+        {
+            _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
+            _sut.Track.First().SideBoder.Track.Should().BeOfType<StartingLineTrack>();
+        }
         [Fact]
         public void Notify_User_To_Choose_Side()
         {

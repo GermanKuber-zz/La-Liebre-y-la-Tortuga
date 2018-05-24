@@ -24,19 +24,9 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
                 new Mock<ITrack>().Object,
                 new Mock<ITrack>().Object
             });
-            resultThreeTracks.Count.Should().Be(4);
+            resultThreeTracks.Count.Should().Be(3);
         }
 
-        [Fact]
-        public void First_Track_Be_Starting_Track()
-        {
-            var resultThreeTracks = _sut.PlaceTracks(new List<ITrack>
-            {
-                new Mock<ITrack>().Object,
-                new Mock<ITrack>().Object,
-                new Mock<ITrack>().Object
-            });
-            resultThreeTracks.First().Should().BeOfType<StartingLineTrack>();
-        }
+      
     }
 }

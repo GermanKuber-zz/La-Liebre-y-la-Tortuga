@@ -12,7 +12,6 @@ namespace TurtleGame.Domain
             var random = new Random();
             var localCount = Enumerable.Range(0, tracksToPlace.Count).ToList();
             var tmpList = new List<ITrack>();
-            tmpList.Add(new StartingLineTrack());
             while (localCount.Count() != 0)
             {
                 var randomIndex = random.Next(0, localCount.Count());
@@ -20,6 +19,19 @@ namespace TurtleGame.Domain
                 localCount.RemoveAt(randomIndex);
             }
             return new ReadOnlyCollection<ITrack>(tmpList);
+        }
+    }
+
+    public class DecideSideFactory : IDecideSideFactory
+    {
+        public DecideSideChain Create()
+        {
+            var decideMaxCountUpSideChain = new DecideMaxCountUpSideChain();
+            var decideMaxCountDownSideChain = new DecideMaxCountDownSideChain();
+            var decideSameCountSideChain = new DecideSameCountSideChain();
+            decideMaxCountUpSideChain.SetSuccessor(decideMaxCountDownSideChain);
+            decideMaxCountDownSideChain.SetSuccessor(decideSameCountSideChain);
+            return decideMaxCountUpSideChain;
         }
     }
 }
