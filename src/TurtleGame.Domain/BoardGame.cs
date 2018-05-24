@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Factories.Interfaces;
 
