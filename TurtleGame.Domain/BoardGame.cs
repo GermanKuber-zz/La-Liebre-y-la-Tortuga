@@ -1,72 +1,98 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Factories.Interfaces;
 
 namespace TurtleGame.Domain
 {
-    public class BoardGame
+    public class PlayersManager : IPlayersManager
     {
-        private readonly IPlayer _playerFive;
-        private readonly IPlayer _playerFour;
-        private readonly IPlayer _playerThree;
-        private readonly IPlayer _playerOne;
-        private readonly IPlayer _playerTwo;
-
-        public static BoardGame ToTwoPlayer(IPlayer playerOne, IPlayer playerTwo)
-            => new BoardGame(playerOne, playerTwo);
-        public static BoardGame ToThreePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
-            => new BoardGame(playerOne, playerTwo, playerThree);
-        public static BoardGame ToFourPlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
-            => new BoardGame(playerOne, playerTwo, playerFour);
-        public static BoardGame ToFivePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive)
-            => new BoardGame(playerOne, playerTwo, playerThree, playerFour, playerFive);
-
-        protected BoardGame(IPlayer playerOne, IPlayer playerTwo)
-        {
-            _playerOne = playerOne;
-            _playerTwo = playerTwo;
-            NumberOfPlayers = 2;
-        }
-        protected BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree) : this(playerOne, playerTwo)
-        {
-            _playerThree = playerThree;
-            NumberOfPlayers = 3;
-        }
-        protected BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour) : this(playerOne, playerTwo, playerThree)
-        {
-            _playerFour = playerFour;
-            NumberOfPlayers = 4;
-        }
-        protected BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive) : this(playerOne, playerTwo, playerThree, playerFour)
-        {
-            _playerFive = playerFive;
-            NumberOfPlayers = 5;
-        }
-
+        public IPlayer PlayerFive { get; }
+        public IPlayer PlayerFour { get; }
+        public IPlayer PlayerThree { get; }
+        public IPlayer PlayerOne { get; }
+        public IPlayer PlayerTwo { get; }
         public int NumberOfPlayers { get; private set; }
 
-        public void SetPlayers(int numberOfPlayers)
+        public PlayersManager(IPlayer playerOne, IPlayer playerTwo)
         {
-            if (numberOfPlayers < 2 || numberOfPlayers > 5)
-                throw new ArgumentException(nameof(numberOfPlayers));
-
-            NumberOfPlayers = numberOfPlayers;
+            PlayerOne = playerOne;
+            PlayerTwo = playerTwo;
+            NumberOfPlayers = 2;
         }
+        public PlayersManager(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree) : this(playerOne, playerTwo)
+        {
+            PlayerThree = playerThree;
+            NumberOfPlayers = 3;
+        }
+        public PlayersManager(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour) : this(playerOne, playerTwo, playerThree)
+        {
+            PlayerFour = playerFour;
+            NumberOfPlayers = 4;
+        }
+        public PlayersManager(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive) : this(playerOne, playerTwo, playerThree, playerFour)
+        {
+            PlayerFive = playerFive;
+            NumberOfPlayers = 5;
+        }
+    }
+
+    public class BoardGame
+    {
+
+        private readonly IList<IBetCard> _beatsCards;
+        public IPlayersManager Players { get; private set; }
+
+        #region Constructors
+
+        public BoardGame(IPlayersManagerFactory playersManagerFactory)
+        {
+            _beatsCards = new List<IBetCard> { new Fox(), new Hare(), new Lamb(), new Turtle(), new Wolf() };
+        }
+        public BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayersManagerFactory playersManagerFactory)
+            : this(playersManagerFactory)
+        {
+            Players = playersManagerFactory.ToTwoPlayer(playerOne, playerTwo);
+        }
+        public BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayersManagerFactory playersManagerFactory)
+            : this(playersManagerFactory)
+        {
+            Players = playersManagerFactory.ToThreePlayer(playerOne, playerTwo, playerThree);
+
+        }
+        public BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayersManagerFactory playersManagerFactory)
+            : this(playersManagerFactory)
+        {
+            Players = playersManagerFactory.ToFourPlayer(playerOne, playerTwo, playerThree, playerFour);
+
+        }
+        public BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive, IPlayersManagerFactory playersManagerFactory)
+            : this(playersManagerFactory)
+        {
+            Players = playersManagerFactory.ToFivePlayer(playerOne, playerTwo, playerThree, playerFour, playerFive);
+        }
+
+        #endregion
+
 
         public void Start()
         {
-            var betCard = new Turtle();
-            if (NumberOfPlayers >= 2)
+            if (Players.NumberOfPlayers >= 2)
             {
-                _playerOne.GiveCard(betCard);
-                _playerTwo.GiveCard(betCard);
+                Players.PlayerOne.GiveCard(_beatsCards[0]);
+                Players.PlayerTwo.GiveCard(_beatsCards[1]);
             }
-            if (NumberOfPlayers >= 3)
-                _playerThree.GiveCard(betCard);
-            if (NumberOfPlayers >= 4)
-                _playerFour.GiveCard(betCard);
-            if (NumberOfPlayers >= 5)
-                _playerFive.GiveCard(betCard);
-
+            if (Players.NumberOfPlayers >= 3)
+                Players.PlayerThree.GiveCard(_beatsCards[2]);
+            if (Players.NumberOfPlayers >= 4)
+                Players.PlayerFour.GiveCard(_beatsCards[3]);
+            if (Players.NumberOfPlayers >= 5)
+                Players.PlayerFive.GiveCard(_beatsCards[4]);
         }
+        public IReadOnlyCollection<IBetCard> GiveAllBetCards() => new ReadOnlyCollection<IBetCard>(_beatsCards);
+
+
     }
 }

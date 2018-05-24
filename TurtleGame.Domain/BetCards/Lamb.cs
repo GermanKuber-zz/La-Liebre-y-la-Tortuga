@@ -1,6 +1,6 @@
-﻿//namespace TurtleGame.Domain.BetCards
-//{
-//    public class Lamb : IBetCard
-//    {
-//    }
-//}
+﻿namespace TurtleGame.Domain.BetCards
+{
+    public class Lamb : IBetCard
+    {
+    }
+}

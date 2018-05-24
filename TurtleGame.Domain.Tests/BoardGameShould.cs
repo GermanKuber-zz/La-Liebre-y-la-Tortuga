@@ -1,49 +1,27 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 using FluentAssertions;
 using Moq;
+using TurtleGame.Domain.Factories;
+using TurtleGame.Domain.Factories.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests
 {
     public class BoardGameShould
     {
-        private  BoardGame _sut;
+        private BoardGame _sut;
         private readonly Mock<IPlayer> _playerOne;
         private readonly Mock<IPlayer> _playerTwo;
+        private readonly IBoardGameFactory _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory());
 
         public BoardGameShould()
         {
             _playerOne = new Mock<IPlayer>();
             _playerTwo = new Mock<IPlayer>();
-            _sut = BoardGame.ToTwoPlayer(_playerOne.Object, _playerTwo.Object);
-        }
-
-        [Theory]
-        [InlineData(2)]
-        [InlineData(3)]
-        [InlineData(4)]
-        [InlineData(5)]
-        public void Set_Two_Playes(int numberOfPlayers)
-        {
-            _sut.SetPlayers(numberOfPlayers);
-            _sut.NumberOfPlayers.Should().Be(numberOfPlayers);
-        }
-
-        [Fact]
-        public void Not_Allow_More_Than_Five_Player()
-        {
-            Action act = () => _sut.SetPlayers(6);
-
-            act.Should().Throw<ArgumentException>();
-        }
-
-        [Fact]
-        public void Not_Allow_Less_Than_Two_Player()
-        {
-            Action act = () => _sut.SetPlayers(1);
-
-            act.Should().Throw<ArgumentException>();
+            _sut = _boardGameFactory.ToTwoPlayer(_playerOne.Object, _playerTwo.Object);
         }
 
         [Fact]
@@ -52,11 +30,11 @@ namespace TurtleGame.Domain.Tests
             var playerThree = new Mock<IPlayer>();
             var playerFour = new Mock<IPlayer>();
             var playerFive = new Mock<IPlayer>();
-            _sut = BoardGame.ToFivePlayer(_playerOne.Object,
-                                          _playerTwo.Object,
-                                          playerThree.Object,
-                                          playerFour.Object,
-                                          playerFive.Object);
+            _sut = _boardGameFactory.ToFivePlayer(_playerOne.Object,
+                _playerTwo.Object,
+                playerThree.Object,
+                playerFour.Object,
+                playerFive.Object);
 
             _sut.Start();
             _playerOne.Verify(mock => mock.GiveCard(It.IsAny<IBetCard>()), Times.Once());
@@ -65,7 +43,42 @@ namespace TurtleGame.Domain.Tests
             playerFour.Verify(mock => mock.GiveCard(It.IsAny<IBetCard>()), Times.Once());
             playerFive.Verify(mock => mock.GiveCard(It.IsAny<IBetCard>()), Times.Once());
         }
+        [Fact]
+        public void Give_Diferent_Cards_To_All_Players()
+        {
+            void ConfigurePlayerToTest(Mock<IPlayer> playerToConfigure, List<IBetCard> list)
+            {
+                playerToConfigure.Setup(x => x.GiveCard(It.IsAny<IBetCard>()))
+                    .Callback((IBetCard s) =>
+                    {
+                        if (list.Contains(s))
+                            throw new Exception();
+                        list.Add(s);
+                    });
+            }
 
+            var playerThree = new Mock<IPlayer>();
+            var playerFour = new Mock<IPlayer>();
+            var playerFive = new Mock<IPlayer>();
+            _sut = _boardGameFactory.ToFivePlayer(_playerOne.Object,
+                _playerTwo.Object,
+                playerThree.Object,
+                playerFour.Object,
+                playerFive.Object);
+
+            IReadOnlyCollection<IBetCard> betCards = _sut.GiveAllBetCards();
+            var tmpBetCards = new List<IBetCard>();
+
+            ConfigurePlayerToTest(_playerOne, tmpBetCards);
+            ConfigurePlayerToTest(_playerTwo, tmpBetCards);
+            ConfigurePlayerToTest(playerThree, tmpBetCards);
+            ConfigurePlayerToTest(playerFour, tmpBetCards);
+            ConfigurePlayerToTest(playerFive, tmpBetCards);
+
+            _sut.Start();
+            _playerOne.Verify(mock => mock.GiveCard(It.IsIn<IBetCard>(betCards)), Times.Once());
+
+        }
 
 
 
