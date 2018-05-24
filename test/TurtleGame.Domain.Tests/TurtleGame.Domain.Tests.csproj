@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\TurtleGame.Domain\TurtleGame.Domain.csproj" />
     <ProjectReference Include="..\TurtleGame.Domain\TurtleGame.Domain.csproj" />
   </ItemGroup>
 

@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FCCDABA8-24A7-4ED3-81C6-E5F5B58BC93E}"
-	ProjectSection(SolutionItems) = preProject
-		test\TurtleGame.Domain.Tests\TurtleGame.Domain.Tests.csproj = test\TurtleGame.Domain.Tests\TurtleGame.Domain.Tests.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A125720E-7EA3-46AE-904A-367C8F645702}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.Domain", "src\TurtleGame.Domain\TurtleGame.Domain.csproj", "{F4206893-4FF6-4FFF-9403-B5CAB126CB4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.Domain.Tests", "test\TurtleGame.Domain.Tests\TurtleGame.Domain.Tests.csproj", "{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +24,16 @@ Global
 		{F4206893-4FF6-4FFF-9403-B5CAB126CB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4206893-4FF6-4FFF-9403-B5CAB126CB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4206893-4FF6-4FFF-9403-B5CAB126CB4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5} = {FCCDABA8-24A7-4ED3-81C6-E5F5B58BC93E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {247B3F4C-4D9E-4D96-9119-A34788D1D219}
