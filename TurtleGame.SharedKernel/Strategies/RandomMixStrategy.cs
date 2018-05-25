@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using TurtleGame.Domain.Tracks.Strategies.Interfaces;
+using TurtleGame.SharedKernel.Strategies.Interfaces;
 
-namespace TurtleGame.Domain.Tracks.Strategies
+namespace TurtleGame.SharedKernel.Strategies
 {
     public class RandomMixStrategy : IGenericMixStrategy
     {

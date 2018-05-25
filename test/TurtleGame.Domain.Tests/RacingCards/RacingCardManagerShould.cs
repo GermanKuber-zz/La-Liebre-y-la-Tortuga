@@ -8,6 +8,8 @@ using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Tracks.Strategies.Interfaces;
+using TurtleGame.SharedKernel.Generators;
+using TurtleGame.SharedKernel.Strategies.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.RacingCards
@@ -20,7 +22,8 @@ namespace TurtleGame.Domain.Tests.RacingCards
 
         public RacingCardManagerShould()
         {
-            var returnList = new List<IRacingCard> {new Mock<IRacingCard>().Object};
+            var returnList = EnumerableGenerator.Generate(1, x => new Mock<IRacingCard>().Object);
+
             _mockRacingCardsFactory = new Mock<IRacingCardsFactory>();
             _mockRacingCardsFactory.Setup(x => x.Create()).Returns(returnList);
             _mockGenericMixStrategy = new Mock<IGenericMixStrategy>();
@@ -36,8 +39,8 @@ namespace TurtleGame.Domain.Tests.RacingCards
         [InlineData(81)]
         private void Return_Count_Of_Racing_Cards(int countOfCards)
         {
-            var listOfRacingCards = Enumerable.Range(1, countOfCards)
-                .Select(x => new Mock<IRacingCard>().Object).ToList();
+            var listOfRacingCards = EnumerableGenerator.Generate(countOfCards, x => new Mock<IRacingCard>().Object);
+
             _mockRacingCardsFactory.Setup(x => x.Create()).Returns(listOfRacingCards);
             _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()))
                 .Returns(new ReadOnlyCollection<IRacingCard>(listOfRacingCards));

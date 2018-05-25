@@ -9,7 +9,6 @@ using TurtleGame.Domain.Side.Enum;
 using TurtleGame.Domain.Side.Interfaces;
 using TurtleGame.Domain.Tracks;
 using TurtleGame.Domain.Tracks.Chain.DecideSide;
-using TurtleGame.Domain.Tracks.Strategies;
 using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using TurtleGame.Domain.Tracks.Types;
 using Xunit;
@@ -19,18 +18,16 @@ namespace TurtleGame.Domain.Tests.Tracks
     public class TrackManagerShould
     {
         private readonly TrackManager _sut;
-        private readonly Mock<ITracksFactory> _mockTrackFactory;
         private readonly Mock<IDecideSideFactory> _mockDecideSideFactory = new Mock<IDecideSideFactory>();
         private readonly Mock<DecideSideChain> _mockDecideSideChain = new Mock<DecideSideChain>();
         private readonly Mock<IPlayer> _mockFirstPlayer = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _mockSecondPlayer = new Mock<IPlayer>();
         private readonly Mock<IMixTrackStrategy> _mockPlaceTrackStrategy = new Mock<IMixTrackStrategy>();
-        private readonly Mock<ITrack> _mockTrack = new Mock<ITrack>();
         private readonly Mock<ISideBoderSelected> _mockSideBoderSelected = new Mock<ISideBoderSelected>();
         private readonly Mock<ISideOfTrack> _mockSideOfTrack = new Mock<ISideOfTrack>();
         public TrackManagerShould()
         {
-            _mockTrackFactory = new Mock<ITracksFactory>();
+            var mockTrackFactory = new Mock<ITracksFactory>();
             _mockSideBoderSelected.Setup(x => x.SideOfTrack).Returns(_mockSideOfTrack.Object);
             _mockSideBoderSelected.Setup(x => x.SideOfTrack.SideType).Returns(SideOfTrackEnum.UpSide);
             _mockFirstPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>())).Returns(_mockSideBoderSelected.Object);
@@ -41,7 +38,7 @@ namespace TurtleGame.Domain.Tests.Tracks
             _mockDecideSideChain.Setup(x => x.Decide(It.IsAny<IReadOnlyCollection<SideOfTrackEnum>>())).Returns(_mockSideOfTrack.Object);
             _mockDecideSideFactory.Setup(x => x.Create()).Returns(_mockDecideSideChain.Object);
 
-            _sut = new TrackManager(_mockTrackFactory.Object, _mockDecideSideFactory.Object);
+            _sut = new TrackManager(mockTrackFactory.Object, _mockDecideSideFactory.Object);
         }
 
         [Fact]

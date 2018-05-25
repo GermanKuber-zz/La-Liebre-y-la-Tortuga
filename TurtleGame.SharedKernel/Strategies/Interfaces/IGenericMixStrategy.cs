@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace TurtleGame.Domain.Tracks.Strategies.Interfaces
+namespace TurtleGame.SharedKernel.Strategies.Interfaces
 {
     public interface IGenericMixStrategy
     {
