@@ -1,34 +1,41 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Castle.Components.DictionaryAdapter;
 using FluentAssertions;
+using Moq;
+using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards;
-using TurtleGame.Domain.RacingCards.Types;
+using TurtleGame.Domain.RacingCards.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.RacingCards
 {
-  public  class RacingCardManagerShould
+    public class RacingCardManagerShould
     {
         private RacingCardManager _sut;
+        private Mock<IRacingCardsFactory> _mockRacingCardsFactory;
 
         public RacingCardManagerShould()
         {
-            _sut = new RacingCardManager();
+            _mockRacingCardsFactory = new Mock<IRacingCardsFactory>();
+            _mockRacingCardsFactory.Setup(x => x.Create()).Returns(new List<IRacingCard> { new Mock<IRacingCard>().Object });
+
+            _sut = new RacingCardManager(_mockRacingCardsFactory.Object);
         }
 
-        [Fact]
-        private void Have_81_Cards_In_Total()
-        {
-            _sut.CountOfCards.Should().Be(81);
-        }
         [Theory]
-        [InlineData(typeof(HareRacingCard), 18)]
-        [InlineData(typeof(TurtleRacingCard), 17)]
-        [InlineData(typeof(WolfRacingCard), 16)]
-        [InlineData(typeof(FoxRacingCard), 15)]
-        private void Have_18_Cards_Of_Hare(Type type,int countOfCards)
+        [InlineData(1)]
+        [InlineData(18)]
+        [InlineData(81)]
+        private void Return_Count_Of_Racing_Cards(int countOfCards)
         {
-            _sut.Cards.Count(x => x.GetType() == type).Should().Be(countOfCards);
+            var listOfRacingCards = Enumerable.Range(1, countOfCards)
+                .Select(x => new Mock<IRacingCard>().Object).ToList();
+            _mockRacingCardsFactory.Setup(x => x.Create()).Returns(listOfRacingCards);
+            _sut = new RacingCardManager(_mockRacingCardsFactory.Object);
+
+
+            _sut.CountOfCards.Should().Be(countOfCards);
         }
     }
 }
