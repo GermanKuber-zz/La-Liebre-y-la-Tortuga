@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Enum;
+using TurtleGame.Domain.Tracks.Chain.DecideSide;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Tracks.Chain.DecideSide

@@ -1,6 +1,8 @@
 using TurtleGame.Domain.Factories.Interfaces;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Factories
 {
     public class PlayersManagerFactory : IPlayersManagerFactory
     {

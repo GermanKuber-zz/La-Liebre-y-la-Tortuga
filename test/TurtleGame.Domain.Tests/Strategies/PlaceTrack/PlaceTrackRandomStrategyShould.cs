@@ -2,6 +2,8 @@
 using System.Linq;
 using FluentAssertions;
 using Moq;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Tracks.Strategies;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack

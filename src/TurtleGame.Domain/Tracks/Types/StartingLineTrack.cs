@@ -1,4 +1,6 @@
-namespace TurtleGame.Domain
+using TurtleGame.Domain.Side;
+
+namespace TurtleGame.Domain.Tracks.Types
 {
     public class StartingLineTrack : TrackBase
     {

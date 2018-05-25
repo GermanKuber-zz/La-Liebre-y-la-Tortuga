@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
-using static TurtleGame.Domain.TrackBase;
+using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Player
 {
     public class Player : IPlayer
     {

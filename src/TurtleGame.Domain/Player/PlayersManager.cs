@@ -1,4 +1,6 @@
-namespace TurtleGame.Domain
+using TurtleGame.Domain.Interfaces;
+
+namespace TurtleGame.Domain.Player
 {
     public class PlayersManager : IPlayersManager
     {

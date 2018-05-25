@@ -1,4 +1,7 @@
-﻿namespace TurtleGame.Domain
+﻿using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side.Interfaces;
+
+namespace TurtleGame.Domain.Side
 {
     public interface ISideBoderSelected
     {

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TurtleGame.Domain.Side;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Side

@@ -1,4 +1,4 @@
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Common
 {
     public abstract class ValueObject< T>
         where T : ValueObject< T>

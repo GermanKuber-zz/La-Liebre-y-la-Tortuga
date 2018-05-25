@@ -1,6 +1,8 @@
 ﻿using System;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Tracks.Interfaces;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks
 {
     public class TrackContainerToPlay : ITrackContainerToPlay
     {

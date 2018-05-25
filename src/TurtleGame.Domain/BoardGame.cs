@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Factories.Interfaces;
+using TurtleGame.Domain.Interfaces;
 
 namespace TurtleGame.Domain
 {

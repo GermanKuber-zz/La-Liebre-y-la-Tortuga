@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Tracks.Chain.DecideSide;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks.Strategies
 {
     public class PlaceTrackRandomStrategy : IPlaceTrackStrategy
     {

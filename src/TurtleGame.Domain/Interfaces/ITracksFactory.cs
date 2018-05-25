@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Interfaces
 {
     public interface ITracksFactory
     {

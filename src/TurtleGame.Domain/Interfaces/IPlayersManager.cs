@@ -1,4 +1,4 @@
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Interfaces
 {
     public interface IPlayersManager
     {

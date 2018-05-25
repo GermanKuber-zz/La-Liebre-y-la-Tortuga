@@ -1,4 +1,4 @@
-﻿namespace TurtleGame.Domain
+﻿namespace TurtleGame.Domain.Side.Enum
 {
     public enum BorderOfTrackEnum
     {

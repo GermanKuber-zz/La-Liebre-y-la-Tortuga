@@ -1,6 +1,9 @@
 using System;
+using TurtleGame.Domain.Common;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks.Types
 {
     public abstract class TrackBase : Entity, ITrack
     {

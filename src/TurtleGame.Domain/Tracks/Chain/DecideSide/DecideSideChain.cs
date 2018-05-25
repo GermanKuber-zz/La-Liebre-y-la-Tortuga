@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using TurtleGame.Domain.Side.Enum;
+using TurtleGame.Domain.Side.Interfaces;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks.Chain.DecideSide
 {
     public abstract class DecideSideChain
     {

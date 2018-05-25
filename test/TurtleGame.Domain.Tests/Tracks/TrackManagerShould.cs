@@ -1,12 +1,19 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data;
 using System.Linq;
 using FluentAssertions;
 using Moq;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Enum;
+using TurtleGame.Domain.Side.Interfaces;
+using TurtleGame.Domain.Tracks;
+using TurtleGame.Domain.Tracks.Chain.DecideSide;
+using TurtleGame.Domain.Tracks.Strategies;
+using TurtleGame.Domain.Tracks.Types;
 using Xunit;
 
-namespace TurtleGame.Domain.Tests
+namespace TurtleGame.Domain.Tests.Tracks
 {
     public class TrackManagerShould
     {

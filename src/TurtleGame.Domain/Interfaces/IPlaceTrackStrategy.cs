@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Interfaces
 {
     public interface IPlaceTrackStrategy
     {

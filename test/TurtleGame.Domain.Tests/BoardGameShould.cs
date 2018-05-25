@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
+using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Factories;
 using TurtleGame.Domain.Factories.Interfaces;
+using TurtleGame.Domain.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests

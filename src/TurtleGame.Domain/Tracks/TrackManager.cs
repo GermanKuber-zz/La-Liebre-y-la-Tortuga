@@ -1,7 +1,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Enum;
+using TurtleGame.Domain.Tracks.Interfaces;
+using TurtleGame.Domain.Tracks.Strategies;
+using TurtleGame.Domain.Tracks.Types;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks
 {
     public class TrackManager
     {

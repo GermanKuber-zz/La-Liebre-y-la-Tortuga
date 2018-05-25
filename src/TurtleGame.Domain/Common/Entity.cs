@@ -1,6 +1,6 @@
 using System;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Common
 {
     public abstract class Entity
     {

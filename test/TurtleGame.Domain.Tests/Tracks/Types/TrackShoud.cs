@@ -1,4 +1,7 @@
-namespace TurtleGame.Domain.Tests
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Tracks.Types;
+
+namespace TurtleGame.Domain.Tests.Tracks.Types
 {
     public class TrackShoud
     {

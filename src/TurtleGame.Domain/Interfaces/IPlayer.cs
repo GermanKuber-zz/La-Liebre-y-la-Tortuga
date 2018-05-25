@@ -1,4 +1,7 @@
-﻿namespace TurtleGame.Domain
+﻿using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Side;
+
+namespace TurtleGame.Domain.Interfaces
 {
     public interface IPlayer
     {

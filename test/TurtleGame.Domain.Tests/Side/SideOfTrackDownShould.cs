@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Enum;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Side

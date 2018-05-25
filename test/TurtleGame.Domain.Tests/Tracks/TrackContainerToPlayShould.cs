@@ -1,9 +1,14 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using Moq;
-using System;
+using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Interfaces;
+using TurtleGame.Domain.Tracks;
+using TurtleGame.Domain.Tracks.Interfaces;
 using Xunit;
 
-namespace TurtleGame.Domain.Tests
+namespace TurtleGame.Domain.Tests.Tracks
 {
     public class TrackContainerToPlayShould
     {

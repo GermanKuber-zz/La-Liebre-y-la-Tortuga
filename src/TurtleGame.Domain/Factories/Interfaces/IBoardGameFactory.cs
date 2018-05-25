@@ -1,4 +1,6 @@
-﻿namespace TurtleGame.Domain.Factories.Interfaces
+﻿using TurtleGame.Domain.Interfaces;
+
+namespace TurtleGame.Domain.Factories.Interfaces
 {
     public interface IBoardGameFactory
     {

@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Side.Enum;
+using TurtleGame.Domain.Side.Interfaces;
 
-namespace TurtleGame.Domain
+namespace TurtleGame.Domain.Tracks.Chain.DecideSide
 {
     public class DecideMaxCountDownSideChain : DecideSideChain
     {
