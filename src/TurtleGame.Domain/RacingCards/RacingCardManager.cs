@@ -6,14 +6,26 @@ using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.RacingCards
 {
-    public class RacingCardManager
+
+    public class RacingCardManager : IRacingCardManager
     {
+        public double CountOfRacingCardToStart => 7;
+
         public int CountOfCards => Cards.Count;
         public IReadOnlyCollection<IRacingCard> Cards { get; set; }
-
+        private readonly IEnumerator<IRacingCard> _cardsInDeck;
         public RacingCardManager(IRacingCardsFactory racingCardsFactory, IGenericMixStrategy mixStrategy)
         {
-            Cards = new ReadOnlyCollection<IRacingCard>(mixStrategy.Mix(racingCardsFactory.Create()));
+            var listOfRacingCards = racingCardsFactory.Create();
+            _cardsInDeck = listOfRacingCards.GetEnumerator();
+
+            Cards = new ReadOnlyCollection<IRacingCard>(mixStrategy.Mix(listOfRacingCards));
+        }
+
+        public IRacingCard TakeCard()
+        {
+            _cardsInDeck.MoveNext();
+            return _cardsInDeck.Current;
         }
     }
 }

@@ -2,11 +2,12 @@
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
 
-namespace TurtleGame.Domain.Player.Types.Interfaces
+namespace TurtleGame.Domain.Player.Players.Interfaces
 {
     public interface IPlayers
     {
-        void GiveCards(IReadOnlyCollection<IBetCard> beatsCards);
+        void GiveCards(IReadOnlyCollection<IBetCard> betsCards);
+        void TakeCard();
         int NumberOfPlayers { get; }
         IPlayer PlayerFive { get; }
         IPlayer PlayerFour { get; }

@@ -1,7 +1,7 @@
 ﻿using TurtleGame.Domain.Common;
 using TurtleGame.Domain.RacingCards.Interfaces;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.RacingCards.Types
 {
     public class RacingCardBase<TRacindCard> : ValueObject<TRacindCard>
                                                where TRacindCard : ValueObject<TRacindCard>,

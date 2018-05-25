@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Player.Types;
+using TurtleGame.Domain.Player.Players;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player.Types
@@ -10,7 +10,8 @@ namespace TurtleGame.Domain.Tests.Player.Types
     {
         public FivePlayersShould()
         {
-            Sut = new FivePlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, PlayerFour.Object, PlayerFive.Object);
+            Sut = new FivePlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, 
+                PlayerFour.Object, PlayerFive.Object, MockRacingCardManager.Object);
         }
 
         [Fact]
@@ -26,7 +27,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
         [Fact]
         public void Give_Differents_Cards_To_Three_Players()
         {
-            Sut = new FivePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object);
+            Sut = new FivePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, MockRacingCardManager.Object);
 
             Differentes_Cards_To_All_Players(Sut, 5);
         }

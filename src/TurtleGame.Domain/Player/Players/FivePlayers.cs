@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.RacingCards;
 
-namespace TurtleGame.Domain.Player.Types
+namespace TurtleGame.Domain.Player.Players
 {
     public class FivePlayers : FourPlayers
     {
@@ -11,14 +12,15 @@ namespace TurtleGame.Domain.Player.Types
 
         public sealed override IPlayer PlayerFive { get; }
 
-        public FivePlayers(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive)
-            : base(playerOne, playerTwo, playerThree, playerFour)
+        public FivePlayers(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour, IPlayer playerFive,
+            IRacingCardManager racingCardManager)
+            : base(playerOne, playerTwo, playerThree, playerFour, racingCardManager)
         {
             PlayerFive = playerFive;
         }
-        public override void GiveCards(IReadOnlyCollection<IBetCard> beatsCards)
+        public override void GiveCards(IReadOnlyCollection<IBetCard> betsCards)
         {
-            var list = beatsCards.ToList();
+            var list = betsCards.ToList();
             PlayerOne.GiveCard(list[0]);
             PlayerTwo.GiveCard(list[1]);
             PlayerThree.GiveCard(list[2]);

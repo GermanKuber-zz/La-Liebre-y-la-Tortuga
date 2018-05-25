@@ -1,7 +1,7 @@
 using System;
 using TurtleGame.Domain.Side;
 
-namespace TurtleGame.Domain.Interfaces
+namespace TurtleGame.Domain.Tracks.Interfaces
 {
     public interface ITrack
     {

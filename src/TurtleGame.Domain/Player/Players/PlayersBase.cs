@@ -1,13 +1,22 @@
 using System.Collections.Generic;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
-using TurtleGame.Domain.Player.Types.Interfaces;
+using TurtleGame.Domain.Player.Players.Interfaces;
+using TurtleGame.Domain.RacingCards;
 
-namespace TurtleGame.Domain.Player.Types
+namespace TurtleGame.Domain.Player.Players
 {
     public abstract class PlayersBase : IPlayers
     {
-        public abstract void GiveCards(IReadOnlyCollection<IBetCard> beatsCards);
+        public IRacingCardManager RacingCardManager { get; }
+
+
+        protected PlayersBase(IRacingCardManager racingCardManager)
+        {
+            RacingCardManager = racingCardManager;
+        }
+        public abstract void GiveCards(IReadOnlyCollection<IBetCard> betsCards);
+        public abstract void TakeCard();
 
         public abstract int NumberOfPlayers { get; }
         public virtual IPlayer PlayerOne => NonePlayer.Create;
@@ -16,6 +25,6 @@ namespace TurtleGame.Domain.Player.Types
         public virtual IPlayer PlayerFour => NonePlayer.Create;
         public virtual IPlayer PlayerFive => NonePlayer.Create;
 
-      
+
     }
 }

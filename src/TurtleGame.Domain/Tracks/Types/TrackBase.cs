@@ -1,7 +1,7 @@
 using System;
 using TurtleGame.Domain.Common;
-using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Tracks.Interfaces;
 
 namespace TurtleGame.Domain.Tracks.Types
 {

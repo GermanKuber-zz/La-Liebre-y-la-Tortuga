@@ -14,16 +14,15 @@ namespace TurtleGame.Domain.Tests.RacingCards
     public class RacingCardManagerShould
     {
         private RacingCardManager _sut;
-        private readonly Mock<IRacingCardsFactory> _mockRacingCardsFactory;
-        private readonly Mock<IGenericMixStrategy> _mockGenericMixStrategy;
+        private readonly Mock<IRacingCardsFactory> _mockRacingCardsFactory = new Mock<IRacingCardsFactory>();
+        private readonly Mock<IGenericMixStrategy> _mockGenericMixStrategy = new Mock<IGenericMixStrategy>();
 
         public RacingCardManagerShould()
         {
             var returnList = EnumerableGenerator.Generate(1, x => new Mock<IRacingCard>().Object);
 
-            _mockRacingCardsFactory = new Mock<IRacingCardsFactory>();
             _mockRacingCardsFactory.Setup(x => x.Create()).Returns(returnList);
-            _mockGenericMixStrategy = new Mock<IGenericMixStrategy>();
+
             _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()))
                 .Returns(new ReadOnlyCollection<IRacingCard>(returnList));
 
@@ -53,6 +52,9 @@ namespace TurtleGame.Domain.Tests.RacingCards
         {
             _mockGenericMixStrategy.Verify(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()), Times.Once);
         }
+
+
+    
     }
 }
 
