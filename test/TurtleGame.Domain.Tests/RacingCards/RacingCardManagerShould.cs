@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Castle.Components.DictionaryAdapter;
 using FluentAssertions;
@@ -6,6 +7,7 @@ using Moq;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.RacingCards
@@ -13,14 +15,19 @@ namespace TurtleGame.Domain.Tests.RacingCards
     public class RacingCardManagerShould
     {
         private RacingCardManager _sut;
-        private Mock<IRacingCardsFactory> _mockRacingCardsFactory;
+        private readonly Mock<IRacingCardsFactory> _mockRacingCardsFactory;
+        private readonly Mock<IGenericMixStrategy> _mockGenericMixStrategy;
 
         public RacingCardManagerShould()
         {
+            var returnList = new List<IRacingCard> {new Mock<IRacingCard>().Object};
             _mockRacingCardsFactory = new Mock<IRacingCardsFactory>();
-            _mockRacingCardsFactory.Setup(x => x.Create()).Returns(new List<IRacingCard> { new Mock<IRacingCard>().Object });
+            _mockRacingCardsFactory.Setup(x => x.Create()).Returns(returnList);
+            _mockGenericMixStrategy = new Mock<IGenericMixStrategy>();
+            _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()))
+                .Returns(new ReadOnlyCollection<IRacingCard>(returnList));
 
-            _sut = new RacingCardManager(_mockRacingCardsFactory.Object);
+            _sut = new RacingCardManager(_mockRacingCardsFactory.Object, _mockGenericMixStrategy.Object);
         }
 
         [Theory]
@@ -32,10 +39,19 @@ namespace TurtleGame.Domain.Tests.RacingCards
             var listOfRacingCards = Enumerable.Range(1, countOfCards)
                 .Select(x => new Mock<IRacingCard>().Object).ToList();
             _mockRacingCardsFactory.Setup(x => x.Create()).Returns(listOfRacingCards);
-            _sut = new RacingCardManager(_mockRacingCardsFactory.Object);
+            _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()))
+                .Returns(new ReadOnlyCollection<IRacingCard>(listOfRacingCards));
 
+            _sut = new RacingCardManager(_mockRacingCardsFactory.Object,
+                                         _mockGenericMixStrategy.Object);
 
             _sut.CountOfCards.Should().Be(countOfCards);
+        }
+
+        [Fact]
+        private void Execute_Mix_From_Strategy()
+        {
+            _mockGenericMixStrategy.Verify(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()), Times.Once);
         }
     }
 }

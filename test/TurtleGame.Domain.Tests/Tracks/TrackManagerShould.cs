@@ -10,6 +10,7 @@ using TurtleGame.Domain.Side.Interfaces;
 using TurtleGame.Domain.Tracks;
 using TurtleGame.Domain.Tracks.Chain.DecideSide;
 using TurtleGame.Domain.Tracks.Strategies;
+using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using TurtleGame.Domain.Tracks.Types;
 using Xunit;
 
@@ -23,7 +24,7 @@ namespace TurtleGame.Domain.Tests.Tracks
         private readonly Mock<DecideSideChain> _mockDecideSideChain = new Mock<DecideSideChain>();
         private readonly Mock<IPlayer> _mockFirstPlayer = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _mockSecondPlayer = new Mock<IPlayer>();
-        private readonly Mock<IPlaceTrackStrategy> _mockPlaceTrackStrategy = new Mock<IPlaceTrackStrategy>();
+        private readonly Mock<IMixTrackStrategy> _mockPlaceTrackStrategy = new Mock<IMixTrackStrategy>();
         private readonly Mock<ITrack> _mockTrack = new Mock<ITrack>();
         private readonly Mock<ISideBoderSelected> _mockSideBoderSelected = new Mock<ISideBoderSelected>();
         private readonly Mock<ISideOfTrack> _mockSideOfTrack = new Mock<ISideOfTrack>();
@@ -34,7 +35,7 @@ namespace TurtleGame.Domain.Tests.Tracks
             _mockSideBoderSelected.Setup(x => x.SideOfTrack.SideType).Returns(SideOfTrackEnum.UpSide);
             _mockFirstPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>())).Returns(_mockSideBoderSelected.Object);
             _mockSecondPlayer.Setup(x => x.ChooseSideOfTrack(It.IsAny<ITrack>())).Returns(_mockSideBoderSelected.Object);
-            _mockPlaceTrackStrategy.Setup(x => x.PlaceTracks(It.IsAny<List<ITrack>>()))
+            _mockPlaceTrackStrategy.Setup(x => x.MixTracks(It.IsAny<List<ITrack>>()))
                 .Returns(() => new ReadOnlyCollection<ITrack>(new List<ITrack> { new Mock<ITrack>().Object, new Mock<ITrack>().Object }));
 
             _mockDecideSideChain.Setup(x => x.Decide(It.IsAny<IReadOnlyCollection<SideOfTrackEnum>>())).Returns(_mockSideOfTrack.Object);

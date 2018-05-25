@@ -3,9 +3,8 @@ using System.Collections.ObjectModel;
 
 namespace TurtleGame.Domain.Interfaces
 {
-    public interface IPlaceTrackStrategy
+    public interface IMixTrackStrategy
     {
-        ReadOnlyCollection<ITrack> PlaceTracks(List<ITrack> tracksToPlace);
+        ReadOnlyCollection<ITrack> MixTracks(List<ITrack> tracksToMix);
     }
-
 }

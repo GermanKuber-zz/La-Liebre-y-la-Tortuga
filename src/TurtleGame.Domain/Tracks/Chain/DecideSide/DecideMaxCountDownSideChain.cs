@@ -10,8 +10,8 @@ namespace TurtleGame.Domain.Tracks.Chain.DecideSide
     {
         public override ISideOfTrack Decide(IReadOnlyCollection<SideOfTrackEnum> decisionList)
         {
-            if (decisionList.Where(x => x == SideOfTrackEnum.DownSide).Count()
-                > decisionList.Where(x => x == SideOfTrackEnum.UpSide).Count())
+            if (decisionList.Count(x => x == SideOfTrackEnum.DownSide)
+                > decisionList.Count(x => x == SideOfTrackEnum.UpSide))
                 return new SideOfTrackDown();
             else
                 return successor.Decide(decisionList);

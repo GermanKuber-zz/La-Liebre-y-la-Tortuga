@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.RacingCards
 {
@@ -10,9 +11,9 @@ namespace TurtleGame.Domain.RacingCards
         public int CountOfCards => Cards.Count;
         public IReadOnlyCollection<IRacingCard> Cards { get; set; }
 
-        public RacingCardManager(IRacingCardsFactory racingCardsFactory)
-        {        
-            Cards = new ReadOnlyCollection<IRacingCard>(racingCardsFactory.Create());
+        public RacingCardManager(IRacingCardsFactory racingCardsFactory, IGenericMixStrategy mixStrategy)
+        {
+            Cards = new ReadOnlyCollection<IRacingCard>(mixStrategy.Mix(racingCardsFactory.Create()));
         }
     }
 }

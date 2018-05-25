@@ -5,6 +5,7 @@ using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Enum;
 using TurtleGame.Domain.Tracks.Interfaces;
 using TurtleGame.Domain.Tracks.Strategies;
+using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using TurtleGame.Domain.Tracks.Types;
 
 namespace TurtleGame.Domain.Tracks
@@ -12,7 +13,6 @@ namespace TurtleGame.Domain.Tracks
     public class TrackManager
     {
         public IReadOnlyCollection<ITrackContainerToPlay> Track { get; set; }
-        private List<ITrack> _allTrackOrder;
         private readonly List<ITrack> _allTracks;
         private readonly IDecideSideFactory _decideSideFactory;
 
@@ -23,9 +23,9 @@ namespace TurtleGame.Domain.Tracks
             this._decideSideFactory = decideSideFactory;
         }
 
-        public void PlaceTracks(IEnumerable<IPlayer> players, IPlaceTrackStrategy placeTrackStrategy)
+        public void PlaceTracks(IEnumerable<IPlayer> players, IMixTrackStrategy placeTrackStrategy)
         {
-            var tracks = placeTrackStrategy.PlaceTracks(_allTracks);
+            var tracks = placeTrackStrategy.MixTracks(_allTracks);
             var listTmp = new List<ITrackContainerToPlay>();
 
             InsertStartLine(listTmp);
