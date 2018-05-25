@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Tracks.Strategies;
-using TurtleGame.SharedKernel.Strategies;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 using Xunit;
 

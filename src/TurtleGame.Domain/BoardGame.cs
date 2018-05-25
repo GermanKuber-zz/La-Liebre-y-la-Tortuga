@@ -6,9 +6,11 @@ using TurtleGame.Domain.Interfaces;
 
 namespace TurtleGame.Domain
 {
+
     public class BoardGame
     {
         public IPlayersManager Players { get; private set; }
+        public IReadOnlyCollection<IBetCard> BetCards => new ReadOnlyCollection<IBetCard>(_beatsCards);
 
 
         private readonly IList<IBetCard> _beatsCards;
@@ -44,32 +46,10 @@ namespace TurtleGame.Domain
 
         #endregion
 
-
         public void Start()
         {
-            if (Players.NumberOfPlayers == 2)
-            {
-                Players.PlayerOne.GiveCard(_beatsCards[0]);
-                Players.PlayerTwo.GiveCard(_beatsCards[1]);
-                Players.PlayerOne.GiveCard(_beatsCards[2]);
-                Players.PlayerTwo.GiveCard(_beatsCards[3]);
-            }
-            else
-            {
-                if (Players.NumberOfPlayers >= 2)
-                {
-                    Players.PlayerOne.GiveCard(_beatsCards[0]);
-                    Players.PlayerTwo.GiveCard(_beatsCards[1]);
-                }
-                if (Players.NumberOfPlayers >= 3)
-                    Players.PlayerThree.GiveCard(_beatsCards[2]);
-                if (Players.NumberOfPlayers >= 4)
-                    Players.PlayerFour.GiveCard(_beatsCards[3]);
-                if (Players.NumberOfPlayers >= 5)
-                    Players.PlayerFive.GiveCard(_beatsCards[4]);
-            }
+           Players.GiveCards(BetCards);
         }
-        public IReadOnlyCollection<IBetCard> GiveAllBetCards() => new ReadOnlyCollection<IBetCard>(_beatsCards);
 
 
     }

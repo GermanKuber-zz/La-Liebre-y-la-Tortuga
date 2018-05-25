@@ -17,6 +17,7 @@ namespace TurtleGame.Domain.Player
         {
             if (choseSideOfTrack == null)
                 throw new ArgumentException(nameof(choseSideOfTrack));
+
             this._choseSideOfTrack = choseSideOfTrack;
         }
         public void GiveCard(IBetCard betCard)

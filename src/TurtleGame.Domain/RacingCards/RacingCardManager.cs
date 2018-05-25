@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
-using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.RacingCards

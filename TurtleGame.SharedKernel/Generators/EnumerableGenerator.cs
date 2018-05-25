@@ -8,5 +8,7 @@ namespace TurtleGame.SharedKernel.Generators
     {
         public static List<TEntity> Generate<TEntity>(int count, Func<int, TEntity> createEntity) => Enumerable.Range(1, count)
             .Select(createEntity).ToList();
+        public static List<TEntity> Generate<TEntity>(int count, Func<int, TEntity> createEntity, int initialValue) => Enumerable.Range(initialValue, count)
+            .Select(createEntity).ToList();
     }
 }

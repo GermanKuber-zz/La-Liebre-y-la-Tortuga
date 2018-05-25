@@ -4,7 +4,6 @@ using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Enum;
 using TurtleGame.Domain.Tracks.Interfaces;
-using TurtleGame.Domain.Tracks.Strategies;
 using TurtleGame.Domain.Tracks.Strategies.Interfaces;
 using TurtleGame.Domain.Tracks.Types;
 
