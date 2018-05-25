@@ -48,6 +48,13 @@ namespace TurtleGame.Domain.Tests
             _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
             _sut.Track.First().SideBoder.Track.Should().BeOfType<StartingLineTrack>();
         }
+
+        [Fact]
+        public void Have_Final_Line_By_Last_Track()
+        {
+            _sut.PlaceTracks(new List<IPlayer> { _mockFirstPlayer.Object, _mockSecondPlayer.Object }, _mockPlaceTrackStrategy.Object);
+            _sut.Track.Last().SideBoder.Track.Should().BeOfType<FinalLineTrack>();
+        }
         [Fact]
         public void Notify_User_To_Choose_Side()
         {

@@ -37,6 +37,7 @@ namespace TurtleGame.Domain
                 listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(track, sideOfTrack, new RoundBorderTrack())));
 
             }
+            InsertLastLine(listTmp);
 
             Track = new ReadOnlyCollection<ITrackContainerToPlay>(listTmp);
         }
@@ -44,6 +45,10 @@ namespace TurtleGame.Domain
         private static void InsertStartLine(List<ITrackContainerToPlay> listTmp)
         {
             listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(new StartingLineTrack(), new SideOfTrackDown(), new RoundBorderTrack())));
+        }
+        private static void InsertLastLine(List<ITrackContainerToPlay> listTmp)
+        {
+            listTmp.Add(new TrackContainerToPlay(new SideBoderSelected(new FinalLineTrack(), new SideOfTrackDown(), new RoundBorderTrack())));
         }
     }
 }
