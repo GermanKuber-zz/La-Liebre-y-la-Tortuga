@@ -14,9 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.Domain", "src\Tu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.Domain.Tests", "test\TurtleGame.Domain.Tests\TurtleGame.Domain.Tests.csproj", "{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleGame.SharedKernel", "TurtleGame.SharedKernel\TurtleGame.SharedKernel.csproj", "{53D6CE22-C14C-40FC-A83C-30D7F1C3148F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.SharedKernel", "TurtleGame.SharedKernel\TurtleGame.SharedKernel.csproj", "{53D6CE22-C14C-40FC-A83C-30D7F1C3148F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleGame.SharedKernel.Tests", "TurtleGame.SharedKernel.Tests\TurtleGame.SharedKernel.Tests.csproj", "{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurtleGame.SharedKernel.Tests", "TurtleGame.SharedKernel.Tests\TurtleGame.SharedKernel.Tests.csproj", "{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleGame.Domain.Integration.Tests", "TurtleGame.Domain.Integration.Tests\TurtleGame.Domain.Integration.Tests.csproj", "{E59A91D8-2FE5-4B64-9176-89F3E3207A77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59A91D8-2FE5-4B64-9176-89F3E3207A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59A91D8-2FE5-4B64-9176-89F3E3207A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59A91D8-2FE5-4B64-9176-89F3E3207A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59A91D8-2FE5-4B64-9176-89F3E3207A77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0D4E8684-58EF-4A6D-8A56-DFE5C9EE80A5} = {FCCDABA8-24A7-4ED3-81C6-E5F5B58BC93E}
 		{A22BC8EF-8AAC-42E6-9207-2DABF1D0FB83} = {FCCDABA8-24A7-4ED3-81C6-E5F5B58BC93E}
+		{E59A91D8-2FE5-4B64-9176-89F3E3207A77} = {FCCDABA8-24A7-4ED3-81C6-E5F5B58BC93E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {247B3F4C-4D9E-4D96-9119-A34788D1D219}

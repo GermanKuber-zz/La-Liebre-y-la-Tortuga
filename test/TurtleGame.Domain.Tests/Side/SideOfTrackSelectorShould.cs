@@ -6,7 +6,6 @@ namespace TurtleGame.Domain.Tests.Side
 {
     public class SideOfTrackSelectorShould
     {
-       
         [Theory]
         [InlineData(false, true, true, true)]
         [InlineData(true, false, true, true)]
