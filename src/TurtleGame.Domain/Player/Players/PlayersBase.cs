@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Players.Interfaces;
 using TurtleGame.Domain.Player.Types;

@@ -2,8 +2,6 @@ using System;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Interfaces;
-using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Factories;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
