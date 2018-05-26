@@ -8,13 +8,7 @@ namespace TurtleGame.Domain.Player.Players
 {
     public abstract class PlayersBase : IPlayers
     {
-        public IRacingCardManager RacingCardManager { get; }
-
-
-        protected PlayersBase(IRacingCardManager racingCardManager)
-        {
-            RacingCardManager = racingCardManager;
-        }
+      
         public abstract void GiveCards(IReadOnlyCollection<IBetCard> betsCards);
         public abstract void TakeCard();
 

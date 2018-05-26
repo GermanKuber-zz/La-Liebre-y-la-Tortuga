@@ -13,10 +13,8 @@ namespace TurtleGame.Domain.Player.Players
         public sealed override IPlayer PlayerOne { get; }
         public sealed override IPlayer PlayerTwo { get; }
 
-        protected List<IRacingCard> RacingCardsPlayerOne = new List<IRacingCard>();
-        protected List<IRacingCard> RacingCardsPlayerTwo = new List<IRacingCard>();
-        public TwoPlayers(IPlayer playerOne, IPlayer playerTwo, IRacingCardManager racingCardManager)
-            : base(racingCardManager)
+        public List<IRacingCard> RacingCardsPlayerTwo = new List<IRacingCard>();
+        public TwoPlayers(IPlayer playerOne, IPlayer playerTwo)
         {
             PlayerOne = playerOne;
             PlayerTwo = playerTwo;
@@ -32,8 +30,8 @@ namespace TurtleGame.Domain.Player.Players
 
         public override void TakeCard()
         {
-            RacingCardsPlayerOne.Add(RacingCardManager.TakeCard());
-            RacingCardsPlayerTwo.Add(RacingCardManager.TakeCard());
+            PlayerOne.TakeRacingCard();
+            PlayerTwo.TakeRacingCard();
         }
 
     }

@@ -12,19 +12,23 @@ namespace TurtleGame.Domain.Player.Players
 
         public sealed override IPlayer PlayerFour { get; }
 
-        public FourPlayers(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour
-        , IRacingCardManager racingCardManager)
-            : base(playerOne, playerTwo, playerThree, racingCardManager)
+        public FourPlayers(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
+            : base(playerOne, playerTwo, playerThree)
         {
             PlayerFour = playerFour;
         }
-        public override void GiveCards(IReadOnlyCollection<IBetCard> beatsCards)
+        public override void GiveCards(IReadOnlyCollection<IBetCard> betsCards)
         {
-            var list = beatsCards.ToList();
+            var list = betsCards.ToList();
             PlayerOne.GiveCard(list[0]);
             PlayerTwo.GiveCard(list[1]);
             PlayerThree.GiveCard(list[2]);
             PlayerFour.GiveCard(list[3]);
+        }
+        public override void TakeCard()
+        {
+            base.TakeCard();
+            PlayerFour.TakeRacingCard();
         }
     }
 }

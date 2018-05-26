@@ -11,7 +11,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
     {
         public FourPlayersShould()
         {
-            Sut = new FourPlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, PlayerFour.Object, MockRacingCardManager.Object);
+            Sut = new FourPlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, PlayerFour.Object);
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
         [Fact]
         public void Give_Differents_Cards_To_Three_Players()
         {
-            Sut = new FourPlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, MockRacingCardManager.Object);
+            Sut = new FourPlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object);
 
             Differentes_Cards_To_All_Players(Sut, 4);
         }
@@ -44,6 +44,13 @@ namespace TurtleGame.Domain.Tests.Player.Types
             Sut.PlayerThree.Should().NotBeNull();
             Sut.PlayerFour.Should().NotBeNull();
             Sut.PlayerFive.Should().BeOfType<NonePlayer>();
+        }
+        [Fact]
+        public void Take_Card_From_User()
+        {
+            Sut.TakeCard();
+
+            PlayerFour.Verify(x => x.TakeRacingCard(), Times.Exactly(1));
         }
     }
 }

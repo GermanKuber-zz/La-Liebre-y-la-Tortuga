@@ -11,7 +11,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
     {
         public ThreePlayersShould()
         {
-            Sut = new ThreePlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, MockRacingCardManager.Object);
+            Sut = new ThreePlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
         [Fact]
         public void Give_Differents_Cards_To_Three_Players()
         {
-            Sut = new ThreePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, MockRacingCardManager.Object);
+            Sut = new ThreePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object);
 
             Differentes_Cards_To_All_Players(Sut, 3);
         }
@@ -39,19 +39,16 @@ namespace TurtleGame.Domain.Tests.Player.Types
         public void To_Assign_Players_Property()
         {
             Sut.PlayerOne.Should().NotBeNull();
-            Sut.PlayerTwo.Should().NotBeNull();
             Sut.PlayerThree.Should().NotBeNull();
-            Sut.PlayerFour.Should().BeOfType<NonePlayer>();
-            Sut.PlayerFive.Should().BeOfType<NonePlayer>();
         }
-          [Fact]
-        public void Take_Card_From_Racing_Card_Manager()
+        [Fact]
+        public void Take_Card_From_User()
         {
-            Sut = new ThreePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, MockRacingCardManager.Object);
-
             Sut.TakeCard();
 
-            MockRacingCardManager.Verify(x=> x.TakeCard(), Times.Exactly(3));
+            PlayerThree.Verify(x => x.TakeRacingCard(), Times.Exactly(1));
         }
+
+     
     }
 }

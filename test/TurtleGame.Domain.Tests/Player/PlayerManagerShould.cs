@@ -7,6 +7,7 @@ using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Factories;
+using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.SharedKernel.Generators;
@@ -22,16 +23,16 @@ namespace TurtleGame.Domain.Tests.Player
         private readonly Mock<IPlayer> _playerThree = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _playerFour = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _playerFive = new Mock<IPlayer>();
-        private  readonly  Mock<IRacingCardManager> _mockRacingCardManager = new Mock<IRacingCardManager>();
-        private readonly PlayersManagerFactory _playersManagerFactory;
+        private readonly Mock<IRacingCardManager> _mockRacingCardManager = new Mock<IRacingCardManager>();
+        private readonly IPlayersManagerFactory _playersManagerFactory;
 
 
         private readonly IReadOnlyCollection<IBetCard> _betCards;
 
         public PlayerManagerShould()
         {
-            _betCards = new ReadOnlyCollection<IBetCard>(EnumerableGenerator.Generate(5, x=> new Mock<IBetCard>().Object));
-            _playersManagerFactory = new PlayersManagerFactory(_mockRacingCardManager.Object);
+            _betCards = new ReadOnlyCollection<IBetCard>(EnumerableGenerator.Generate(5, x => new Mock<IBetCard>().Object));
+            _playersManagerFactory = new PlayersManagerFactory();
             _playerOne.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
             _playerTwo.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
             _playerThree.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
@@ -80,7 +81,7 @@ namespace TurtleGame.Domain.Tests.Player
             list.Distinct().Count().Should().Be(list.Count);
 
         }
-       
+
         [Theory]
         [InlineData(3)]
         [InlineData(6)]

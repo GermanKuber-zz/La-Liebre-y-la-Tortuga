@@ -3,6 +3,9 @@ using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player;
+using TurtleGame.Domain.Player.Factories;
+using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Enum;
 using TurtleGame.Domain.Tracks.Interfaces;
@@ -10,20 +13,26 @@ using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player
 {
-    public class PlayerShould
+    public class RegularPlayerShould
     {
-        private Domain.Player.Player _sut;
-        private Mock<ISideBoderSelected> _mockSideBorderSelected = new Mock<ISideBoderSelected>();
+        private IPlayer _sut;
+        private readonly Mock<ISideBoderSelected> _mockSideBorderSelected = new Mock<ISideBoderSelected>();
         private Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
-        public PlayerShould()
+        private IPlayerFactory _playerFactory;
+        private readonly Mock<IRacingCardManager> _mockRacingCardManager = new Mock<IRacingCardManager>();
+
+        public RegularPlayerShould()
         {
+            _playerFactory = new PlayerFactory(_mockRacingCardManager.Object);
             _choseSideOfTrack = (track) => _mockSideBorderSelected.Object;
-            _sut = new Domain.Player.Player(_choseSideOfTrack);
+            CreateRularPlayer();
         }
+
+
         [Fact]
         public void Not_Accept_Null_In_Parameters()
         {
-            Action call = () => _sut = new Domain.Player.Player(null);
+            Action call = () => _sut = new RegularPlayer(null, _mockRacingCardManager.Object);
 
             call.Should().Throw<ArgumentException>();
         }
@@ -37,7 +46,8 @@ namespace TurtleGame.Domain.Tests.Player
                 call = true;
                 return _mockSideBorderSelected.Object;
             };
-            _sut = new Domain.Player.Player(_choseSideOfTrack);
+            CreateRularPlayer();
+
             _sut.ChooseSideOfTrack(mockTrack.Object);
             call.Should().Be(true);
         }
@@ -52,7 +62,7 @@ namespace TurtleGame.Domain.Tests.Player
 
             _mockSideBorderSelected.Setup(x => x.SideOfTrack.SideType).Returns(sideChoosed);
 
-            _sut = new Domain.Player.Player(_choseSideOfTrack);
+            CreateRularPlayer();
             _sut.ChooseSideOfTrack(mockTrack.Object).SideOfTrack.SideType.Should().Be(sideChoosed);
         }
         [Fact]
@@ -80,6 +90,16 @@ namespace TurtleGame.Domain.Tests.Player
 
             act.Should().Throw<ArgumentException>();
         }
+        [Fact]
+        public void Add_Racing_Card_To_List_Of_Racings_Cards()
+        {
+            _sut.TakeRacingCard();
 
+            _sut.RacingCards.Count.Should().Be(1);
+        }
+        private void CreateRularPlayer()
+        {
+            _sut = new RegularPlayer(_choseSideOfTrack, _mockRacingCardManager.Object);
+        }
     }
 }
