@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using FluentAssertions;
 using Moq;
-using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Tracks.Interfaces;
 using TurtleGame.Domain.Tracks.Strategies;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
@@ -13,7 +12,7 @@ namespace TurtleGame.Domain.Tests.Strategies.PlaceTrack
     public class PlaceTrackRandomStrategyShould
     {
         private readonly MixTrackRandomStrategy _sut;
-        private Mock<IGenericMixStrategy> _mockGenericMixStrategy;
+        private readonly Mock<IGenericMixStrategy> _mockGenericMixStrategy;
 
         public PlaceTrackRandomStrategyShould()
         {

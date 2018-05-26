@@ -1,4 +1,5 @@
 ﻿using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player.Interfaces;
 
 namespace TurtleGame.Domain.Factories.Interfaces
 {

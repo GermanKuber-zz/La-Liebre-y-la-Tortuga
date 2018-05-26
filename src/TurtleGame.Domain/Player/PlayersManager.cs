@@ -19,15 +19,23 @@ namespace TurtleGame.Domain.Player
             _mixStrategy = mixStrategy;
             Players = players;
         }
-        public void GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
+        public IPlayersManager GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
         {
             if (beatsCards == null || beatsCards.Count != 5)
                 throw new ArgumentException(nameof(beatsCards));
 
             Players.GiveCards(_mixStrategy.Mix(beatsCards.ToList()).ToList());
+            return this;
         }
 
-        public void GiveRaicingsCard() => Players.TakeCard();
-
+        /// <summary>
+        /// Deal one raicing card to each player
+        /// </summary>
+        public IPlayersManager GiveRaicingCards()
+        {
+            for (var i = 0; i < 7; i++)
+                Players.TakeCard();
+            return this;
+        }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
-using TurtleGame.Domain.RacingCards;
+using TurtleGame.Domain.Player.Interfaces;
 
 namespace TurtleGame.Domain.Player.Players
 {

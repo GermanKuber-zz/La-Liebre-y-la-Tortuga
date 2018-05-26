@@ -1,7 +1,6 @@
 ﻿using System;
 using FluentAssertions;
 using Moq;
-using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Interfaces;
 using TurtleGame.Domain.Tracks;
@@ -12,10 +11,10 @@ namespace TurtleGame.Domain.Tests.Tracks
 {
     public class TrackContainerToPlayShould
     {
-        private Mock<SideOfTrackSelector> _mockCurrentSide = new Mock<SideOfTrackSelector>();
-        private ITrackContainerToPlay _sut;
-        private Mock<ITrack> _mockTrack = new Mock<ITrack>();
-        private Mock<ISideOfTrack> _mockSideOfTrack = new Mock<ISideOfTrack>();
+        private readonly Mock<SideOfTrackSelector> _mockCurrentSide = new Mock<SideOfTrackSelector>();
+        private readonly ITrackContainerToPlay _sut;
+        private readonly Mock<ITrack> _mockTrack = new Mock<ITrack>();
+        private readonly Mock<ISideOfTrack> _mockSideOfTrack = new Mock<ISideOfTrack>();
         public TrackContainerToPlayShould()
         {
             _mockCurrentSide.SetupAllProperties();

@@ -7,7 +7,7 @@ namespace TurtleGame.Domain.Tests.Side
 {
     public class SideOfTrackUpShould
     {
-        private SideOfTrackUp _sut;
+        private readonly SideOfTrackUp _sut;
 
         public SideOfTrackUpShould()
         {

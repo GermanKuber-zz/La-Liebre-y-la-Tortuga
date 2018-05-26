@@ -1,6 +1,7 @@
 using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Players;
 using TurtleGame.SharedKernel.Strategies;
 

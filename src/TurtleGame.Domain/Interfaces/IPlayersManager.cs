@@ -7,7 +7,7 @@ namespace TurtleGame.Domain.Interfaces
     public interface IPlayersManager
     {
         IPlayers Players { get; }
-        void GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards);
-        void GiveRaicingsCard();
+        IPlayersManager GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards);
+        IPlayersManager GiveRaicingCards();
     }
 }

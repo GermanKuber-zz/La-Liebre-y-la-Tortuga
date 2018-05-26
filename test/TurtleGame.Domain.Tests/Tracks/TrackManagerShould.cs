@@ -4,6 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Enum;
 using TurtleGame.Domain.Side.Interfaces;

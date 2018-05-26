@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
@@ -19,7 +18,7 @@ namespace TurtleGame.Domain.RacingCards
             var listOfRacingCards = racingCardsFactory.Create();
             _cardsInDeck = listOfRacingCards.GetEnumerator();
 
-            Cards = new ReadOnlyCollection<IRacingCard>(mixStrategy.Mix(listOfRacingCards));
+            Cards = mixStrategy.Mix<IRacingCard>(listOfRacingCards);
         }
 
         public IRacingCard TakeCard()

@@ -1,7 +1,6 @@
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Players;
 using Xunit;
 

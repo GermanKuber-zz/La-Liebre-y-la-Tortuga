@@ -8,7 +8,7 @@ namespace TurtleGame.SharedKernel.Strategies
 {
     public class RandomMixStrategy : IGenericMixStrategy
     {
-        public ReadOnlyCollection<TEntity> Mix<TEntity>(List<TEntity> entitiesToMix)
+        public IReadOnlyCollection<TEntity> Mix<TEntity>(List<TEntity> entitiesToMix)
         {
             var random = new Random();
             var localCount = Enumerable.Range(0, entitiesToMix.Count).ToList();

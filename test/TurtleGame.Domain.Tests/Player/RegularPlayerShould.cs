@@ -5,6 +5,8 @@ using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Factories;
+using TurtleGame.Domain.Player.Interfaces;
+using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Side.Enum;
@@ -18,16 +20,14 @@ namespace TurtleGame.Domain.Tests.Player
         private IPlayer _sut;
         private readonly Mock<ISideBoderSelected> _mockSideBorderSelected = new Mock<ISideBoderSelected>();
         private Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
-        private IPlayerFactory _playerFactory;
         private readonly Mock<IRacingCardManager> _mockRacingCardManager = new Mock<IRacingCardManager>();
 
         public RegularPlayerShould()
         {
-            _playerFactory = new PlayerFactory(_mockRacingCardManager.Object);
+            new PlayerFactory(_mockRacingCardManager.Object);
             _choseSideOfTrack = (track) => _mockSideBorderSelected.Object;
             CreateRularPlayer();
         }
-
 
         [Fact]
         public void Not_Accept_Null_In_Parameters()

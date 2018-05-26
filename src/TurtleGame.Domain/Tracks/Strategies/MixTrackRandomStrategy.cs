@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Tracks.Interfaces;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
@@ -14,7 +13,7 @@ namespace TurtleGame.Domain.Tracks.Strategies
         {
             _genericMixStrategy = genericMixStrategy;
         }
-        public ReadOnlyCollection<ITrack> MixTracks(List<ITrack> tracksToMix) => _genericMixStrategy.Mix(tracksToMix);
+        public IReadOnlyCollection<ITrack> MixTracks(List<ITrack> tracksToMix) => _genericMixStrategy.Mix(tracksToMix);
 
       
     }

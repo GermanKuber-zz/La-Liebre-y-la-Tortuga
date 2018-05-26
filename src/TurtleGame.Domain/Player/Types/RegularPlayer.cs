@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Tracks.Interfaces;
 
-namespace TurtleGame.Domain.Player
+namespace TurtleGame.Domain.Player.Types
 {
     public class RegularPlayer : IPlayer
     {
@@ -20,7 +20,7 @@ namespace TurtleGame.Domain.Player
 
         public IReadOnlyCollection<IRacingCard> RacingCards => new ReadOnlyCollection<IRacingCard>(_racingCards);
 
-        private List<IRacingCard> _racingCards = new List<IRacingCard>();
+        private readonly List<IRacingCard> _racingCards = new List<IRacingCard>();
 
         public RegularPlayer(Func<ITrack, ISideBoderSelected> choseSideOfTrack,
             IRacingCardManager racingCardManager)

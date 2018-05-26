@@ -4,7 +4,7 @@ using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Tracks.Interfaces;
 
-namespace TurtleGame.Domain.Interfaces
+namespace TurtleGame.Domain.Player.Interfaces
 {
     public interface IPlayer
     {

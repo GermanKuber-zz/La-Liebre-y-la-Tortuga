@@ -11,7 +11,7 @@ namespace TurtleGame.Domain.Tests.Tracks.Chain.DecideSide
 {
     public class DecideMaxCountDownSideChainShould
     {
-        private DecideMaxCountDownSideChain _sut;
+        private readonly DecideMaxCountDownSideChain _sut;
 
         public DecideMaxCountDownSideChainShould()
         {

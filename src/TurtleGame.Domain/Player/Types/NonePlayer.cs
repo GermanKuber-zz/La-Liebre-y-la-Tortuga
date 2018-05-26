@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Interfaces;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Tracks.Interfaces;
 
-namespace TurtleGame.Domain.Player
+namespace TurtleGame.Domain.Player.Types
 {
     public class NonePlayer : IPlayer
     {
