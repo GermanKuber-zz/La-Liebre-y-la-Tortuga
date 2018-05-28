@@ -11,20 +11,21 @@ namespace TurtleGame.Domain.Player
     public class PlayersManager : IPlayersManager
     {
         private readonly IGenericMixStrategy _mixStrategy;
-        public IPlayers Players { get; }
+        public IPlayers _players;
+        public int NumberOfPlayers => _players.NumberOfPlayers;
 
         public PlayersManager(IPlayers players,
                               IGenericMixStrategy mixStrategy)
         {
             _mixStrategy = mixStrategy;
-            Players = players;
+            _players = players;
         }
         public IPlayersManager GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
         {
             if (beatsCards == null || beatsCards.Count != 5)
                 throw new ArgumentException(nameof(beatsCards));
 
-            Players.GiveCards(_mixStrategy.Mix(beatsCards.ToList()).ToList());
+            _players.GiveCards(_mixStrategy.Mix(beatsCards.ToList()).ToList());
             return this;
         }
 
@@ -34,7 +35,7 @@ namespace TurtleGame.Domain.Player
         public IPlayersManager GiveRaicingCards()
         {
             for (var i = 0; i < 7; i++)
-                Players.TakeCard();
+                _players.TakeCard();
             return this;
         }
     }

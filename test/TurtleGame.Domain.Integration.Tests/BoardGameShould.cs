@@ -13,27 +13,30 @@ namespace TurtleGame.Domain.Integration.Tests
     public class BoardGameShould
     {
         private readonly BoardGame _sut;
+        private RegularPlayer _playerOne;
+        private readonly RegularPlayer _playerTwo;
 
         public BoardGameShould()
         {
             IBoardGameFactory boardGameFactory = new BoardGameFactory(new PlayersManagerFactory());
-            var playerOne = new RegularPlayer((track => new SideBoderSelected(track,
+            _playerOne = new RegularPlayer((track => new SideBoderSelected(track,
                 new SideOfTrackDown(), new LineBorderTrack())), new RacingCardManager(new RacingCardsFactory(),
                 new RandomMixStrategy()));
-            var playerTwo = new RegularPlayer((track => new SideBoderSelected(track,
+            _playerTwo = new RegularPlayer((track => new SideBoderSelected(track,
                 new SideOfTrackDown(), new LineBorderTrack())), new RacingCardManager(new RacingCardsFactory(),
                 new RandomMixStrategy()));
-            _sut = boardGameFactory.ToTwoPlayer(playerOne, playerTwo);
+            _sut = boardGameFactory.ToTwoPlayer(_playerOne, _playerTwo);
         }
 
         [Fact]
         public void Start_Game_With_Two_Players()
         {
             _sut.Start();
-            _sut.Players.Players.NumberOfPlayers.Should().Be(2);
-            _sut.Players.Players.PlayerOne.BetCardsQuantity.Should().Be(2);
-            _sut.Players.Players.PlayerTwo.RacingCards.Count.Should().Be(7);
-            _sut.Players.Players.PlayerOne.RacingCards.Count.Should().Be(7);
+
+            _sut.Players.NumberOfPlayers.Should().Be(2);
+            _playerOne.BetCardsQuantity.Should().Be(2);
+            _playerTwo.RacingCards.Count.Should().Be(7);
+            _playerOne.RacingCards.Count.Should().Be(7);
         }
     }
 }
