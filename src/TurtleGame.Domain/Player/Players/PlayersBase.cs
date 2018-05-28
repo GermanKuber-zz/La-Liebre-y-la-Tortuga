@@ -12,6 +12,8 @@ namespace TurtleGame.Domain.Player.Players
         public abstract void GiveCards(IReadOnlyCollection<IBetCard> betsCards);
         public abstract void TakeCard();
 
+        public abstract void ChooseSecondBet(); 
+
         public abstract int NumberOfPlayers { get; }
         public virtual IPlayer PlayerOne => NonePlayer.Create;
         public virtual IPlayer PlayerTwo => NonePlayer.Create;

@@ -126,10 +126,10 @@ namespace TurtleGame.Domain.Tests.Player
             _mockRacingCardManager.Setup(x => x.TakeCard()).Returns(new Mock<IRacingCard>().Object);
             _sut.TakeRacingCard();
 
-
             _sut.ChooseSecondBet();
 
             _sut.RacingCards.Count.Should().Be(1);
+            _sut.BetCardsQuantity.Should().Be(1);
         }
 
 

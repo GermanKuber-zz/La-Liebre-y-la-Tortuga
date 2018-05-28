@@ -32,11 +32,19 @@ namespace TurtleGame.Domain.Player
         /// <summary>
         /// Deal one raicing card to each player
         /// </summary>
-        public IPlayersManager GiveRaicingCards()
+        public IPlayersManagerThirdStep GiveRaicingCards()
         {
             Enumerable.Range(1, 7)
                 .ToList()
                 .ForEach(x => _players.TakeCard());
+            return this;
+        }
+
+        public IPlayersManager ChooseSecondBet()
+        {
+            Enumerable.Range(1, 1)
+                .ToList()
+                .ForEach(x => _players.ChooseSecondBet());
             return this;
         }
     }

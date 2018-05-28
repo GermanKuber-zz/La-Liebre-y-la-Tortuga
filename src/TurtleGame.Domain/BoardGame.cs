@@ -44,7 +44,8 @@ namespace TurtleGame.Domain
         public void Start()
         {
             Players.GiveBetCards(BetCards)
-                   .GiveRaicingCards();
+                   .GiveRaicingCards()
+                   .ChooseSecondBet();
         }
 
     }

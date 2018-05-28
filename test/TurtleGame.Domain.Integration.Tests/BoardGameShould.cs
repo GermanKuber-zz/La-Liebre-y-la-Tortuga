@@ -35,9 +35,9 @@ namespace TurtleGame.Domain.Integration.Tests
             _sut.Start();
 
             _sut.Players.NumberOfPlayers.Should().Be(2);
-            _playerOne.BetCardsQuantity.Should().Be(2);
-            _playerTwo.RacingCards.Count.Should().Be(7);
-            _playerOne.RacingCards.Count.Should().Be(7);
+            _playerOne.BetCardsQuantity.Should().Be(3);
+            _playerTwo.RacingCards.Count.Should().Be(6);
+            _playerOne.RacingCards.Count.Should().Be(6);
         }
     }
 }

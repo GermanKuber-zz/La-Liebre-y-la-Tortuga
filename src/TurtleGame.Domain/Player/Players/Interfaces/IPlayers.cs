@@ -17,5 +17,6 @@ namespace TurtleGame.Domain.Player.Players.Interfaces
         IPlayer PlayerOne { get; }
         IPlayer PlayerThree { get; }
         IPlayer PlayerTwo { get; }
+        void ChooseSecondBet();
     }
 }

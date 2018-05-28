@@ -32,6 +32,10 @@ namespace TurtleGame.Domain.Player.Players
             PlayerOne.TakeRacingCard();
             PlayerTwo.TakeRacingCard();
         }
-
+        public override void ChooseSecondBet()
+        {
+            PlayerOne.ChooseSecondBet();
+            PlayerTwo.ChooseSecondBet();
+        }
     }
 }

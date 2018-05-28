@@ -69,5 +69,7 @@ namespace TurtleGame.Domain.Tests.Player
 
             _mockPlayers.Verify(x => x.TakeCard(), Times.Exactly(7));
         }
+
+    
     }
 }
