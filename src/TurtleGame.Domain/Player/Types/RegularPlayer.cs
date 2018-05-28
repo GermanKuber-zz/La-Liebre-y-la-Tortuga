@@ -13,7 +13,7 @@ namespace TurtleGame.Domain.Player.Types
     public class RegularPlayer : IPlayer
     {
         private readonly List<IBetCard> _betCards = new List<IBetCard>();
-        private readonly Func<ITrack, ISideBoderSelected> _choseSideOfTrack;
+        private readonly Func<ITrack, ISideBoderSelected> _chooseSideOfTrack;
         private readonly IRacingCardManager _racingCardManager;
 
         public int BetCardsQuantity => _betCards.Count;
@@ -21,15 +21,20 @@ namespace TurtleGame.Domain.Player.Types
         public IReadOnlyCollection<IRacingCard> RacingCards => new ReadOnlyCollection<IRacingCard>(_racingCards);
 
         private readonly List<IRacingCard> _racingCards = new List<IRacingCard>();
+        private readonly Func<IReadOnlyCollection<IRacingCard>, IRacingCard> _chooseSecondBet;
 
-        public RegularPlayer(Func<ITrack, ISideBoderSelected> choseSideOfTrack,
+        public RegularPlayer(Func<ITrack, ISideBoderSelected> chooseSideOfTrack,
+            Func<IReadOnlyCollection<IRacingCard>, IRacingCard> chooseSecondBet,
             IRacingCardManager racingCardManager)
         {
-            if (choseSideOfTrack == null)
-                throw new ArgumentException(nameof(choseSideOfTrack));
+            if (chooseSideOfTrack == null)
+                throw new ArgumentException(nameof(chooseSideOfTrack));
+            if (chooseSecondBet == null)
+                throw new ArgumentException(nameof(chooseSecondBet));
 
-            _choseSideOfTrack = choseSideOfTrack;
+            _chooseSideOfTrack = chooseSideOfTrack;
             _racingCardManager = racingCardManager;
+            _chooseSecondBet = chooseSecondBet;
         }
         public void GiveCard(IBetCard betCard)
         {
@@ -40,6 +45,12 @@ namespace TurtleGame.Domain.Player.Types
 
         public void TakeRacingCard() => _racingCards.Add(_racingCardManager.TakeCard());
 
-        public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _choseSideOfTrack.Invoke(track);
+        public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _chooseSideOfTrack.Invoke(track);
+        public void ChooseSecondBet()
+        {
+            var choosedSecondBetCard = _chooseSecondBet.Invoke(_racingCards);
+            _racingCards.Remove(choosedSecondBetCard);
+            _betCards.Add(new SecondBetCard(choosedSecondBetCard));
+        }
     }
 }

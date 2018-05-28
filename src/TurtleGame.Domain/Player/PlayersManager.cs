@@ -20,7 +20,7 @@ namespace TurtleGame.Domain.Player
             _mixStrategy = mixStrategy;
             _players = players;
         }
-        public IPlayersManager GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
+        public IPlayersManagerSecondStep GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
         {
             if (beatsCards == null || beatsCards.Count != 5)
                 throw new ArgumentException(nameof(beatsCards));
@@ -37,7 +37,6 @@ namespace TurtleGame.Domain.Player
             Enumerable.Range(1, 7)
                 .ToList()
                 .ForEach(x => _players.TakeCard());
-
             return this;
         }
     }

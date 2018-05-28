@@ -13,5 +13,6 @@ namespace TurtleGame.Domain.Player.Interfaces
         IReadOnlyCollection<IRacingCard> RacingCards { get; }
         void TakeRacingCard();
         ISideBoderSelected ChooseSideOfTrack(ITrack track);
+        void ChooseSecondBet();
     }
 }

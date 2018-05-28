@@ -26,5 +26,7 @@ namespace TurtleGame.Domain.Player.Types
         }
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => default(ISideBoderSelected);
+
+        public void ChooseSecondBet() { }
     }
 }

@@ -3,10 +3,17 @@ using TurtleGame.Domain.BetCards;
 
 namespace TurtleGame.Domain.Interfaces
 {
-    public interface IPlayersManager
+    public interface IPlayersManager : IPlayersManagerFirstStep, IPlayersManagerSecondStep
     {
         int NumberOfPlayers { get; }
-        IPlayersManager GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards);
+
+    }
+    public interface IPlayersManagerFirstStep
+    {
+        IPlayersManagerSecondStep GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards);
+    }
+    public interface IPlayersManagerSecondStep
+    {
         IPlayersManager GiveRaicingCards();
     }
 }
