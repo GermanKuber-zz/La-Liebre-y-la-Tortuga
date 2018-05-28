@@ -34,8 +34,10 @@ namespace TurtleGame.Domain.Player
         /// </summary>
         public IPlayersManager GiveRaicingCards()
         {
-            for (var i = 0; i < 7; i++)
-                _players.TakeCard();
+            Enumerable.Range(1, 7)
+                .ToList()
+                .ForEach(x => _players.TakeCard());
+
             return this;
         }
     }
