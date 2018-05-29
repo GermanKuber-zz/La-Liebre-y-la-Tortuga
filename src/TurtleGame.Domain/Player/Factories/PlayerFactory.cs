@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TurtleGame.Domain.Player.Factories.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
+using TurtleGame.Domain.Player.Types.BetCards;
 using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
@@ -25,6 +26,7 @@ namespace TurtleGame.Domain.Player.Factories
             new RegularPlayer(UserCallbacksNotifications.Create(chooseSideOfTrack,
                                                     chooseSecondBet,
                                                     selectRacingCard),
+                                                    BetCardsPlayerManager.Create(),
                                                     _racingCardManager);
 
     }

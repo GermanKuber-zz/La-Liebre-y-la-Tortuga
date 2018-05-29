@@ -37,7 +37,7 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
             PlayerOne.ChooseSecondBet();
             PlayerTwo.ChooseSecondBet();
         }
-        public override bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback)
+        public override bool CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback)
         {
             return PlayerOne.CardsTurn(cardsTurnCallback);
         }

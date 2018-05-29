@@ -15,7 +15,7 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
         public abstract void TakeCard();
 
         public abstract void ChooseSecondBet();
-        public abstract bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback);
+        public abstract bool CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback);
 
         public abstract int NumberOfPlayers { get; }
         public virtual IPlayer PlayerOne => NonePlayer.Create;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
 
 namespace TurtleGame.Domain.Interfaces
@@ -9,7 +10,7 @@ namespace TurtleGame.Domain.Interfaces
     {
         int NumberOfPlayers { get; }
 
-        bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> func);
+        bool CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback);
     }
     public interface IPlayersManagerFirstStep
     {

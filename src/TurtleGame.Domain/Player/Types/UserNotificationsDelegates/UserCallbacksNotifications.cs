@@ -2,7 +2,7 @@ using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 
 namespace TurtleGame.Domain.Player.Types
 {
-    public class UserCallbacksNotifications
+    public class UserCallbacksNotifications : IUserCallbacksNotifications
     {
 
 
@@ -19,7 +19,7 @@ namespace TurtleGame.Domain.Player.Types
             SelectRacingCard = selectRacingCard;
         }
 
-        public static UserCallbacksNotifications Create(ChooseSideOfTrackDelagate chooseSideOfTrack,
+        public static IUserCallbacksNotifications Create(ChooseSideOfTrackDelagate chooseSideOfTrack,
             ChooseSecondBetDelagate chooseSecondBet,
             SelectRacingCardDelagate selectRacingCard) =>
             new UserCallbacksNotifications(chooseSideOfTrack, chooseSecondBet, selectRacingCard);

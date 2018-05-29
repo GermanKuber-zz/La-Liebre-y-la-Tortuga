@@ -20,6 +20,6 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType.Interfaces
         IPlayer PlayerThree { get; }
         IPlayer PlayerTwo { get; }
         void ChooseSecondBet();
-        bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback);
+        bool CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback);
     }
 }
