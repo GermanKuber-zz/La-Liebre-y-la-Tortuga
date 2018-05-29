@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
@@ -26,6 +27,8 @@ namespace TurtleGame.Domain.Player.Types
         }
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => default(ISideBoderSelected);
+
+        public bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> selectedCardsConfirmation) => true;
 
         public void ChooseSecondBet() { }
     }

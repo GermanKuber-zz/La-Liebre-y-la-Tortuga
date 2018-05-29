@@ -13,7 +13,7 @@ namespace TurtleGame.Domain.Player.Types
     public class RegularPlayer : IPlayer
     {
         private readonly List<IBetCard> _betCards = new List<IBetCard>();
-        private readonly Func<ITrack, ISideBoderSelected> _chooseSideOfTrack;
+        private readonly UserCallbacksNotifications _userCallbacksNotifications;
         private readonly IRacingCardManager _racingCardManager;
 
         public int BetCardsQuantity => _betCards.Count;
@@ -21,20 +21,16 @@ namespace TurtleGame.Domain.Player.Types
         public IReadOnlyCollection<IRacingCard> RacingCards => new ReadOnlyCollection<IRacingCard>(_racingCards);
 
         private readonly List<IRacingCard> _racingCards = new List<IRacingCard>();
-        private readonly Func<IReadOnlyCollection<IRacingCard>, IRacingCard> _chooseSecondBet;
 
-        public RegularPlayer(Func<ITrack, ISideBoderSelected> chooseSideOfTrack,
-            Func<IReadOnlyCollection<IRacingCard>, IRacingCard> chooseSecondBet,
+        public RegularPlayer(UserCallbacksNotifications userCallbacksNotifications,
             IRacingCardManager racingCardManager)
         {
-            if (chooseSideOfTrack == null)
-                throw new ArgumentException(nameof(chooseSideOfTrack));
-            if (chooseSecondBet == null)
-                throw new ArgumentException(nameof(chooseSecondBet));
+            if (userCallbacksNotifications == null)
+                throw new ArgumentException(nameof(userCallbacksNotifications));
 
-            _chooseSideOfTrack = chooseSideOfTrack;
+            _userCallbacksNotifications = userCallbacksNotifications;
             _racingCardManager = racingCardManager;
-            _chooseSecondBet = chooseSecondBet;
+
         }
         public void GiveCard(IBetCard betCard)
         {
@@ -45,10 +41,21 @@ namespace TurtleGame.Domain.Player.Types
 
         public void TakeRacingCard() => _racingCards.Add(_racingCardManager.TakeCard());
 
-        public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _chooseSideOfTrack.Invoke(track);
+        public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _userCallbacksNotifications.ChooseSideOfTrack.Invoke(track);
+        public bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> selectedCardsConfirmation)
+        {
+            var selectedCards = _userCallbacksNotifications.SelectRacingCard(RacingCards);
+            if (selectedCardsConfirmation(selectedCards))
+            {
+                //Remove card form the main cards list
+            }
+
+            return true;
+        }
+
         public void ChooseSecondBet()
         {
-            var choosedSecondBetCard = _chooseSecondBet.Invoke(_racingCards);
+            var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(_racingCards);
             _racingCards.Remove(choosedSecondBetCard);
             _betCards.Add(new SecondBetCard(choosedSecondBetCard));
         }

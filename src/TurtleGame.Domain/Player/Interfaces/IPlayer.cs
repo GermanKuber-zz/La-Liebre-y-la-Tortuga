@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
@@ -15,5 +16,6 @@ namespace TurtleGame.Domain.Player.Interfaces
         IReadOnlyCollection<IRacingCard> RacingCards { get; }
         void TakeRacingCard();
         ISideBoderSelected ChooseSideOfTrack(ITrack track);
+        bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> selectedCardsConfirmation);
     }
 }

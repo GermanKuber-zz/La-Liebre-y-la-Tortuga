@@ -1,17 +1,17 @@
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Player.Players;
+using TurtleGame.Domain.Player.PlayersQuantityType;
+using TurtleGame.Domain.Player.Types;
 using Xunit;
 
-namespace TurtleGame.Domain.Tests.Player.Types
+namespace TurtleGame.Domain.Tests.Player.Players
 {
-    public class FivePlayersShould : PlayersShouldBase
+    public class FourPlayersQuantityTypeShould : PlayersQuantityTypeBase
     {
-        public FivePlayersShould()
+        public FourPlayersQuantityTypeShould()
         {
-            Sut = new FivePlayers(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, 
-                PlayerFour.Object, PlayerFive.Object);
+            Sut = new FourPlayersQuantityType(PlayerOne.Object, PlayerTwo.Object, PlayerThree.Object, PlayerFour.Object);
         }
 
         [Fact]
@@ -21,20 +21,20 @@ namespace TurtleGame.Domain.Tests.Player.Types
             PlayerOne.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1));
             PlayerTwo.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1));
             PlayerThree.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1));
-            PlayerFive.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1));
+            PlayerFour.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1));
         }
 
         [Fact]
         public void Give_Differents_Cards_To_Three_Players()
         {
-            Sut = new FivePlayers(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object);
+            Sut = new FourPlayersQuantityType(PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object);
 
-            Differentes_Cards_To_All_Players(Sut, 5);
+            Differentes_Cards_To_All_Players(Sut, 4);
         }
         [Fact]
-        public void Return_Number_Of_Player_Of_Five()
+        public void Return_Number_Of_Player_Of_Three()
         {
-            Sut.NumberOfPlayers.Should().Be(5);
+            Sut.NumberOfPlayers.Should().Be(4);
         }
         [Fact]
         public void To_Assign_Players_Property()
@@ -43,14 +43,14 @@ namespace TurtleGame.Domain.Tests.Player.Types
             Sut.PlayerTwo.Should().NotBeNull();
             Sut.PlayerThree.Should().NotBeNull();
             Sut.PlayerFour.Should().NotBeNull();
-            Sut.PlayerFive.Should().NotBeNull();
+            Sut.PlayerFive.Should().BeOfType<NonePlayer>();
         }
         [Fact]
         public void Take_Card_From_User()
         {
             Sut.TakeCard();
 
-            PlayerFive.Verify(x => x.TakeRacingCard(), Times.Exactly(1));
+            PlayerFour.Verify(x => x.TakeRacingCard(), Times.Exactly(1));
         }
     }
 }

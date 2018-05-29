@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
+using TurtleGame.Domain.RacingCards.Interfaces;
 
-namespace TurtleGame.Domain.Player.Players.Interfaces
+namespace TurtleGame.Domain.Player.PlayersQuantityType.Interfaces
 {
-    public interface IPlayers
+    public interface IPlayersQuantityType
     {
         void GiveCards(IReadOnlyCollection<IBetCard> betsCards);
         /// <summary>
@@ -18,5 +20,6 @@ namespace TurtleGame.Domain.Player.Players.Interfaces
         IPlayer PlayerThree { get; }
         IPlayer PlayerTwo { get; }
         void ChooseSecondBet();
+        bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback);
     }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
-using TurtleGame.Domain.Player.Players.Interfaces;
+using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
+using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.Player
@@ -11,10 +12,10 @@ namespace TurtleGame.Domain.Player
     public class PlayersManager : IPlayersManager
     {
         private readonly IGenericMixStrategy _mixStrategy;
-        public IPlayers _players;
+        private readonly IPlayersQuantityType _players;
         public int NumberOfPlayers => _players.NumberOfPlayers;
 
-        public PlayersManager(IPlayers players,
+        public PlayersManager(IPlayersQuantityType players,
                               IGenericMixStrategy mixStrategy)
         {
             _mixStrategy = mixStrategy;
@@ -46,6 +47,11 @@ namespace TurtleGame.Domain.Player
                 .ToList()
                 .ForEach(x => _players.ChooseSecondBet());
             return this;
+        }
+
+        public bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback)
+        {
+            return _players.CardsTurn(cardsTurnCallback);
         }
     }
 }

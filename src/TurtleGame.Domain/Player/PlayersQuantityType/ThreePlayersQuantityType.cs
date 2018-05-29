@@ -3,31 +3,30 @@ using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
 
-namespace TurtleGame.Domain.Player.Players
+namespace TurtleGame.Domain.Player.PlayersQuantityType
 {
-    public class FourPlayers : ThreePlayers
+    public class ThreePlayersQuantityType : TwoPlayersQuantityType
     {
-        public override int NumberOfPlayers => 4;
+        public override int NumberOfPlayers => 3;
+        public sealed override IPlayer PlayerThree { get; }
 
-        public sealed override IPlayer PlayerFour { get; }
-
-        public FourPlayers(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
-            : base(playerOne, playerTwo, playerThree)
+        public ThreePlayersQuantityType(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree)
+            : base(playerOne, playerTwo)
         {
-            PlayerFour = playerFour;
+            PlayerThree = playerThree;
         }
+
         public override void GiveCards(IReadOnlyCollection<IBetCard> betsCards)
         {
             var list = betsCards.ToList();
             PlayerOne.GiveCard(list[0]);
             PlayerTwo.GiveCard(list[1]);
             PlayerThree.GiveCard(list[2]);
-            PlayerFour.GiveCard(list[3]);
         }
         public override void TakeCard()
         {
             base.TakeCard();
-            PlayerFour.TakeRacingCard();
+            PlayerThree.TakeRacingCard();
         }
     }
 }

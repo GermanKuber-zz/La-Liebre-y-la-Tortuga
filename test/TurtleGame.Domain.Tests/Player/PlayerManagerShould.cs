@@ -7,7 +7,7 @@ using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Interfaces;
-using TurtleGame.Domain.Player.Players.Interfaces;
+using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
 using TurtleGame.SharedKernel.Generators;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 using Xunit;
@@ -23,7 +23,7 @@ namespace TurtleGame.Domain.Tests.Player
         private readonly Mock<IPlayer> _playerFour = new Mock<IPlayer>();
         private readonly Mock<IPlayer> _playerFive = new Mock<IPlayer>();
         private readonly IReadOnlyCollection<IBetCard> _betCards;
-        private readonly Mock<IPlayers> _mockPlayers = new Mock<IPlayers>();
+        private readonly Mock<IPlayersQuantityType> _mockPlayers = new Mock<IPlayersQuantityType>();
         private readonly Mock<IGenericMixStrategy> _mockgGenericMixStrategy = new Mock<IGenericMixStrategy>();
 
         public PlayerManagerShould()

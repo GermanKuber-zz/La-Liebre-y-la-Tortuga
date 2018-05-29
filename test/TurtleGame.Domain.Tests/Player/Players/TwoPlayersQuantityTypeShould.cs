@@ -1,18 +1,18 @@
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Player.Players;
+using TurtleGame.Domain.Player.PlayersQuantityType;
 using TurtleGame.Domain.Player.Types;
 using Xunit;
 
-namespace TurtleGame.Domain.Tests.Player.Types
+namespace TurtleGame.Domain.Tests.Player.Players
 {
-    public class TwoPlayersShould : PlayersShouldBase
+    public class TwoPlayersQuantityTypeShould : PlayersQuantityTypeBase
     {
 
-        public TwoPlayersShould()
+        public TwoPlayersQuantityTypeShould()
         {
-            Sut = new TwoPlayers(PlayerOne.Object, PlayerTwo.Object);
+            Sut = new TwoPlayersQuantityType(PlayerOne.Object, PlayerTwo.Object);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
         [Fact]
         public void Give_Differents_Cards_To_Two_Players()
         {
-            Sut = new TwoPlayers(PlayerOne.Object, PlayerOne.Object);
+            Sut = new TwoPlayersQuantityType(PlayerOne.Object, PlayerOne.Object);
 
             Differentes_Cards_To_All_Players(Sut, 4);
         }

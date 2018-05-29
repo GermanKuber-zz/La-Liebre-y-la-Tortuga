@@ -1,19 +1,19 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
 
-namespace TurtleGame.Domain.Player.Players
+namespace TurtleGame.Domain.Player.PlayersQuantityType
 {
-    public class TwoPlayers : PlayersBase
+    public class TwoPlayersQuantityType : PlayersQuantityTypeBase
     {
         public override int NumberOfPlayers => 2;
         public sealed override IPlayer PlayerOne { get; }
         public sealed override IPlayer PlayerTwo { get; }
 
-        public List<IRacingCard> RacingCardsPlayerTwo = new List<IRacingCard>();
-        public TwoPlayers(IPlayer playerOne, IPlayer playerTwo)
+        public TwoPlayersQuantityType(IPlayer playerOne, IPlayer playerTwo)
         {
             PlayerOne = playerOne;
             PlayerTwo = playerTwo;
@@ -36,6 +36,10 @@ namespace TurtleGame.Domain.Player.Players
         {
             PlayerOne.ChooseSecondBet();
             PlayerTwo.ChooseSecondBet();
+        }
+        public override bool CardsTurn(Func<IReadOnlyCollection<IRacingCard>, bool> cardsTurnCallback)
+        {
+            return PlayerOne.CardsTurn(cardsTurnCallback);
         }
     }
 }

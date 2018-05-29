@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TurtleGame.Domain.Player.Factories.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
+using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
@@ -18,9 +19,13 @@ namespace TurtleGame.Domain.Player.Factories
         {
             _racingCardManager = racingCardManager;
         }
-        public IPlayer Create(Func<ITrack, ISideBoderSelected> choseSideOfTrack,
-            Func<IReadOnlyCollection<IRacingCard>, IRacingCard> chooseSecondBet) =>
-            new RegularPlayer(choseSideOfTrack, chooseSecondBet, _racingCardManager);
+        public IPlayer Create(ChooseSideOfTrackDelagate chooseSideOfTrack,
+            ChooseSecondBetDelagate chooseSecondBet,
+            SelectRacingCardDelagate selectRacingCard) =>
+            new RegularPlayer(UserCallbacksNotifications.Create(chooseSideOfTrack,
+                                                    chooseSecondBet,
+                                                    selectRacingCard),
+                                                    _racingCardManager);
 
     }
 }
