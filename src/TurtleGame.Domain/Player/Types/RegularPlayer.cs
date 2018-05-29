@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types.BetCards;
+using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
@@ -19,9 +19,8 @@ namespace TurtleGame.Domain.Player.Types
 
         public int BetCardsQuantity => _betCardsPlayerManager.BetCardsQuantity;
 
-        public IReadOnlyCollection<IRacingCard> RacingCards => new ReadOnlyCollection<IRacingCard>(_racingCards);
 
-        private readonly List<IRacingCard> _racingCards = new List<IRacingCard>();
+        public  IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
 
         public RegularPlayer(IUserCallbacksNotifications userCallbacksNotifications,
             IBetCardsPlayerManager betCardsPlayerManager,
@@ -38,7 +37,7 @@ namespace TurtleGame.Domain.Player.Types
 
         public void GiveCard(IBetCard betCard) => _betCardsPlayerManager.GiveCard(betCard);
 
-        public void TakeRacingCard() => _racingCards.Add(_racingCardManager.TakeCard());
+        public void TakeRacingCard() => RacingCards.Add(_racingCardManager.TakeCard());
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _userCallbacksNotifications.ChooseSideOfTrack.Invoke(track);
         public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
@@ -48,15 +47,15 @@ namespace TurtleGame.Domain.Player.Types
             {
                 //Remove card form the main cards list
             }
-
             return true;
         }
 
         public void ChooseSecondBet()
         {
-            var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(_racingCards);
-            _racingCards.Remove(choosedSecondBetCard);
+            var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(RacingCards);
+            RacingCards.Remove(choosedSecondBetCard);
             _betCardsPlayerManager.GiveCard(new SecondBetCard(choosedSecondBetCard));
         }
+
     }
 }

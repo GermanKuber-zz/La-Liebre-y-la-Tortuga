@@ -5,7 +5,6 @@ using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
-using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.Player

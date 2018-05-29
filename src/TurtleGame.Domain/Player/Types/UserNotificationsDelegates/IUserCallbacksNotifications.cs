@@ -1,6 +1,4 @@
-﻿using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
-
-namespace TurtleGame.Domain.Player.Types
+﻿namespace TurtleGame.Domain.Player.Types.UserNotificationsDelegates
 {
     public interface IUserCallbacksNotifications
     {

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
-using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.RacingCards;
 
 namespace TurtleGame.Domain.Player.Types.UserNotificationsDelegates
 {
-    public delegate IReadOnlyCollection<IRacingCard> SelectRacingCardDelagate(IReadOnlyCollection<IRacingCard> track);
+    public delegate IRacingCards SelectRacingCardDelagate(IRacingCards racingCards);
 }

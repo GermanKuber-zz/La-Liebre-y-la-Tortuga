@@ -8,7 +8,7 @@ namespace TurtleGame.Domain.RacingCards
 {
     public class RacingCards : IEnumerable<IRacingCard>,IEnumerator<IRacingCard>, IRacingCards
     {
-        private readonly IList<IRacingCard> _racingCardsList;
+        private readonly List<IRacingCard> _racingCardsList = new List<IRacingCard>();
 
         public IRacingCard this[int index]
         {
@@ -17,12 +17,15 @@ namespace TurtleGame.Domain.RacingCards
         }
 
         public int Count => _racingCardsList.Count;
-        public static RacingCards Create(IList<IRacingCard> racingCardsList) =>
+        public static RacingCards Create(List<IRacingCard> racingCardsList) =>
             new RacingCards(racingCardsList);
         public static RacingCards Create(IReadOnlyCollection<IRacingCard> racingCardsList) =>
             new RacingCards(racingCardsList);
 
-        private RacingCards(IList<IRacingCard> racingCardsList)
+        public void Add(IRacingCard racingCard) => _racingCardsList.Add(racingCard);
+        public void Remove(IRacingCard racingCard) => _racingCardsList.Remove(racingCard);
+
+        private RacingCards(List<IRacingCard> racingCardsList)
         {
             _racingCardsList = racingCardsList;
         }

@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
+using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Tracks.Interfaces;
@@ -19,9 +18,6 @@ namespace TurtleGame.Domain.Player.Types
 
         }
 
-        public IReadOnlyCollection<IRacingCard> RacingCards =>
-        new ReadOnlyCollection<IRacingCard>(new List<IRacingCard>());
-
         public void TakeRacingCard()
         {
         }
@@ -31,5 +27,6 @@ namespace TurtleGame.Domain.Player.Types
         public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation) => true;
 
         public void ChooseSecondBet() { }
+        public IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
     }
 }

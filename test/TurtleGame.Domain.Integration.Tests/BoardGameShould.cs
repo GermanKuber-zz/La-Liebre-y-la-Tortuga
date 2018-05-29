@@ -15,7 +15,7 @@ namespace TurtleGame.Domain.Integration.Tests
     public class BoardGameShould
     {
         private readonly BoardGame _sut;
-        private RegularPlayer _playerOne;
+        private readonly RegularPlayer _playerOne;
         private readonly RegularPlayer _playerTwo;
 
         public BoardGameShould()
@@ -45,8 +45,8 @@ namespace TurtleGame.Domain.Integration.Tests
 
             _sut.Players.NumberOfPlayers.Should().Be(2);
             _playerOne.BetCardsQuantity.Should().Be(3);
-            _playerTwo.RacingCards.Count.Should().Be(6);
-            _playerOne.RacingCards.Count.Should().Be(6);
+            _playerTwo.RacingCards.Count().Should().Be(6);
+            _playerOne.RacingCards.Count().Should().Be(6);
         }
     }
 }

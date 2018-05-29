@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
-using TurtleGame.Domain.RacingCards.Interfaces;
 
 namespace TurtleGame.Domain.Player.PlayersQuantityType
 {

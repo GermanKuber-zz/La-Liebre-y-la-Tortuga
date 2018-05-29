@@ -6,6 +6,7 @@ using Moq;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
+using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Tracks.Interfaces;
@@ -65,7 +66,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
         public void Add_Racing_Card_To_List_Of_Racings_Cards()
         {
             _sut.TakeRacingCard();
-            _sut.RacingCards.Count.Should().Be(1);
+            _sut.RacingCards.Count().Should().Be(1);
         }
 
         [Fact]
@@ -73,13 +74,13 @@ namespace TurtleGame.Domain.Tests.Player.Types
         {
             var callback = new Mock<SelectedCardsConfirmationDelegate>();
             _sut.CardsTurn(callback.Object);
-            callback.Verify(x => x(It.IsAny<IReadOnlyCollection<IRacingCard>>()), Times.Once);
+            callback.Verify(x => x(It.IsAny<IRacingCards>()), Times.Once);
         }
 
         [Fact]
         public void Call_Callback_With_All_Available_Racing_Cards()
         {
-            var list = _listOfRaicingCards.Take(2).ToList();
+            var list =  Domain.RacingCards.RacingCards.Create(_listOfRaicingCards.Take(2).ToList());
 
             _mockUserCallbacksNotifications
                 .Setup(x => x.SelectRacingCard)
@@ -113,7 +114,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
 
             _sut.ChooseSecondBet();
 
-            _sut.RacingCards.Count.Should().Be(1);
+            _sut.RacingCards.Count().Should().Be(1);
         }
 
 
