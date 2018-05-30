@@ -2,98 +2,98 @@
 <DirectedGraph DataVirtualized="True" FilterState="UncategorizedCodeElement,CodeSchema_Delegate,CodeSchema_Property,CodeSchema_Field,CodeSchema_Method,CodeSchema_Event,CodeSchema_Struct,CodeSchema_Assembly,CodeMap_SolutionFolder,UncategorizedRelationship,Implements,CodeSchema_Calls,CodeSchema_FunctionPointer,CodeSchema_AttributeUse,CodeSchema_ReturnTypeLink,CodeMap_ProjectReference,CodeSchema_FieldRead,CodeSchema_FieldWrite" GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
     <Node Id="(@1 @34 Type=TracksFactory Member=.ctor)" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="TracksFactory" />
-    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="1476.245,220.6875,265.76,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Factories‎.Interfaces" />
-    <Node Id="@100" Category="CodeSchema_Property" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BetCards" />
+    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="966.874715444435,415.005416490289,265.76,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Factories‎.Interfaces" />
+    <Node Id="@100" Category="CodeSchema_Property" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BetCards" UseManualLocation="True" />
     <Node Id="@101" Category="CodeSchema_Method" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="GetTracks" />
-    <Node Id="@102" Category="CodeSchema_Property" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Players" />
-    <Node Id="@103" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" DelayedCrossGroupLinksState="Fetched" Label="Start" />
-    <Node Id="@11" Category="CodeSchema_Namespace" Bounds="1062.86833333333,910.2481,216.513333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Interfaces" />
-    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="2288.51166666667,39.5,197.226666666666,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player" />
-    <Node Id="@13" Category="CodeSchema_Namespace" Bounds="906.888333333333,220.6875,246.473333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Factories" />
-    <Node Id="@14" Category="CodeSchema_Namespace" Bounds="575.95,220.6875,300.35,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Factories‎.Interfaces" />
-    <Node Id="@15" Category="CodeSchema_Namespace" Bounds="1623.57333333333,419.875,251.103333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Interfaces" />
-    <Node Id="@17" Category="CodeSchema_Namespace" Bounds="1836.49833333333,135.6875,307.253333333334,195" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="3" Group="Expanded" Label="TurtleGame‎.Domain‎.Player‎.PlayersQuantityType" />
-    <Node Id="@18" Category="CodeSchema_Namespace" Bounds="2206.56,220.6875,361.13,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.PlayersQuantityType‎.Interfaces" />
-    <Node Id="@19" Category="CodeSchema_Namespace" Bounds="1184.28333333333,220.6875,229.683333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types" />
+    <Node Id="@102" Category="CodeSchema_Property" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Players" UseManualLocation="True" />
+    <Node Id="@103" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" DelayedCrossGroupLinksState="Fetched" Label="Start" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Namespace" Bounds="1431.16375163645,860.005416490289,216.513333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Interfaces" />
+    <Node Id="@12" Category="CodeSchema_Namespace" Bounds="1035.40804877777,360.005416490289,197.226666666666,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player" />
+    <Node Id="@13" Category="CodeSchema_Namespace" Bounds="1599.88824877777,360.005416490289,246.473333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Factories" />
+    <Node Id="@14" Category="CodeSchema_Namespace" Bounds="1599.88824877777,305.005416490289,300.35,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Factories‎.Interfaces" />
+    <Node Id="@15" Category="CodeSchema_Namespace" Bounds="1170.8393157019,470.005416490289,251.103333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Interfaces" />
+    <Node Id="@17" Category="CodeSchema_Namespace" Bounds="1262.63481544444,245.005416490289,307.253333333334,195.0004" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="3" Group="Expanded" Label="TurtleGame‎.Domain‎.Player‎.PlayersQuantityType" />
+    <Node Id="@18" Category="CodeSchema_Namespace" Bounds="575.744615444435,415.005416490289,361.13,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.PlayersQuantityType‎.Interfaces" />
+    <Node Id="@19" Category="CodeSchema_Namespace" Bounds="1599.88824877777,415.005416490289,229.683333333333,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types" />
     <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="05/30/2018 15:00:27" Bounds="-1487.29996308261,-241.40625,2973.59992616521,481.8125" CodeSchemaProperty_StrongName="TurtleGame.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="29" FilePath="$(f4206893-4ff6-4fff-9403-b5cab126cb4b.OutputPath)" Group="Expanded" Label="TurtleGame.Domain.dll" UseManualLocation="True" />
-    <Node Id="@20" Category="CodeSchema_Namespace" Bounds="1406.43666666667,674.0625,279.376666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types‎.BetCards" />
-    <Node Id="@21" Category="CodeSchema_Namespace" Bounds="764.258333333334,419.875,375.733333333334,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types‎.UserNotificationsDelegates" />
-    <Node Id="@23" Category="CodeSchema_Namespace" Bounds="965.865000000001,534.0625,410.52,305" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="TurtleGame‎.Domain‎.RacingCards" />
-    <Node Id="@24" Category="CodeSchema_Namespace" Bounds="2270.15333333333,910.2481,279.943333333334,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.RacingCards‎.Factories" />
-    <Node Id="@25" Category="CodeSchema_Namespace" Bounds="1505.83833333333,1410.64677440199,284.573333333334,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.RacingCards‎.Interfaces" />
-    <Node Id="@27" Category="CodeSchema_Namespace" Bounds="2743.71323333333,1006.4337,548.823533333333,260.025574401989" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="TurtleGame‎.Domain‎.RacingCards‎.Types" />
-    <Node Id="@29" Category="CodeSchema_Namespace" Bounds="507.691666666667,1298.14677440199,392.866666666666,250" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="TurtleGame‎.Domain‎.Side" />
-    <Node Id="@30" Category="CodeSchema_Namespace" Bounds="512.901666666667,362.375,220.446666666667,140" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TurtleGame‎.Domain‎.Side‎.Enum" />
-    <Node Id="@31" Category="CodeSchema_Namespace" Bounds="583.256666666667,1579.83427440199,241.736666666667,140" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TurtleGame‎.Domain‎.Side‎.Interfaces" />
-    <Node Id="@32" Category="CodeSchema_Namespace" Bounds="25.4450000000006,220.6875,197.36,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks" />
-    <Node Id="@33" Category="CodeSchema_Namespace" Bounds="253.28,220.6875,291.690000000001,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Chain‎.DecideSide" />
-    <Node Id="@35" Category="CodeSchema_Namespace" Bounds="394.821666666667,870.75,246.606666666667,103.9962" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="TurtleGame‎.Domain‎.Tracks‎.Factories" />
-    <Node Id="@36" Category="CodeSchema_Namespace" Bounds="578.506666666667,1123.94648720099,251.236666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Interfaces" />
-    <Node Id="@37" Category="CodeSchema_Namespace" Bounds="112.135000000001,910.2481,251.98,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Strategies" />
-    <Node Id="@38" Category="CodeSchema_Namespace" Bounds="176.196666666667,419.875,305.856666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Strategies‎.Interfaces" />
-    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="1659.52,0,163.21,104" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="TurtleGame‎.Domain" />
-    <Node Id="@40" Category="CodeSchema_Namespace" Bounds="2009.32333333333,1066.44648720099,703.603333333333,140" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="5" Group="Expanded" Label="TurtleGame‎.Domain‎.Tracks‎.Types" />
-    <Node Id="@41" Category="CodeSchema_Class" Bounds="985.865000000001,629.0625,233.926666666667,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="EntitiesCollectionsBase‎&lt;TEntity‎&gt;" />
-    <Node Id="@42" Category="CodeSchema_Class" Bounds="1003.03666666667,684.0625,199.583333333333,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="EnumeratorBase‎&lt;TEntity‎&gt;" />
-    <Node Id="@43" Category="CodeSchema_Class" Bounds="2904.54735373733,1221.45927440199,228.796666666666,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCardBase‎&lt;TRacindCard‎&gt;" />
-    <Node Id="@45" Category="CodeSchema_Class" Bounds="1679.52,40,123.21,44" CodeSchemaProperty_IsPublic="True" CommonLabel="BoardGame" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="9" Group="Expanded" Icon="CodeSchema_Class" Label="BoardGame" SourceLocation="(Assembly=&quot;file:///C:/Users/Germán Küber/Source/Repos/La-Liebre-y-la-Tortuga/src/TurtleGame.Domain/BoardGame.cs&quot; StartLineNumber=10 StartCharacterOffset=17 EndLineNumber=10 EndCharacterOffset=26)" />
+    <Node Id="@20" Category="CodeSchema_Namespace" Bounds="1534.36662280255,732.381786830915,279.376666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types‎.BetCards" />
+    <Node Id="@21" Category="CodeSchema_Namespace" Bounds="1451.94274903523,470.005416490289,375.733333333334,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Player‎.Types‎.UserNotificationsDelegates" />
+    <Node Id="@23" Category="CodeSchema_Namespace" Bounds="1093.84652280255,525.005416490289,410.52,305.0006" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="TurtleGame‎.Domain‎.RacingCards" />
+    <Node Id="@24" Category="CodeSchema_Namespace" Bounds="2027.40627640878,774.001616490289,279.943333333335,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.RacingCards‎.Factories" />
+    <Node Id="@25" Category="CodeSchema_Namespace" Bounds="1440.28504765647,1195.00541649029,284.573333333334,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.RacingCards‎.Interfaces" />
+    <Node Id="@27" Category="CodeSchema_Namespace" Bounds="2549.81348946922,829.001616490287,548.823533333333,260.025874402022" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="TurtleGame‎.Domain‎.RacingCards‎.Types" />
+    <Node Id="@29" Category="CodeSchema_Namespace" Bounds="1754.8584809898,999.00161649029,392.866666666669,250.000550000001" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="TurtleGame‎.Domain‎.Side" />
+    <Node Id="@30" Category="CodeSchema_Namespace" Bounds="1857.67618236856,470.005416490289,220.446666666667,140.0003" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TurtleGame‎.Domain‎.Side‎.Enum" />
+    <Node Id="@31" Category="CodeSchema_Namespace" Bounds="1838.14168641982,1279.00161649029,241.736666666667,140.0003" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TurtleGame‎.Domain‎.Side‎.Interfaces" />
+    <Node Id="@32" Category="CodeSchema_Namespace" Bounds="1859.5716821111,415.005416490289,197.360000000001,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks" />
+    <Node Id="@33" Category="CodeSchema_Namespace" Bounds="1876.3616821111,360.005416490289,291.690000000001,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Chain‎.DecideSide" />
+    <Node Id="@35" Category="CodeSchema_Namespace" Bounds="1843.74338946922,640.005416490289,246.606666666667,103.9964" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="TurtleGame‎.Domain‎.Tracks‎.Factories" />
+    <Node Id="@36" Category="CodeSchema_Namespace" Bounds="1535.10995613588,915.005416490289,251.236666666668,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Interfaces" />
+    <Node Id="@37" Category="CodeSchema_Namespace" Bounds="1534.36662280255,788.107080098352,251.98,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Strategies" />
+    <Node Id="@38" Category="CodeSchema_Namespace" Bounds="2108.12294903523,573.324780935617,305.856666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Tracks‎.Strategies‎.Interfaces" />
+    <Node Id="@4" Category="CodeSchema_Namespace" Bounds="1315.53944205439,130.005416490289,163.21,85" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" Group="Expanded" Label="TurtleGame‎.Domain" />
+    <Node Id="@40" Category="CodeSchema_Namespace" Bounds="1816.34672280255,829.001616490289,703.466666666667,140.0002" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="5" Group="Expanded" Label="TurtleGame‎.Domain‎.Tracks‎.Types" />
+    <Node Id="@41" Category="CodeSchema_Class" Bounds="1113.84652280255,620.005733156933,233.926666666667,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="EntitiesCollectionsBase‎&lt;TEntity‎&gt;" />
+    <Node Id="@42" Category="CodeSchema_Class" Bounds="1131.01818946922,675.005733156933,199.583333333333,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="EnumeratorBase‎&lt;TEntity‎&gt;" />
+    <Node Id="@43" Category="CodeSchema_Class" Bounds="2710.64760987322,1044.02729089228,228.796666666666,25" CodeSchemaProperty_IsGeneric="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCardBase‎&lt;TRacindCard‎&gt;" />
+    <Node Id="@45" Category="CodeSchema_Class" Bounds="1335.53944205439,170.005416490289,123.21,25" CodeSchemaProperty_IsPublic="True" CommonLabel="BoardGame" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="9" Group="Collapsed" Icon="CodeSchema_Class" Label="BoardGame" SourceLocation="(Assembly=&quot;file:///C:/Users/Germán Küber/Source/Repos/La-Liebre-y-la-Tortuga/src/TurtleGame.Domain/BoardGame.cs&quot; StartLineNumber=10 StartCharacterOffset=17 EndLineNumber=10 EndCharacterOffset=26)" />
     <Node Id="@47" Category="CodeSchema_Class" Bounds="1417.22166666667,40,161.386666666667,44" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="6" Group="Expanded" Label="BoardGameFactory" UseManualLocation="True" />
-    <Node Id="@48" Category="CodeSchema_Enum" Bounds="541.915,457.375,162.42,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BorderOfTrackEnum" />
-    <Node Id="@49" Category="CodeSchema_Class" Bounds="2029.32333333333,1106.44648720099,136.983333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="CommonTrack" />
-    <Node Id="@50" Category="CodeSchema_Class" Bounds="2558.70333333333,1106.44648720099,134.223333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FinalLineTrack" />
-    <Node Id="@51" Category="CodeSchema_Class" Bounds="1699.27833333333,1051.44648720099,79.3966666666665,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Fox" />
-    <Node Id="@52" Category="CodeSchema_Class" Bounds="2853.08967700611,1166.45927440199,139.763333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FoxRacingCard" />
-    <Node Id="@53" Category="CodeSchema_Class" Bounds="1699.27833333333,1106.44648720099,86.0766666666668,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Hare" />
-    <Node Id="@54" Category="CodeSchema_Class" Bounds="2945.58,1107.4337,146.443333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="HareRacingCard" />
-    <Node Id="@55" Category="CodeSchema_Interface" Bounds="1820.77833333333,1161.44648720099,106.193333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IBetCard" />
-    <Node Id="@56" Category="CodeSchema_Interface" Bounds="634.311666666667,1674.83427440199,139.626666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IBorderOfTrack" />
-    <Node Id="@57" Category="CodeSchema_Interface" Bounds="1939.48666666667,230.6875,101.276666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IPlayers" />
-    <Node Id="@58" Category="CodeSchema_Interface" Bounds="1184.52833333333,739.0625,171.856666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IRacingCardManager" />
-    <Node Id="@59" Category="CodeSchema_Interface" Bounds="1005.37,794.0625,129.653333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IRacingCards" />
-    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="1679.27833333333,1011.44648720099,267.693333333333,250" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="TurtleGame‎.Domain‎.BetCards" />
-    <Node Id="@60" Category="CodeSchema_Interface" Bounds="717.528333333334,1448.14677440199,163.03,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ISideBoderSelected" />
-    <Node Id="@61" Category="CodeSchema_Interface" Bounds="634.311666666667,1619.83427440199,126.65,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ISideOfTrack" />
-    <Node Id="@62" Category="CodeSchema_Class" Bounds="1815.355,1106.44648720099,90.1466666666668,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Lamb" />
-    <Node Id="@63" Category="CodeSchema_Class" Bounds="3122.02343333333,1111.45927440199,150.513333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LambRacingCard" />
-    <Node Id="@64" Category="CodeSchema_Class" Bounds="696.445,1338.14677440199,145.253333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LineBorderTrack" />
-    <Node Id="@65" Category="CodeSchema_Class" Bounds="1905.91166666667,285.6875,98.083333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Players" />
+    <Node Id="@48" Category="CodeSchema_Enum" Bounds="1886.6895157019,565.005566490289,162.42,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="BorderOfTrackEnum" />
+    <Node Id="@49" Category="CodeSchema_Class" Bounds="1836.34672280255,869.001716490289,136.983333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="CommonTrack" />
+    <Node Id="@50" Category="CodeSchema_Class" Bounds="2003.72672280255,869.001716490289,134.223333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FinalLineTrack" />
+    <Node Id="@51" Category="CodeSchema_Class" Bounds="1242.99234948003,955.005791490251,79.3966666666665,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Fox" />
+    <Node Id="@52" Category="CodeSchema_Class" Bounds="2659.189933142,989.027290892277,139.763333333332,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FoxRacingCard" />
+    <Node Id="@53" Category="CodeSchema_Class" Bounds="1242.99234948003,1010.00579149025,86.0766666666668,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Hare" />
+    <Node Id="@54" Category="CodeSchema_Class" Bounds="2751.68025613589,930.001716490288,146.443333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="HareRacingCard" />
+    <Node Id="@55" Category="CodeSchema_Interface" Bounds="1364.49234948003,1065.00579149025,106.193333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IBetCard" />
+    <Node Id="@56" Category="CodeSchema_Interface" Bounds="1889.19668641982,1374.00176649029,139.626666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IBorderOfTrack" />
+    <Node Id="@57" Category="CodeSchema_Interface" Bounds="1365.62314877777,340.005616490289,101.276666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IPlayers" />
+    <Node Id="@58" Category="CodeSchema_Interface" Bounds="1312.50985613588,730.005733156933,171.856666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IRacingCardManager" />
+    <Node Id="@59" Category="CodeSchema_Interface" Bounds="1133.35152280255,785.005733156933,129.653333333333,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IRacingCards" />
+    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="1222.99234948003,915.005416490288,267.693333333334,250.0007" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="TurtleGame‎.Domain‎.BetCards" />
+    <Node Id="@60" Category="CodeSchema_Interface" Bounds="1964.69514765647,1149.00188315696,163.030000000001,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ISideBoderSelected" />
+    <Node Id="@61" Category="CodeSchema_Interface" Bounds="1889.19668641983,1319.00176649029,126.65,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ISideOfTrack" />
+    <Node Id="@62" Category="CodeSchema_Class" Bounds="1359.06901614669,1010.00579149025,90.1466666666665,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Lamb" />
+    <Node Id="@63" Category="CodeSchema_Class" Bounds="2928.12368946922,934.027290892277,150.513333333332,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LambRacingCard" />
+    <Node Id="@64" Category="CodeSchema_Class" Bounds="1943.61181432314,1039.00188315696,145.253333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LineBorderTrack" />
+    <Node Id="@65" Category="CodeSchema_Class" Bounds="1332.04814877777,395.005616490289,98.083333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Players" />
     <Node Id="@66" Category="CodeSchema_Class" Bounds="1417.22166666667,114,183.556666666666,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="PlayersManagerFactory" UseManualLocation="True" />
-    <Node Id="@67" Category="CodeSchema_Class" Bounds="1905.91166666667,175.6875,168.426666666666,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="PlayersQuantityType" />
-    <Node Id="@68" Category="CodeSchema_Class" Bounds="985.865000000001,739.0625,168.663333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCardManager" />
-    <Node Id="@69" Category="CodeSchema_Class" Bounds="1039.59833333333,574.0625,126.46,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCards" />
-    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="2254.03,1410.64677440199,214.190000000001,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Common" />
-    <Node Id="@70" Category="CodeSchema_Class" Bounds="712.055000000001,1393.14677440199,158.133333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RoundBorderTrack" />
-    <Node Id="@71" Category="CodeSchema_Class" Bounds="1699.27833333333,1216.44648720099,142.08,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SecondBetCard" />
-    <Node Id="@72" Category="CodeSchema_Class" Bounds="527.691666666667,1448.14677440199,159.836666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideBoderSelected" />
-    <Node Id="@73" Category="CodeSchema_Class" Bounds="527.691666666667,1393.14677440199,154.363333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackDown" />
-    <Node Id="@74" Category="CodeSchema_Enum" Bounds="541.915,402.375,149.443333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackEnum" />
-    <Node Id="@75" Category="CodeSchema_Class" Bounds="527.691666666667,1503.14677440199,166.103333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackSelector" />
-    <Node Id="@76" Category="CodeSchema_Class" Bounds="527.691666666667,1338.14677440199,138.753333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackUp" />
-    <Node Id="@77" Category="CodeSchema_Class" Bounds="2377.40666666667,1106.44648720099,150.816666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="StartingLineTrack" />
-    <Node Id="@78" Category="CodeSchema_Class" Bounds="2396.62166666667,1161.44648720099,112.386666666666,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TrackBase" />
-    <Node Id="@79" Category="CodeSchema_Class" Bounds="452.475,910.75,131.3,43.9962" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TracksFactory" />
-    <Node Id="@80" Category="CodeSchema_Class" Bounds="2196.84,1106.44648720099,149.95,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TrackWithStream" />
-    <Node Id="@81" Category="CodeSchema_Class" Bounds="1699.27833333333,1161.44648720099,91.5,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Turtle" />
-    <Node Id="@82" Category="CodeSchema_Class" Bounds="2763.71323333333,1111.45927440199,151.866666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleRacingCard" />
-    <Node Id="@83" Category="CodeSchema_Class" Bounds="1808.675,1051.44648720099,85.4333333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Wolf" />
-    <Node Id="@84" Category="CodeSchema_Class" Bounds="3044.65800063197,1166.45927440199,145.799999999999,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="WolfRacingCard" />
+    <Node Id="@67" Category="CodeSchema_Class" Bounds="1332.04814877777,285.005616490289,168.426666666666,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="PlayersQuantityType" />
+    <Node Id="@68" Category="CodeSchema_Class" Bounds="1113.84652280255,730.005733156933,168.663333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCardManager" />
+    <Node Id="@69" Category="CodeSchema_Class" Bounds="1167.57985613589,565.005733156933,126.46,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RacingCards" />
+    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="2349.68111313258,1119.02719089228,214.190000000001,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleGame‎.Domain‎.Common" />
+    <Node Id="@70" Category="CodeSchema_Class" Bounds="1959.22181432314,1094.00188315696,158.133333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="RoundBorderTrack" />
+    <Node Id="@71" Category="CodeSchema_Class" Bounds="1242.99234948003,1120.00579149025,142.08,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SecondBetCard" />
+    <Node Id="@72" Category="CodeSchema_Class" Bounds="1774.8584809898,1149.00188315696,159.836666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideBoderSelected" />
+    <Node Id="@73" Category="CodeSchema_Class" Bounds="1774.8584809898,1094.00188315696,154.363333333335,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackDown" />
+    <Node Id="@74" Category="CodeSchema_Enum" Bounds="1886.6895157019,510.005566490289,149.443333333333,25" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackEnum" />
+    <Node Id="@75" Category="CodeSchema_Class" Bounds="1774.8584809898,1204.00188315696,166.103333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackSelector" />
+    <Node Id="@76" Category="CodeSchema_Class" Bounds="1774.8584809898,1039.00188315696,138.753333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SideOfTrackUp" />
+    <Node Id="@77" Category="CodeSchema_Class" Bounds="2168.43005613588,869.001716490289,150.816666666668,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="StartingLineTrack" />
+    <Node Id="@78" Category="CodeSchema_Class" Bounds="2187.64505613589,924.001716490289,112.386666666665,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TrackBase" />
+    <Node Id="@79" Category="CodeSchema_Class" Bounds="1901.39672280255,680.005516490289,131.3,43.9962" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Expanded" Label="TracksFactory" />
+    <Node Id="@80" Category="CodeSchema_Class" Bounds="2349.86338946922,869.001716490289,149.95,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TrackWithStream" />
+    <Node Id="@81" Category="CodeSchema_Class" Bounds="1242.99234948003,1065.00579149025,91.5,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Turtle" />
+    <Node Id="@82" Category="CodeSchema_Class" Bounds="2569.81348946922,934.027290892277,151.866666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="TurtleRacingCard" />
+    <Node Id="@83" Category="CodeSchema_Class" Bounds="1352.38901614669,955.005791490251,85.4333333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Wolf" />
+    <Node Id="@84" Category="CodeSchema_Class" Bounds="2850.75825676786,989.027290892277,145.799999999999,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="WolfRacingCard" />
     <Node Id="@87" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGameFactory" />
     <Node Id="@89" Category="CodeSchema_Method" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="ToTwoPlayer" />
-    <Node Id="@9" Category="CodeSchema_Namespace" Bounds="1417.18333333333,39.5,211.883333333333,25" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Collapsed" Label="TurtleGame‎.Domain‎.Factories" />
-    <Node Id="@90" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" />
+    <Node Id="@9" Category="CodeSchema_Namespace" Bounds="1020.7513821111,305.005416490289,211.883333333333,25" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Collapsed" Label="TurtleGame‎.Domain‎.Factories" />
+    <Node Id="@90" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" UseManualLocation="True" />
     <Node Id="@91" Category="CodeSchema_Method" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="ToFourPlayer" />
     <Node Id="@92" Category="CodeSchema_Method" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="ToThreePlayer" />
-    <Node Id="@93" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" />
+    <Node Id="@93" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" UseManualLocation="True" />
     <Node Id="@94" Category="CodeSchema_Method" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsVirtual="True" DelayedCrossGroupLinksState="Fetched" Label="ToFivePlayer" />
-    <Node Id="@95" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" />
-    <Node Id="@96" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" />
-    <Node Id="@97" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" />
-    <Node Id="@98" Category="CodeSchema_Field" CodeSchemaProperty_IsPrivate="True" DelayedCrossGroupLinksState="Fetched" Label="_beatsCards" />
+    <Node Id="@95" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" UseManualLocation="True" />
+    <Node Id="@96" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" UseManualLocation="True" />
+    <Node Id="@97" Category="CodeSchema_Method" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="BoardGame" UseManualLocation="True" />
+    <Node Id="@98" Category="CodeSchema_Field" CodeSchemaProperty_IsPrivate="True" DelayedCrossGroupLinksState="Fetched" Label="_beatsCards" UseManualLocation="True" />
     <Node Id="@99" Category="CodeSchema_Field" CodeSchemaProperty_IsPrivate="True" DelayedCrossGroupLinksState="Fetched" Label="_playersManagerFactory" />
   </Nodes>
   <Links>
     <Link Source="@10" Target="@11" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@10" Target="@15" Category="References" Bounds="1617.91064453125,245.6875,117.25341796875,166.824310302734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="29" />
+    <Link Source="@10" Target="@15" Category="References" Bounds="1144.44477610901,440.005416490289,98.588804186074,27.5757077524578" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="29" />
     <Link Source="@10" Target="@45" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="4" />
     <Link Source="@100" Target="@55" Category="References" IsSourceVirtualized="True" Weight="2" />
     <Link Source="@100" Target="@98" Category="CodeSchema_FieldRead" IsSourceVirtualized="True" Weight="1" />
@@ -107,15 +107,15 @@
     <Link Source="@103" Target="@100" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@103" Target="@102" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@103" Target="@11" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="3" />
-    <Link Source="@11" Target="@15" Category="References" Bounds="1271.7265625,453.875,477.3984375,456.373107910156" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@11" Target="@25" Category="References" Bounds="1241.32507324219,935.248107910156,402.075805664063,466.612487792969" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@11" Target="@36" Category="References" Bounds="728.438415527344,935.248107910156,393.307067871094,183.377868652344" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@11" Target="@15" Category="References" Bounds="1389.52905273438,496.326477050781,148.659301757813,363.678955078125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@11" Target="@25" Category="References" Bounds="1530.32006835938,885.005432128906,48.1900634765625,301.158630371094" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@11" Target="@36" Category="References" Bounds="1566.99038902269,885.005416490289,57.9710730085812,26.2836119768876" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
     <Link Source="@11" Target="@55" Category="References" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@12" Target="@11" Category="Implements" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@12" Target="@15" Category="References" Bounds="1752.9521484375,63.2923545837402,537.301025390625,347.723728179932" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@12" Target="@18" Category="References" Bounds="2387.125,64.5,0,147.1875" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
+    <Link Source="@12" Target="@15" Category="References" Bounds="1176.02075195313,385.005401611328,101.90087890625,78.5555725097656" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@12" Target="@18" Category="References" Bounds="851.059274747839,385.005416490289,197.11852402993,28.7031535112696" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@12" Target="@55" Category="References" IsSourceVirtualized="True" Weight="4" />
@@ -123,11 +123,11 @@
     <Link Source="@13" Target="@15" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@13" Target="@19" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
     <Link Source="@13" Target="@20" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@13" Target="@21" Category="References" Bounds="960.301574707031,245.6875,64.9285278320313,165.80712890625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@13" Target="@21" Category="References" Bounds="1589.75402832031,385.005401611328,81.8616943359375,80.047119140625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
     <Link Source="@13" Target="@58" Category="References" IsSourceVirtualized="True" Weight="2" />
     <Link Source="@14" Target="@15" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@14" Target="@21" Category="References" Bounds="740.3076171875,245.6875,190.882873535156,168.236663818359" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
-    <Link Source="@15" Target="@36" Category="References" Bounds="732.682678222656,444.875,1037.77569580078,674.442016601563" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@14" Target="@21" Category="References" Bounds="1589.75402832031,330.005401611328,98.396240234375,134.970703125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@15" Target="@36" Category="References" Bounds="1380.62646484375,495.005401611328,279.294189453125,411.006378173828" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@15" Target="@55" Category="References" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@15" Target="@59" Category="References" IsSourceVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_ReturnTypeLink" />
@@ -136,23 +136,23 @@
     <Link Source="@17" Target="@57" Category="Contains" FetchingParent="@17" />
     <Link Source="@17" Target="@65" Category="Contains" FetchingParent="@17" />
     <Link Source="@17" Target="@67" Category="Contains" FetchingParent="@17" />
-    <Link Source="@18" Target="@15" Category="References" Bounds="1782.0302734375,245.6875,580.19482421875,170.14501953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@18" Target="@15" Category="References" Bounds="879.055380654465,440.005416490289,286.764479117451,29.2030929363194" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@18" Target="@55" Category="References" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@18" Target="@57" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="1" />
-    <Link Source="@19" Target="@15" Category="References" Bounds="1316.13500976563,245.6875,407.369384765625,169.092529296875" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
+    <Link Source="@19" Target="@15" Category="References" Bounds="1400.39122425795,440.005416490289,219.261660941967,28.8268444515562" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@19" Target="@20" Category="References" Bounds="1316.03674316406,245.6875,223.72705078125,419.757507324219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
+    <Link Source="@19" Target="@20" Category="References" Bounds="1686.62170410156,440.005401611328,151.1884765625,284.741363525391" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@19" Target="@21" Category="References" Bounds="992.393615722656,245.6875,292.615051269531,170.902984619141" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="28">
+    <Link Source="@19" Target="@21" Category="References" Bounds="1664.09175381421,440.005416490289,33.6107753251044,24.6740564896571" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="28">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@19" Target="@25" Category="References" Bounds="947.215087890625,245.6875,661.473266601563,1161.6015625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@19" Target="@36" Category="References" Bounds="711.856506347656,245.6875,580.251770019531,869.81591796875" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@19" Target="@25" Category="References" Bounds="1598.02648925781,440.005401611328,237.830200195313,747.937957763672" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@19" Target="@36" Category="References" Bounds="1684.67919921875,440.005401611328,151.177490234375,469.615081787109" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
     <Link Source="@19" Target="@55" Category="References" IsSourceVirtualized="True" Weight="2" />
     <Link Source="@19" Target="@58" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
@@ -194,7 +194,7 @@
     <Link Source="@2" Target="@9" Category="Contains" FetchingParent="@2" />
     <Link Source="@20" Target="@55" Category="References" IsSourceVirtualized="True" Weight="7" />
     <Link Source="@21" Target="@25" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@21" Target="@36" Category="References" Bounds="704.125,444.875,211.887878417969,670.071533203125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@21" Target="@36" Category="References" Bounds="1649.40661621094,495.005401611328,169.788696289063,414.615081787109" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
     <Link Source="@21" Target="@59" Category="References" IsSourceVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
@@ -206,7 +206,7 @@
     <Link Source="@23" Target="@68" Category="Contains" FetchingParent="@23" />
     <Link Source="@23" Target="@69" Category="Contains" FetchingParent="@23" />
     <Link Source="@24" Target="@11" Category="Implements" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@24" Target="@25" Category="References" Bounds="1685.6904296875,935.248107910156,698.823486328125,471.865783691406" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@24" Target="@25" Category="References" Bounds="1598.02648925781,798.740112304688,432.784057617188,389.203247070313" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
     <Link Source="@24" Target="@52" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
@@ -244,18 +244,18 @@
     <Link Source="@30" Target="@74" Category="Contains" FetchingParent="@30" />
     <Link Source="@31" Target="@56" Category="Contains" FetchingParent="@31" />
     <Link Source="@31" Target="@61" Category="Contains" FetchingParent="@31" />
-    <Link Source="@32" Target="@11" Category="References" Bounds="126.449310302734,245.6875,986.571319580078,662.351989746094" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+    <Link Source="@32" Target="@11" Category="References" Bounds="1528.33508300781,440.005401611328,387.159545898438,411.045623779297" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@32" Target="@15" Category="References" Bounds="221.584228515625,243.96125793457,1494.46276855469,171.892227172852" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+    <Link Source="@32" Target="@15" Category="References" Bounds="1380.20288085938,440.005401611328,517.954833984375,28.5191650390625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@32" Target="@33" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@32" Target="@36" Category="References" Bounds="125.045951843262,245.6875,574.53345489502,869.457153320313" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="19">
+    <Link Source="@32" Target="@36" Category="References" Bounds="1681.60998535156,440.005401611328,233.884643554688,469.038848876953" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="19">
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@32" Target="@38" Category="References" Bounds="136.989761352539,245.6875,172.815658569336,167.915710449219" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="@32" Target="@38" Category="References" Bounds="2008.46081542969,440.005401611328,228.168823242188,128.017974853516" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@32" Target="@50" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
@@ -282,7 +282,7 @@
     <Link Source="@37" Target="@33" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@37" Target="@36" Category="References" Bounds="265.383056640625,935.248107910156,403.303100585938,184.946838378906" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@37" Target="@36" Category="References" Bounds="1660.39323347425,813.107080098352,0.272085752691737,92.8983749935175" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
     <Link Source="@37" Target="@38" Category="Implements" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@38" Target="@33" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@4" Target="@45" Category="Contains" FetchingParent="@4" />
@@ -291,7 +291,7 @@
     <Link Source="@40" Target="@77" Category="Contains" FetchingParent="@40" />
     <Link Source="@40" Target="@78" Category="Contains" FetchingParent="@40" />
     <Link Source="@40" Target="@80" Category="Contains" FetchingParent="@40" />
-    <Link Source="@41" Target="@42" Category="InheritsFrom" Bounds="1102.82836914063,654.0625,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
+    <Link Source="@41" Target="@42" Category="InheritsFrom" Bounds="1230.80981445313,645.005737304688,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_FieldRead" />
     </Link>
@@ -315,25 +315,25 @@
     <Link Source="@47" Target="@94" Category="Contains" FetchingParent="@47" />
     <Link Source="@47" Target="@99" Category="Contains" FetchingParent="@47" />
     <Link Source="@49" Target="@75" Category="References" IsSourceVirtualized="True" Weight="2" />
-    <Link Source="@49" Target="@78" Category="InheritsFrom" Bounds="2165.33569335938,1129.40747070313,222.040283203125,34.4005126953125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@49" Target="@78" Category="InheritsFrom" Bounds="1971.99951171875,892.398071289063,206.52294921875,33.5066528320313" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@50" Target="@75" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@50" Target="@78" Category="InheritsFrom" Bounds="2501.18676757813,1131.44653320313,85.31005859375,27.1217041015625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@50" Target="@78" Category="InheritsFrom" Bounds="2110.15649414063,894.001708984375,85.310302734375,27.1217041015625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@51" Target="@55" Category="Implements" Weight="1" />
     <Link Source="@52" Target="@25" Category="Implements" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@52" Target="@43" Category="InheritsFrom" Bounds="2944.78369444502,1191.45927440199,44.1071657443022,25.2764856736699" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@52" Target="@43" Category="InheritsFrom" Bounds="2750.88395058091,1014.02729089228,44.1071657443022,25.2764856736699" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@52" Target="@52" Category="References" Bounds="2888.03051757813,1106.45922851563,69.881591796875,60" Weight="1" />
+    <Link Source="@52" Target="@52" Category="References" Bounds="2694.130859375,929.027282714844,69.881591796875,60" Weight="1" />
     <Link Source="@53" Target="@55" Category="Implements" Weight="1" />
     <Link Source="@54" Target="@25" Category="Implements" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@54" Target="@43" Category="InheritsFrom" Bounds="3018.81745483576,1132.4337,0.100445066863813,79.5255819796751" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@54" Target="@43" Category="InheritsFrom" Bounds="2824.91771097165,955.001716490288,0.100445066863813,79.5255819796753" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@54" Target="@54" Category="References" Bounds="2982.19091796875,1047.43371582031,73.2216796875,60" Weight="1" />
+    <Link Source="@54" Target="@54" Category="References" Bounds="2788.291015625,870.001708984375,73.2216796875,60" Weight="1" />
     <Link Source="@56" Target="@48" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@57" Target="@15" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5" />
     <Link Source="@58" Target="@25" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
@@ -351,10 +351,10 @@
     <Link Source="@61" Target="@74" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@62" Target="@55" Category="Implements" Weight="1" />
     <Link Source="@63" Target="@25" Category="Implements" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@63" Target="@43" Category="InheritsFrom" Bounds="3023.32299804688,1136.45922851563,111.09912109375,75.6856689453125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@63" Target="@43" Category="InheritsFrom" Bounds="2829.42333984375,959.027282714844,111.098876953125,75.6857299804688" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@63" Target="@63" Category="References" Bounds="3159.65185546875,1051.45922851563,75.256591796875,60" Weight="1" />
+    <Link Source="@63" Target="@63" Category="References" Bounds="2965.751953125,874.027282714844,75.2568359375,60" Weight="1" />
     <Link Source="@64" Target="@48" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@64" Target="@56" Category="Implements" Weight="1" />
     <Link Source="@65" Target="@15" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="17" />
@@ -374,7 +374,7 @@
     </Link>
     <Link Source="@67" Target="@18" Category="Implements" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@67" Target="@55" Category="References" IsSourceVirtualized="True" Weight="6" />
-    <Link Source="@67" Target="@57" Category="References" Bounds="1990.125,200.6875,0,21" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+    <Link Source="@67" Target="@57" Category="References" Bounds="1416.26147460938,310.005615234375,0,21" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
@@ -385,12 +385,12 @@
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
     <Link Source="@68" Target="@58" Category="Implements" Weight="1" />
-    <Link Source="@68" Target="@59" Category="References" Bounds="1070.19665527344,764.0625,0,21" IsSourceVirtualized="True" Weight="5">
+    <Link Source="@68" Target="@59" Category="References" Bounds="1198.17822265625,755.005737304688,0,21" IsSourceVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
     <Link Source="@68" Target="@69" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
     <Link Source="@69" Target="@25" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="10" />
-    <Link Source="@69" Target="@41" Category="InheritsFrom" Bounds="1102.82836914063,599.0625,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="@69" Target="@41" Category="InheritsFrom" Bounds="1230.80981445313,590.005737304688,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@69" Target="@59" Category="Implements" Weight="1" />
@@ -413,7 +413,7 @@
     <Link Source="@76" Target="@61" Category="Implements" Weight="1" />
     <Link Source="@76" Target="@74" Category="CodeSchema_ReturnTypeLink" IsSourceVirtualized="True" Weight="1" />
     <Link Source="@77" Target="@75" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@77" Target="@78" Category="InheritsFrom" Bounds="2452.81494140625,1131.44653320313,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@77" Target="@78" Category="InheritsFrom" Bounds="2243.83837890625,894.001708984375,0,20.5" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@78" Target="@36" Category="Implements" IsTargetVirtualized="True" Weight="1" />
@@ -427,21 +427,21 @@
     <Link Source="@79" Target="@101" Category="Contains" FetchingParent="@79" />
     <Link Source="@79" Target="@11" Category="Implements" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@80" Target="@75" Category="References" IsSourceVirtualized="True" Weight="2" />
-    <Link Source="@80" Target="@78" Category="InheritsFrom" Bounds="2312.95141601563,1131.44653320313,89.6376953125,27.2379150390625" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@80" Target="@78" Category="InheritsFrom" Bounds="2294.064453125,894.001708984375,89.637451171875,27.2379760742188" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
     <Link Source="@81" Target="@55" Category="Implements" Weight="1" />
     <Link Source="@82" Target="@25" Category="Implements" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@82" Target="@43" Category="InheritsFrom" Bounds="2902.73022460938,1136.45922851563,111.733154296875,75.694580078125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@82" Target="@43" Category="InheritsFrom" Bounds="2708.83056640625,959.027282714844,111.733154296875,75.6945190429688" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@82" Target="@82" Category="References" Bounds="2801.67993164063,1051.45922851563,75.933349609375,60" Weight="1" />
+    <Link Source="@82" Target="@82" Category="References" Bounds="2607.7802734375,874.027282714844,75.93310546875,60" Weight="1" />
     <Link Source="@83" Target="@55" Category="Implements" Weight="1" />
     <Link Source="@84" Target="@25" Category="Implements" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@84" Target="@43" Category="InheritsFrom" Bounds="3049.654366131,1191.45927440199,45.4917450552225,25.3725512329827" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
+    <Link Source="@84" Target="@43" Category="InheritsFrom" Bounds="2855.75462226688,1014.02729089228,45.4917450552221,25.3725512329829" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@84" Target="@84" Category="References" Bounds="3081.10791015625,1106.45922851563,72.900146484375,60" Weight="1" />
+    <Link Source="@84" Target="@84" Category="References" Bounds="2887.20825195313,929.027282714844,72.89990234375,60" Weight="1" />
     <Link Source="@87" Target="@10" Category="References" IsTargetVirtualized="True" Weight="1" />
     <Link Source="@87" Target="@99" Category="CodeSchema_FieldWrite" Weight="1" />
     <Link Source="@89" Target="@15" Category="References" IsTargetVirtualized="True" Weight="2" />

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
@@ -8,6 +9,7 @@ using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
+using TurtleGame.Domain.RacingCards;
 using TurtleGame.SharedKernel.Generators;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 using Xunit;
@@ -18,28 +20,17 @@ namespace TurtleGame.Domain.Tests.Player
     public class PlayerManagerShould
     {
         private readonly IPlayersManager _sut;
-        private readonly Mock<IPlayer> _playerOne = new Mock<IPlayer>();
-        private readonly Mock<IPlayer> _playerTwo = new Mock<IPlayer>();
-        private readonly Mock<IPlayer> _playerThree = new Mock<IPlayer>();
-        private readonly Mock<IPlayer> _playerFour = new Mock<IPlayer>();
-        private readonly Mock<IPlayer> _playerFive = new Mock<IPlayer>();
         private readonly IReadOnlyCollection<IBetCard> _betCards;
-        private readonly Mock<IPlayersQuantityType> _mockPlayers = new Mock<IPlayersQuantityType>();
+        private readonly Mock<IPlayersQuantityType> _mockPlayers = new Mock<IPlayersQuantityType> { DefaultValue = DefaultValue.Mock};
         private readonly Mock<IGenericMixStrategy> _mockgGenericMixStrategy = new Mock<IGenericMixStrategy>();
 
         public PlayerManagerShould()
         {
             _betCards = new ReadOnlyCollection<IBetCard>(EnumerableGenerator.Generate(5, x => new Mock<IBetCard>().Object));
-            _playerOne.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
-            _playerTwo.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
-            _playerThree.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
-            _playerFour.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
-            _playerFive.Setup(x => x.GiveCard(It.IsAny<IBetCard>()));
+        
             _mockgGenericMixStrategy.Setup(x => x.Mix<IBetCard>(It.IsAny<List<IBetCard>>()))
                 .Returns(EnumerableGenerator.Generate(10, x => new Mock<IBetCard>().Object));
 
-            _mockPlayers.Setup(x => x.TakeCard());
-            _mockPlayers.Setup(x => x.GiveCards(It.IsAny<IReadOnlyCollection<IBetCard>>()));
             _sut = new PlayersManager(_mockPlayers.Object, _mockgGenericMixStrategy.Object);
         }
      
@@ -71,6 +62,20 @@ namespace TurtleGame.Domain.Tests.Player
             _mockPlayers.Verify(x => x.TakeCard(), Times.Exactly(7));
         }
 
-    
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(19)]
+        public void Call_CardsTurn_To_Players(int quantityOfCalls)
+        {
+            var callback = new Mock<SelectedCardsConfirmationDelegate>();
+
+            Enumerable.Range(0, quantityOfCalls)
+                .ToList()
+                .ForEach(x => _sut.CardsTurn(callback.Object));
+
+            _mockPlayers.Verify(x => x.CardsTurn(callback.Object), Times.Exactly(quantityOfCalls));
+
+        }
     }
 }

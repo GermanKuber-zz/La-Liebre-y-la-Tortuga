@@ -24,7 +24,7 @@ namespace TurtleGame.Domain.Player.Types
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => default(ISideBoderSelected);
 
-        public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation) => true;
+        public void CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation) { }
 
         public void ChooseSecondBet() { }
         public IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());

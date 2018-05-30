@@ -31,6 +31,13 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
 
         public void TakeCard() => Players.Each(x => x.TakeRacingCard());
         public void ChooseSecondBet() => Players.Each(x => x.ChooseSecondBet());
-        public void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback) => Players.Each(x => x.CardsTurn(cardsTurnCallback));
+        public void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback) {
+            if (!Players.MoveNext()) { 
+                Players.Reset();
+                Players.MoveNext();
+            }
+
+            Players.Current.CardsTurn(cardsTurnCallback);
+        } 
     }
 }

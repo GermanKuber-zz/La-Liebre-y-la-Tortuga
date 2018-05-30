@@ -9,13 +9,14 @@ using Xunit;
 using System.Linq;
 using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
 using System;
+using TurtleGame.Domain.RacingCards;
 
 namespace TurtleGame.Domain.Tests.Player.Players
 {
-    public class TwoPlayersQuantityTypeShould : PlayersQuantityTypeShouldBase
+    public class PlayersQuantityTypeShould : PlayersQuantityTypeShouldBase
     {
 
-        public TwoPlayersQuantityTypeShould()
+        public PlayersQuantityTypeShould()
         {
             SetupSutSutWithPlayers(2);
         }
@@ -64,12 +65,29 @@ namespace TurtleGame.Domain.Tests.Player.Players
 
             Differentes_Cards_To_All_Players(Sut, quantityOfPlayers, quantityOfDiferentsCardsPlayers);
         }
+
         [Fact]
         private void Give_One_Cards_Every_Player()
         {
             Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(ListOfPlayers.Select(x => x.Object)));
             Sut.GiveCards(BetCards);
             ListOfPlayers.ForEach(player => player.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1)));
+        }
+
+        [Theory]
+        [InlineData(5, 1)]
+        [InlineData(10, 2)]
+        private void Execute_Each_CardTurn_Of_All_Players(int quantitOfExecutionOfCardsTurn, int quantityExecutionOfPlayersCallBack)
+        {
+            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(ListOfPlayers.Select(x => x.Object)));
+            var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
+
+            Enumerable.Range(0, quantitOfExecutionOfCardsTurn)
+                .ToList()
+                .ForEach(x => Sut.CardsTurn(callback.Object));
+
+            ListOfPlayers.ForEach(player => player.Verify(x => x.CardsTurn(callback.Object), Times.Exactly(quantityExecutionOfPlayersCallBack)));
         }
     }
 }

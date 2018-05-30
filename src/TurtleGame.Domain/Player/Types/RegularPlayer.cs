@@ -41,17 +41,22 @@ namespace TurtleGame.Domain.Player.Types
         public void TakeRacingCard() => MyRacingCards.Add(_racingCardManager.TakeCard());
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _userCallbacksNotifications.ChooseSideOfTrack.Invoke(track);
-        public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
+        public void CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
         {
             var selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
             do
             {
                 selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
             } while (!selectedCardsConfirmation(selectedCards));
-                        
 
+            _racingCardManager.FallCardsToDeck(selectedCards);
 
-            return true;
+            selectedCards.ToList().ForEach(x => MyRacingCards.Remove(x));
+            
+            Enumerable.Range(0, selectedCards.Count())
+                      .ToList()
+                      .ForEach(x => MyRacingCards.Add(_racingCardManager.TakeCard()));
+
         }
 
         public void ChooseSecondBet()
