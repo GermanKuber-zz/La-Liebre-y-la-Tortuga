@@ -55,10 +55,10 @@ namespace TurtleGame.Domain.Tests.Player.Players
         }
 
         [Theory]
-        [InlineData(2,4)]
-        [InlineData(3,3)]
-        [InlineData(4,4)]
-        [InlineData(5,5)]
+        [InlineData(2, 4)]
+        [InlineData(3, 3)]
+        [InlineData(4, 4)]
+        [InlineData(5, 5)]
         public void Give_Differents_Cards_To_Each_Players(int quantityOfPlayers, int quantityOfDiferentsCardsPlayers)
         {
             SetupSutSutWithPlayers(quantityOfPlayers);

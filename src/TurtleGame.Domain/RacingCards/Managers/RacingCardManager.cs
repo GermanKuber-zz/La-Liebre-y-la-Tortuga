@@ -22,7 +22,6 @@ namespace TurtleGame.Domain.RacingCards
         {
             Cards.MoveNext();
             return Cards.Current;
-        }   
-     
+        }
     }
 }

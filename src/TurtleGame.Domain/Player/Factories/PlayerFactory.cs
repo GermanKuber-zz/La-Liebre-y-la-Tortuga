@@ -1,4 +1,5 @@
-﻿using TurtleGame.Domain.Player.Factories.Interfaces;
+﻿using TurtleGame.Domain.Condition.Factories;
+using TurtleGame.Domain.Player.Factories.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
@@ -10,10 +11,13 @@ namespace TurtleGame.Domain.Player.Factories
     public class PlayerFactory : IPlayerFactory
     {
         private readonly IRacingCardManager _racingCardManager;
+        private readonly IPreConditionRaicingCardsFactory _preConditionRaicingCardsFactory;
 
-        public PlayerFactory(IRacingCardManager racingCardManager)
+        public PlayerFactory(IRacingCardManager racingCardManager,
+            IPreConditionRaicingCardsFactory preConditionRaicingCardsFactory)
         {
             _racingCardManager = racingCardManager;
+            _preConditionRaicingCardsFactory = preConditionRaicingCardsFactory;
         }
         public IPlayer Create(ChooseSideOfTrackDelagate chooseSideOfTrack,
             ChooseSecondBetDelagate chooseSecondBet,
@@ -22,7 +26,8 @@ namespace TurtleGame.Domain.Player.Factories
                                                     chooseSecondBet,
                                                     selectRacingCard),
                                                     BetCardsPlayerManager.Create(),
-                                                    _racingCardManager);
+                                                    _racingCardManager,
+                                                    _preConditionRaicingCardsFactory.Create());
 
     }
 }

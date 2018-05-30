@@ -34,7 +34,8 @@ namespace TurtleGame.Domain.Tests.Player.Types
         private readonly Mock<IRacingCardManager> _mockRacingCardManager =
             new Mock<IRacingCardManager> { DefaultValue = DefaultValue.Mock };
 
-
+        private Mock<IPreConditionRaicingCards> _mockPreConditionRaicingCards =
+            new Mock<IPreConditionRaicingCards> {  DefaultValue = DefaultValue.Mock };
 
         public RegularPlayerShould()
         {
@@ -49,6 +50,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
                 .Returns(x => _listOfSelectRacing);
             _mockUserCallbacksNotifications.Setup(x => x.ChooseSecondBet).Returns(x => _listOfRaicingCards.First());
 
+            _mockPreConditionRaicingCards.Setup(x => x.Validate(It.IsAny<IRacingCards>())).Returns(true);
             CreateRularPlayer();
             _sut.TakeRacingCard();
             _sut.TakeRacingCard();
@@ -59,7 +61,8 @@ namespace TurtleGame.Domain.Tests.Player.Types
         {
             Action call = () => _sut = new RegularPlayer(null
                 , _mockBetCardsPlayerManager.Object
-                , _mockRacingCardManager.Object);
+                , _mockRacingCardManager.Object,
+                _mockPreConditionRaicingCards.Object);
 
             call.Should().Throw<ArgumentException>();
         }
@@ -122,7 +125,8 @@ namespace TurtleGame.Domain.Tests.Player.Types
         {
             _sut = new RegularPlayer(_mockUserCallbacksNotifications.Object,
                 BetCardsPlayerManager.Create(),
-                _mockRacingCardManager.Object);
+                _mockRacingCardManager.Object,
+                _mockPreConditionRaicingCards.Object);
 
             _sut.ChooseSecondBet();
             _mockUserCallbacksNotifications.Verify(x => x.ChooseSecondBet, Times.Once);
@@ -140,7 +144,8 @@ namespace TurtleGame.Domain.Tests.Player.Types
         {
             _sut = new RegularPlayer(_mockUserCallbacksNotifications.Object
                 , _mockBetCardsPlayerManager.Object
-                , _mockRacingCardManager.Object);
+                , _mockRacingCardManager.Object,
+                _mockPreConditionRaicingCards.Object);
         }
     }
 }

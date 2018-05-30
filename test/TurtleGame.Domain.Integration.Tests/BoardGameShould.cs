@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using System;
 using System.Linq;
+using TurtleGame.Domain.Condition.Factories;
 using TurtleGame.Domain.Factories;
 using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Player.Types;
@@ -35,10 +36,11 @@ namespace TurtleGame.Domain.Integration.Tests
                                                                                                         new SideOfTrackDown(),
                                                                                                         new LineBorderTrack()),
                                                                         x => x.ToList().First(),
-                                                                        x => TurtleGame.Domain.RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0,4)).ToList())),
+                                                                        x => RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0,4)).ToList())),
                                     BetCardsPlayerManager.Create(),
                                     new RacingCardManager(new RacingCardsFactory(),
-                                    new RandomMixStrategy()));
+                                    new RandomMixStrategy()),
+                                    new PreConditionRaicingCardsFactory().Create());
         }
 
         [Fact]

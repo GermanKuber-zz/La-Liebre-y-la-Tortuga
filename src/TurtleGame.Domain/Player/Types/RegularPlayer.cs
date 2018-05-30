@@ -17,6 +17,7 @@ namespace TurtleGame.Domain.Player.Types
         private readonly IUserCallbacksNotifications _userCallbacksNotifications;
         private readonly IBetCardsPlayerManager _betCardsPlayerManager;
         private readonly IRacingCardManager _racingCardManager;
+        private readonly IPreConditionRaicingCards _preConditionRaicingCards;
 
         public int BetCardsQuantity => _betCardsPlayerManager.BetCardsQuantity;
 
@@ -25,7 +26,8 @@ namespace TurtleGame.Domain.Player.Types
 
         public RegularPlayer(IUserCallbacksNotifications userCallbacksNotifications,
             IBetCardsPlayerManager betCardsPlayerManager,
-            IRacingCardManager racingCardManager)
+            IRacingCardManager racingCardManager,
+            IPreConditionRaicingCards preConditionRaicingCards)
         {
             if (userCallbacksNotifications == null)
                 throw new ArgumentException(nameof(userCallbacksNotifications));
@@ -33,7 +35,7 @@ namespace TurtleGame.Domain.Player.Types
             _userCallbacksNotifications = userCallbacksNotifications;
             _betCardsPlayerManager = betCardsPlayerManager;
             _racingCardManager = racingCardManager;
-
+            _preConditionRaicingCards = preConditionRaicingCards;
         }
 
         public void GiveCard(IBetCard betCard) => _betCardsPlayerManager.GiveCard(betCard);
@@ -43,14 +45,18 @@ namespace TurtleGame.Domain.Player.Types
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _userCallbacksNotifications.ChooseSideOfTrack.Invoke(track);
         public void CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
         {
+            var valid = false;
+
             var selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
-            do
+            valid = selectedCardsConfirmation(selectedCards) && _preConditionRaicingCards.Validate(selectedCards);
+            while (!valid)
             {
                 selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
-            } while (!selectedCardsConfirmation(selectedCards));
+                valid = selectedCardsConfirmation(selectedCards) && _preConditionRaicingCards.Validate(selectedCards);
+            }
 
             selectedCards.ToList().ForEach(x => MyRacingCards.Remove(x));
-            
+
             Enumerable.Range(0, selectedCards.Count())
                       .ToList()
                       .ForEach(x => MyRacingCards.Add(_racingCardManager.TakeCard()));
