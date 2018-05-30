@@ -23,7 +23,7 @@ namespace TurtleGame.Domain.Tests.Player
         private readonly IReadOnlyCollection<IBetCard> _betCards;
         private readonly Mock<IPlayersQuantityType> _mockPlayers = new Mock<IPlayersQuantityType> { DefaultValue = DefaultValue.Mock};
         private readonly Mock<IGenericMixStrategy> _mockgGenericMixStrategy = new Mock<IGenericMixStrategy>();
-
+        private readonly Mock<IRacingCardManager> _mockRacingCardManager = new Mock<IRacingCardManager>();
         public PlayerManagerShould()
         {
             _betCards = new ReadOnlyCollection<IBetCard>(EnumerableGenerator.Generate(5, x => new Mock<IBetCard>().Object));
@@ -31,7 +31,7 @@ namespace TurtleGame.Domain.Tests.Player
             _mockgGenericMixStrategy.Setup(x => x.Mix<IBetCard>(It.IsAny<List<IBetCard>>()))
                 .Returns(EnumerableGenerator.Generate(10, x => new Mock<IBetCard>().Object));
 
-            _sut = new PlayersManager(_mockPlayers.Object, _mockgGenericMixStrategy.Object);
+            _sut = new PlayersManager(_mockPlayers.Object, _mockRacingCardManager.Object,_mockgGenericMixStrategy.Object);
         }
      
         [Theory]
@@ -64,15 +64,18 @@ namespace TurtleGame.Domain.Tests.Player
 
 
         [Theory]
-        [InlineData(5)]
+        [InlineData(2)]
         [InlineData(19)]
         public void Call_CardsTurn_To_Players(int quantityOfCalls)
         {
             var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            var deskIsValidForTheNextPlayerCallback = new Mock<DeskIsValidForTheNextPlayerDelegate>();
+            deskIsValidForTheNextPlayerCallback.SetupSequence(x => x())
+                                                .Returns(false);
 
             Enumerable.Range(0, quantityOfCalls)
                 .ToList()
-                .ForEach(x => _sut.CardsTurn(callback.Object));
+                .ForEach(x => _sut.CardsTurn(callback.Object, deskIsValidForTheNextPlayerCallback.Object));
 
             _mockPlayers.Verify(x => x.CardsTurn(callback.Object), Times.Exactly(quantityOfCalls));
 

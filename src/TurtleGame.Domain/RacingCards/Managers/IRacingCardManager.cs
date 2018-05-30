@@ -7,7 +7,6 @@ namespace TurtleGame.Domain.RacingCards
         int CountOfCards { get; }
         double CountOfRacingCardToStart { get; }
         IRacingCard TakeCard();
-        int QuantityOfCardsInDesk { get; }
-        void FallCardsToDeck(IRacingCards selectedRacingCardsToFall);
+      
     }
 }

@@ -6,6 +6,7 @@ using TurtleGame.Domain.Tracks.Interfaces;
 namespace TurtleGame.Domain.Player.Interfaces
 {
     public delegate bool SelectedCardsConfirmationDelegate(IRacingCards racingCards);
+    public delegate bool DeskIsValidForTheNextPlayerDelegate();
 
     public interface IPlayer
     {

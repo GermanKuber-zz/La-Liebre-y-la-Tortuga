@@ -52,20 +52,6 @@ namespace TurtleGame.Domain.Tests.RacingCards
         {
             _mockGenericMixStrategy.Verify(x => x.Mix<IRacingCard>(It.IsAny<List<IRacingCard>>()), Times.Once);
         }
-
-        [Fact]
-        private void Add_New_Cards_To_Desk()
-        {
-            var listOfRacing = new List<IRacingCard> { new Mock<IRacingCard>().Object, new Mock<IRacingCard>().Object, new Mock<IRacingCard>().Object };
-            var racingCards = Domain.RacingCards.RacingCards.Create(listOfRacing);
-
-            _sut.FallCardsToDeck(racingCards);
-
-            _sut.QuantityOfCardsInDesk.Should().Be(3);
-        }
-
-
-
     }
 }
 

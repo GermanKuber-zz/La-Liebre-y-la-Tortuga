@@ -49,8 +49,6 @@ namespace TurtleGame.Domain.Player.Types
                 selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
             } while (!selectedCardsConfirmation(selectedCards));
 
-            _racingCardManager.FallCardsToDeck(selectedCards);
-
             selectedCards.ToList().ForEach(x => MyRacingCards.Remove(x));
             
             Enumerable.Range(0, selectedCards.Count())

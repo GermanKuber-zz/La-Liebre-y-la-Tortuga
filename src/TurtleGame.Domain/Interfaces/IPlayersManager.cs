@@ -8,7 +8,8 @@ namespace TurtleGame.Domain.Interfaces
     {
         int NumberOfPlayers { get; }
 
-        void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback);
+        IPlayersManager CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallbac,
+            DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback);
     }
     public interface IPlayersManagerFirstStep
     {

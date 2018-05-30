@@ -5,6 +5,7 @@ using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
+using TurtleGame.Domain.RacingCards;
 using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.Player
@@ -13,13 +14,17 @@ namespace TurtleGame.Domain.Player
     {
         private readonly IGenericMixStrategy _mixStrategy;
         private readonly IPlayersQuantityType _players;
+        private readonly IRacingCardManager _racingCardManager;
+
         public int NumberOfPlayers => _players.NumberOfPlayers;
 
         public PlayersManager(IPlayersQuantityType players,
+                              IRacingCardManager racingCardManager,
                               IGenericMixStrategy mixStrategy)
         {
             _mixStrategy = mixStrategy;
             _players = players;
+            _racingCardManager = racingCardManager;
         }
         public IPlayersManagerSecondStep GiveBetCards(IReadOnlyCollection<IBetCard> beatsCards)
         {
@@ -45,6 +50,17 @@ namespace TurtleGame.Domain.Player
             return this;
         }
 
-        public void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback) => _players.CardsTurn(cardsTurnCallback);
+        public IPlayersManager CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback,
+            DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback)
+        {
+            var finishCardTurns = true;
+            while (finishCardTurns)
+            {
+                _players.CardsTurn(cardsTurnCallback);
+                finishCardTurns = deskIsValidForTheNextPlayerCallback();
+            }
+            return this;
+        }     
+
     }
 }

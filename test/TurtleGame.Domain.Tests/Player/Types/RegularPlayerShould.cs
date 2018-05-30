@@ -88,14 +88,14 @@ namespace TurtleGame.Domain.Tests.Player.Types
             callback.Verify(x => x(It.IsAny<IRacingCards>()), Times.Once);
         }
 
-        [Fact]
-        public void Take_Out_Cards_From_My_Cards()
-        {
-            var callback = new Mock<SelectedCardsConfirmationDelegate>();
-            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
-            _sut.CardsTurn(callback.Object);
-            _mockRacingCardManager.Verify(x => x.FallCardsToDeck(It.IsAny<IRacingCards>()), Times.Once);
-        }
+        //[Fact]
+        //public void Take_Out_Cards_From_My_Cards()
+        //{
+        //    var callback = new Mock<SelectedCardsConfirmationDelegate>();
+        //    callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
+        //    _sut.CardsTurn(callback.Object);
+        //    _mockRacingCardManager.Verify(x => x.FallCardsToDeck(It.IsAny<IRacingCards>()), Times.Once);
+        //}
 
         [Fact]
         public void Have_The_Same_Quantity_Of_Cards_In_Hand()

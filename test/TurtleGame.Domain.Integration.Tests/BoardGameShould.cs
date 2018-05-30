@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using System;
 using System.Linq;
 using TurtleGame.Domain.Factories;
 using TurtleGame.Domain.Factories.Interfaces;
@@ -20,7 +21,8 @@ namespace TurtleGame.Domain.Integration.Tests
 
         public BoardGameShould()
         {
-            IBoardGameFactory boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy()));
+            IBoardGameFactory boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(),
+                                                 new RacingCardsFactory()), new RacingCardOnDeskManager());
             _playerOne = CreateUser();
             _playerTwo = CreateUser();
             _sut = boardGameFactory.ToTwoPlayer(_playerOne, _playerTwo);
@@ -28,11 +30,12 @@ namespace TurtleGame.Domain.Integration.Tests
 
         private static RegularPlayer CreateUser()
         {
+            var random = new Random();
             return new RegularPlayer(UserCallbacksNotifications.Create(track => new SideBoderSelected(track,
                                                                                                         new SideOfTrackDown(),
                                                                                                         new LineBorderTrack()),
                                                                         x => x.ToList().First(),
-                                                                        x => x),
+                                                                        x => TurtleGame.Domain.RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0,4)).ToList())),
                                     BetCardsPlayerManager.Create(),
                                     new RacingCardManager(new RacingCardsFactory(),
                                     new RandomMixStrategy()));
