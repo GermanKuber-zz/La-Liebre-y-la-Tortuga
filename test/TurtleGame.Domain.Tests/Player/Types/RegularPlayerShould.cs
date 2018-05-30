@@ -35,7 +35,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
             new Mock<IRacingCardManager> { DefaultValue = DefaultValue.Mock };
 
         private Mock<IPreConditionRaicingCards> _mockPreConditionRaicingCards =
-            new Mock<IPreConditionRaicingCards> {  DefaultValue = DefaultValue.Mock };
+            new Mock<IPreConditionRaicingCards> { DefaultValue = DefaultValue.Mock };
 
         public RegularPlayerShould()
         {
@@ -89,6 +89,30 @@ namespace TurtleGame.Domain.Tests.Player.Types
             _sut.CardsTurn(callback.Object);
 
             callback.Verify(x => x(It.IsAny<IRacingCards>()), Times.Once);
+        }
+
+        [Fact]
+        public void Call_Pre_Conditions_Validations_Two_Times()
+        {
+            var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
+            _mockPreConditionRaicingCards.SetupSequence(x => x.Validate(It.IsAny<IRacingCards>()))
+                                                        .Returns(false)
+                                                        .Returns(true);
+            _sut.CardsTurn(callback.Object);
+
+            _mockPreConditionRaicingCards.Verify(x => x.Validate(It.IsAny<IRacingCards>()), Times.Exactly(2));
+        }
+
+        [Fact]
+        public void Call_Pre_Conditions_Validations_One_Times()
+        {
+            var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
+      
+            _sut.CardsTurn(callback.Object);
+
+            _mockPreConditionRaicingCards.Verify(x => x.Validate(It.IsAny<IRacingCards>()), Times.Once);
         }
 
         //[Fact]
