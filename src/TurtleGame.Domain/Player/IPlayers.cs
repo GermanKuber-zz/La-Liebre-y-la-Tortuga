@@ -4,7 +4,7 @@ using TurtleGame.Domain.Player.Interfaces;
 
 namespace TurtleGame.Domain.Player.PlayersQuantityType
 {
-    public interface IPlayers : IEnumerable<IPlayers>, IEnumerator<IPlayers>
+    public interface IPlayers : IEnumerable<IPlayer>, IEnumerator<IPlayer>
     {
         void Each(Action<IPlayer> eachCallBack);
         void Each(Action<IPlayer> eachCallBack, int quantityOfEach);

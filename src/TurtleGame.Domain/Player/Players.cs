@@ -42,11 +42,6 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
                 });
         }
 
-        public new IEnumerator<IPlayers> GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
-
-        public IPlayers Current => this.Current;
     }
 }
+

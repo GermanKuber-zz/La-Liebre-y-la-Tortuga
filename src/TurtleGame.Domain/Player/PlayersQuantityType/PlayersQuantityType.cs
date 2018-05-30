@@ -20,8 +20,14 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
             Players = players;
         }
 
-        public void GiveCards(IReadOnlyCollection<IBetCard> betsCards) =>
-            Players.Each((player, index) => player.GiveCard(betsCards.ToList()[index]), 1);
+        public void GiveCards(IReadOnlyCollection<IBetCard> betsCards)
+        {
+            if (Players.Count().Equals(2))
+                Players.Each((player, index) => player.GiveCard(betsCards.ToList()[index]), 2);
+            else
+                Players.Each((player, index) => player.GiveCard(betsCards.ToList()[index]), 1);
+
+        }
 
         public void TakeCard() => Players.Each(x => x.TakeRacingCard());
         public void ChooseSecondBet() => Players.Each(x => x.ChooseSecondBet());
