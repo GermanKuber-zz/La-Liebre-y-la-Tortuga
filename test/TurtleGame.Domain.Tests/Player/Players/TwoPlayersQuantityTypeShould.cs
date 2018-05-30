@@ -1,32 +1,33 @@
+using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType;
 using TurtleGame.Domain.Player.Types;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player.Players
 {
-    public class TwoPlayersQuantityTypeShould : PlayersQuantityTypeBase
+    public class TwoPlayersQuantityTypeShould : PlayersQuantityTypeShouldBase
     {
 
         public TwoPlayersQuantityTypeShould()
         {
-            Sut = new TwoPlayersQuantityType(PlayerOne.Object, PlayerTwo.Object);
+            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(new List<IPlayer> { PlayerOne.Object, PlayerTwo.Object }));
         }
 
         [Fact]
         private void Give_Two_Cards_Every_Player()
         {
             Sut.GiveCards(BetCards);
-            PlayerOne.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(2));
-            PlayerTwo.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(2));
+            ListOfPlayers.ForEach(player => player.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(2)));
         }
 
         [Fact]
         public void Give_Differents_Cards_To_Two_Players()
         {
-            Sut = new TwoPlayersQuantityType(PlayerOne.Object, PlayerOne.Object);
+            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(new List<IPlayer> { PlayerOne.Object, PlayerOne.Object }));
 
             Differentes_Cards_To_All_Players(Sut, 4);
         }
@@ -38,11 +39,8 @@ namespace TurtleGame.Domain.Tests.Player.Players
         [Fact]
         public void To_Assign_Players_Property()
         {
-            Sut.PlayerOne.Should().NotBeNull();
-            Sut.PlayerTwo.Should().NotBeNull();
-            Sut.PlayerThree.Should().BeOfType<NonePlayer>();
-            Sut.PlayerFour.Should().BeOfType<NonePlayer>();
-            Sut.PlayerFive.Should().BeOfType<NonePlayer>();
+            ListOfPlayers.ForEach(player => player.Should().NotBeNull());
+            ListOfPlayers.ForEach(player => player.Should().BeOfType<NonePlayer>());
         }
         [Fact]
         public void Take_Card_From_User()
@@ -51,6 +49,18 @@ namespace TurtleGame.Domain.Tests.Player.Players
 
             PlayerOne.Verify(x => x.TakeRacingCard(), Times.Exactly(1));
         }
+        [Fact]
+        public void Give_Differents_Cards_To_Three_Players()
+        {
+            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(new List<IPlayer> { PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object, PlayerOne.Object }));
 
+            Differentes_Cards_To_All_Players(Sut, 5);
+        }
+        [Fact]
+        private void Give_One_Cards_Every_Player()
+        {
+            Sut.GiveCards(BetCards);
+            ListOfPlayers.ForEach(player => player.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1)));
+        }
     }
 }

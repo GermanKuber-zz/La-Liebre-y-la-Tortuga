@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types.BetCards;
@@ -20,7 +21,7 @@ namespace TurtleGame.Domain.Player.Types
         public int BetCardsQuantity => _betCardsPlayerManager.BetCardsQuantity;
 
 
-        public  IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
+        public IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
 
         public RegularPlayer(IUserCallbacksNotifications userCallbacksNotifications,
             IBetCardsPlayerManager betCardsPlayerManager,

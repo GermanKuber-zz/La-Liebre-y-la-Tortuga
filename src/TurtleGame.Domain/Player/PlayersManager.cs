@@ -29,10 +29,6 @@ namespace TurtleGame.Domain.Player
             _players.GiveCards(_mixStrategy.Mix(beatsCards.ToList()).ToList());
             return this;
         }
-
-        /// <summary>
-        /// Deal one raicing card to each player
-        /// </summary>
         public IPlayersManagerThirdStep GiveRaicingCards()
         {
             Enumerable.Range(1, 7)
@@ -49,6 +45,6 @@ namespace TurtleGame.Domain.Player
             return this;
         }
 
-        public bool CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback) => _players.CardsTurn(cardsTurnCallback);
+        public void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback) => _players.CardsTurn(cardsTurnCallback);
     }
 }

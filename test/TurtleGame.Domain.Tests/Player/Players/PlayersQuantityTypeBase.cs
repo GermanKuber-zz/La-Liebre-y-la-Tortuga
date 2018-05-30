@@ -9,7 +9,7 @@ using TurtleGame.SharedKernel.Generators;
 
 namespace TurtleGame.Domain.Tests.Player.Players
 {
-    public class PlayersQuantityTypeBase
+    public class PlayersQuantityTypeShouldBase
     {
         protected readonly Mock<IPlayer> PlayerOne = new Mock<IPlayer>();
         protected readonly Mock<IPlayer> PlayerTwo = new Mock<IPlayer>();
@@ -17,10 +17,12 @@ namespace TurtleGame.Domain.Tests.Player.Players
         protected readonly Mock<IPlayer> PlayerFour = new Mock<IPlayer>();
         protected readonly Mock<IPlayer> PlayerFive = new Mock<IPlayer>();
         protected readonly List<IBetCard> BetCards = new List<IBetCard>();
-        protected  IPlayersQuantityType Sut;
-        public PlayersQuantityTypeBase()
+        public List<Mock<IPlayer>> ListOfPlayers { get; set; }
+        protected IPlayersQuantityType Sut;
+        public PlayersQuantityTypeShouldBase()
         {
             BetCards.AddRange(EnumerableGenerator.Generate(5, x => new Mock<IBetCard>().Object));
+            ListOfPlayers = new List<Mock<IPlayer>> { PlayerOne, PlayerTwo, PlayerThree, PlayerFour, PlayerFive };
         }
 
         protected void Differentes_Cards_To_All_Players(IPlayersQuantityType players, int countOfPlayers)
@@ -34,6 +36,6 @@ namespace TurtleGame.Domain.Tests.Player.Players
             list.Count.Should().Be(countOfPlayers);
             list.Distinct().Count().Should().Be(list.Count);
         }
-      
+
     }
 }

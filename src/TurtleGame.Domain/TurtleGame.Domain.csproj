@@ -13,4 +13,10 @@
     <ProjectReference Include="..\TurtleGame.SharedKernel\TurtleGame.SharedKernel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\..\..\..\..\.nuget\packages\moq\4.8.2\lib\netstandard1.3\Moq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
