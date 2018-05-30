@@ -20,7 +20,7 @@ namespace TurtleGame.Domain.Integration.Tests
 
         public BoardGameShould()
         {
-            IBoardGameFactory boardGameFactory = new BoardGameFactory(new PlayersManagerFactory());
+            IBoardGameFactory boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy()));
             _playerOne = CreateUser();
             _playerTwo = CreateUser();
             _sut = boardGameFactory.ToTwoPlayer(_playerOne, _playerTwo);

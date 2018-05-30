@@ -44,11 +44,25 @@ namespace TurtleGame.Domain.Player.Types
         public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
         {
             var selectedCards = _userCallbacksNotifications.SelectRacingCard(RacingCards);
-            if (selectedCardsConfirmation(selectedCards))
-            {
-                //Remove card form the main cards list
-            }
-            return true;
+
+            var returnValue = false;
+            Enumerable.Range(0, 1)
+                .ToList()
+                .ForEach(x =>
+                {
+                    if (selectedCardsConfirmation(selectedCards))
+                    {
+                        returnValue = true;
+                        //Remove card form the main cards list
+                    }
+                    else
+                    {
+                        returnValue = false;
+                    }
+
+                });
+
+            return returnValue;
         }
 
         public void ChooseSecondBet()

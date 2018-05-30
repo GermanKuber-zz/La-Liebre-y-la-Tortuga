@@ -14,13 +14,11 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
 
         public int NumberOfPlayers => Players.Count();
 
-        #region  Constructors
 
         public PlayersQuantityType(IPlayers players)
         {
             Players = players;
         }
-        #endregion
 
         public void GiveCards(IReadOnlyCollection<IBetCard> betsCards) =>
             Players.Each((player, index) => player.GiveCard(betsCards.ToList()[index]), 1);

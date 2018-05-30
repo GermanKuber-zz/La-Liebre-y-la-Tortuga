@@ -14,6 +14,7 @@ using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player
 {
+
     public class PlayerManagerShould
     {
         private readonly IPlayersManager _sut;
