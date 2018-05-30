@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TurtleGame.Domain.RacingCards
 {
-    public class EntitiesCollectionsBase<TEntity> : EnumeratorBase<TEntity>
-    {
-        protected EntitiesCollectionsBase(List<TEntity> entitiesList):base(entitiesList)
-        {
-        }
-        public void Add(TEntity entityCard) => EntitiesList.Add(entityCard);
-        public void Remove(TEntity entityCard) => EntitiesList.Remove(entityCard);
-    }
 
     public class EnumeratorBase<TEntity> : IEnumerable<TEntity>, IEnumerator<TEntity>
     {

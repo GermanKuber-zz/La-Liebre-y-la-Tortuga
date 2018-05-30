@@ -12,8 +12,8 @@ namespace TurtleGame.Domain.Player.Interfaces
         int BetCardsQuantity { get; }
         void GiveCard(IBetCard betCard);
         void ChooseSecondBet();
-        IRacingCards RacingCards { get; }
         void TakeRacingCard();
+        IRacingCards MyRacingCards { get; }
         ISideBoderSelected ChooseSideOfTrack(ITrack track);
         bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation);
     }

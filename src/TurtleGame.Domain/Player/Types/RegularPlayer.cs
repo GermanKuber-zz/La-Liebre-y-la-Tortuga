@@ -21,7 +21,7 @@ namespace TurtleGame.Domain.Player.Types
         public int BetCardsQuantity => _betCardsPlayerManager.BetCardsQuantity;
 
 
-        public IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
+        public IRacingCards MyRacingCards { get; } = RacingCards.RacingCards.Create(new List<IRacingCard>());
 
         public RegularPlayer(IUserCallbacksNotifications userCallbacksNotifications,
             IBetCardsPlayerManager betCardsPlayerManager,
@@ -38,37 +38,26 @@ namespace TurtleGame.Domain.Player.Types
 
         public void GiveCard(IBetCard betCard) => _betCardsPlayerManager.GiveCard(betCard);
 
-        public void TakeRacingCard() => RacingCards.Add(_racingCardManager.TakeCard());
+        public void TakeRacingCard() => MyRacingCards.Add(_racingCardManager.TakeCard());
 
         public ISideBoderSelected ChooseSideOfTrack(ITrack track) => _userCallbacksNotifications.ChooseSideOfTrack.Invoke(track);
         public bool CardsTurn(SelectedCardsConfirmationDelegate selectedCardsConfirmation)
         {
-            var selectedCards = _userCallbacksNotifications.SelectRacingCard(RacingCards);
+            var selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
+            do
+            {
+                selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
+            } while (!selectedCardsConfirmation(selectedCards));
+                        
 
-            var returnValue = false;
-            Enumerable.Range(0, 1)
-                .ToList()
-                .ForEach(x =>
-                {
-                    if (selectedCardsConfirmation(selectedCards))
-                    {
-                        returnValue = true;
-                        //Remove card form the main cards list
-                    }
-                    else
-                    {
-                        returnValue = false;
-                    }
 
-                });
-
-            return returnValue;
+            return true;
         }
 
         public void ChooseSecondBet()
         {
-            var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(RacingCards);
-            RacingCards.Remove(choosedSecondBetCard);
+            var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(MyRacingCards);
+            MyRacingCards.Remove(choosedSecondBetCard);
             _betCardsPlayerManager.GiveCard(new SecondBetCard(choosedSecondBetCard));
         }
 

@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using TurtleGame.Domain.Player.Interfaces;
+using TurtleGame.Domain.RacingCards;
 
 namespace TurtleGame.Domain.Player.PlayersQuantityType
 {
-    public interface IPlayers : IEnumerable<IPlayer>, IEnumerator<IPlayer>
+    public interface IPlayers : ICollectionsBase<IPlayer>
     {
-        void Each(Action<IPlayer> eachCallBack);
-        void Each(Action<IPlayer> eachCallBack, int quantityOfEach);
-        void Each(Action<IPlayer, int> eachCallBack, int quantityOfEach);
+    }
+    public interface ICollectionsBase<TEntity> : IEntitiesCollectionsBase<TEntity>,IEnumerable<TEntity>, IEnumerator<TEntity>
+    {
+        void Each(Action<TEntity> eachCallBack);
+        void Each(Action<TEntity> eachCallBack, int quantityOfEach);
+        void Each(Action<TEntity, int> eachCallBack, int quantityOfEach);
     }
 }

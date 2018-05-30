@@ -17,7 +17,7 @@ namespace TurtleGame.Domain.Tests.Player.Players
 
         public TwoPlayersQuantityTypeShould()
         {
-            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(new List<IPlayer> { PlayerOne.Object, PlayerTwo.Object }));
+            SetupSutSutWithPlayers(2);
         }
 
         [Fact]

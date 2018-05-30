@@ -25,10 +25,10 @@ namespace TurtleGame.Domain.Tests.Player.Types
             new Mock<IRacingCard>().Object
         };
 
-        private readonly Mock<IBetCardsPlayerManager> _mockBetCardsPlayerManager = 
+        private readonly Mock<IBetCardsPlayerManager> _mockBetCardsPlayerManager =
             new Mock<IBetCardsPlayerManager> { DefaultValue = DefaultValue.Mock };
 
-        private readonly Mock<IUserCallbacksNotifications> _mockUserCallbacksNotifications = 
+        private readonly Mock<IUserCallbacksNotifications> _mockUserCallbacksNotifications =
             new Mock<IUserCallbacksNotifications> { DefaultValue = DefaultValue.Mock };
 
         private readonly Mock<IRacingCardManager> _mockRacingCardManager =
@@ -66,30 +66,35 @@ namespace TurtleGame.Domain.Tests.Player.Types
         public void Add_Racing_Card_To_List_Of_Racings_Cards()
         {
             _sut.TakeRacingCard();
-            _sut.RacingCards.Count().Should().Be(1);
+            _sut.MyRacingCards.Count().Should().Be(1);
         }
 
         [Fact]
         public void Call_Function_To_Player_Select_Cards()
         {
             var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
             _sut.CardsTurn(callback.Object);
+
             callback.Verify(x => x(It.IsAny<IRacingCards>()), Times.Once);
         }
 
         [Fact]
         public void Call_Callback_With_All_Available_Racing_Cards()
         {
-            var list =  Domain.RacingCards.RacingCards.Create(_listOfRaicingCards.Take(2).ToList());
+            var list = Domain.RacingCards.RacingCards.Create(_listOfRaicingCards.Take(2).ToList());
 
             _mockUserCallbacksNotifications
                 .Setup(x => x.SelectRacingCard)
                 .Returns(x => list);
 
-            var callBack = new Mock<SelectedCardsConfirmationDelegate>();
-            _sut.CardsTurn(callBack.Object);
+            var callback = new Mock<SelectedCardsConfirmationDelegate>();
+            callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
 
-            callBack.Verify(x => x(list), Times.Once);
+
+            _sut.CardsTurn(callback.Object);
+
+            callback.Verify(x => x(list), Times.Once);
 
         }
 
@@ -114,7 +119,7 @@ namespace TurtleGame.Domain.Tests.Player.Types
 
             _sut.ChooseSecondBet();
 
-            _sut.RacingCards.Count().Should().Be(1);
+            _sut.MyRacingCards.Count().Should().Be(1);
         }
 
 

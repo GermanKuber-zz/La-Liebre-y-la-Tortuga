@@ -28,5 +28,7 @@ namespace TurtleGame.Domain.Player.Types
 
         public void ChooseSecondBet() { }
         public IRacingCards RacingCards { get; } = Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
+
+        public IRacingCards MyRacingCards => Domain.RacingCards.RacingCards.Create(new List<IRacingCard>());
     }
 }

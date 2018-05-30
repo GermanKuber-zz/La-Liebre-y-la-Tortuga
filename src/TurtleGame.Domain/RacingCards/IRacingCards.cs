@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using TurtleGame.Domain.Player.PlayersQuantityType;
 using TurtleGame.Domain.RacingCards.Interfaces;
 
 namespace TurtleGame.Domain.RacingCards
 {
-    public interface IRacingCards: IEnumerable<IRacingCard>, IEnumerator<IRacingCard>
+    public interface IRacingCards : ICollectionsBase<IRacingCard>
     {
-        void Add(IRacingCard racingCard);
-        void Remove(IRacingCard racingCard);
+
     }
 }
