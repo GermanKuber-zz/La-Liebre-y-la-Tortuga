@@ -1,13 +1,16 @@
 ﻿using FluentAssertions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.Condition.Factories;
 using TurtleGame.Domain.Factories;
 using TurtleGame.Domain.Factories.Interfaces;
+using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Factories;
+using TurtleGame.Domain.RacingCards.Interfaces;
 using TurtleGame.Domain.Side;
 using TurtleGame.SharedKernel.Strategies;
 using Xunit;
@@ -17,31 +20,37 @@ namespace TurtleGame.Domain.Integration.Tests
     public class BoardGameShould
     {
         private BoardGame _sut;
+        private readonly IRacingCardManager _racingCardManager;
         private readonly IBoardGameFactory _boardGameFactory;
         private readonly RegularPlayer _playerOne;
         private readonly RegularPlayer _playerTwo;
         private RegularPlayer _playerThree;
-
+        private IRacingCardsFactory _racingCardsFactory = new RacingCardsFactory();
+        private IRacingCardOnDeskManager _racingCardOnDeskManager = new RacingCardOnDeskManager();
         public BoardGameShould()
         {
+            _racingCardManager = new RacingCardManager(_racingCardsFactory,
+                                                          new RandomMixStrategy(),
+                                                          _racingCardOnDeskManager);
             _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(),
-                                                 new RacingCardsFactory()), new RacingCardOnDeskManager());
+                                                                               new RacingCardsFactory(),
+                                                                               _racingCardOnDeskManager),
+                                                     _racingCardOnDeskManager);
             _playerOne = CreateUser();
             _playerTwo = CreateUser();
             _sut = _boardGameFactory.ToTwoPlayer(_playerOne, _playerTwo);
         }
 
-        private static RegularPlayer CreateUser()
+        private RegularPlayer CreateUser()
         {
             var random = new Random();
             return new RegularPlayer(UserCallbacksNotifications.Create(track => new SideBoderSelected(track,
                                                                                                         new SideOfTrackDown(),
                                                                                                         new LineBorderTrack()),
                                                                         x => x.ToList().First(),
-                                                                        x => RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0, 2)).ToList())),
+                                                                        x => RacingCards.RacingCards.Create(new List<IRacingCard> { x.ToList().First() })),
                                     BetCardsPlayerManager.Create(),
-                                    new RacingCardManager(new RacingCardsFactory(),
-                                    new RandomMixStrategy()),
+                                   _racingCardManager,
                                     new PreConditionRaicingCardsFactory().Create());
         }
 

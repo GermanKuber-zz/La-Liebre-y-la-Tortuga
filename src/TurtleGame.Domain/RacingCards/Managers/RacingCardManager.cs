@@ -9,19 +9,35 @@ namespace TurtleGame.Domain.RacingCards
     public class RacingCardManager : IRacingCardManager
     {
         public double CountOfRacingCardToStart => 7;
-        public int CountOfCards => Cards.Count();
-        public IRacingCards Cards { get; set; }
+        public int CountOfCards => _cards.Count();
+        public IRacingCards _cards;
 
-        public RacingCardManager(IRacingCardsFactory racingCardsFactory, IGenericMixStrategy mixStrategy)
+        private readonly IMixDiscartCards _mixDiscartCards;
+
+        public RacingCardManager(IRacingCardsFactory racingCardsFactory,
+            IGenericMixStrategy mixStrategy,
+            IMixDiscartCards mixDiscartCards)
         {
             var listOfRacingCards = racingCardsFactory.Create();
 
-            Cards = RacingCards.Create(mixStrategy.Mix(listOfRacingCards));
+            _cards = RacingCards.Create(mixStrategy.Mix(listOfRacingCards));
+            _mixDiscartCards = mixDiscartCards;
         }
         public IRacingCard TakeCard()
         {
-            Cards.MoveNext();
-            return Cards.Current;
+            var item = _cards.FirstOrDefault();
+            if (item != null)
+            {
+                _cards.Remove(item);
+                return item;
+            }
+            else
+            {
+                _cards.Add(_mixDiscartCards.MixAll().ToList());
+                var itemToReturn = _cards.FirstOrDefault();
+                _cards.Remove(itemToReturn);
+                return itemToReturn;
+            }
         }
     }
 }

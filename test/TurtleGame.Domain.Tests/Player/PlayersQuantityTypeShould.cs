@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
-using TurtleGame.Domain.BetCards;
-using TurtleGame.Domain.Interfaces;
-using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType;
 using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
-using TurtleGame.Domain.RacingCards;
-using TurtleGame.SharedKernel.Generators;
-using TurtleGame.SharedKernel.Strategies.Interfaces;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player

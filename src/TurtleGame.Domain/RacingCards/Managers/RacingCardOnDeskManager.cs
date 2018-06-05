@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
-using TurtleGame.SharedKernel.Strategies.Interfaces;
 
 namespace TurtleGame.Domain.RacingCards
 {
@@ -16,5 +14,7 @@ namespace TurtleGame.Domain.RacingCards
             racingCard.ToList().ForEach(x => _cardsInDeck.Add(x));
             return true;
         }
+
+        public IEnumerable<IRacingCard> MixAll() => _cardsInDeck.Clear();
     }
 }

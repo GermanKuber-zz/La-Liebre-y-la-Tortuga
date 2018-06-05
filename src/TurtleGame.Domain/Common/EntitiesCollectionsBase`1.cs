@@ -24,7 +24,20 @@ namespace TurtleGame.Domain.RacingCards
             }
             return EntitiesList.First();
         }
+        public List<TEntity> Clear()
+        {
+            var returnList = new List<TEntity>();
+
+            EntitiesList.ToList()
+                           .ForEach(x =>
+                           {
+                               returnList.Add(x);
+                           });
+            EntitiesList.Clear();
+            return returnList;
+        }
         public void Add(TEntity entityCard) => EntitiesList.Add(entityCard);
+        public void Add(IList<TEntity> entityCards) => EntitiesList.AddRange(entityCards);
         public void Remove(TEntity entityCard) => EntitiesList.Remove(entityCard);
         public TEntity First() => EntitiesList.First();
         public void Each(Action<TEntity> eachCallBack) => EntitiesList.ForEach(eachCallBack);
