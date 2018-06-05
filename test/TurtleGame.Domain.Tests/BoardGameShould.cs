@@ -13,7 +13,6 @@ namespace TurtleGame.Domain.Tests
             _sut = new BoardGame();
         }
 
-
         [Fact]
         public void Initializate_Bet_Cards()
         {

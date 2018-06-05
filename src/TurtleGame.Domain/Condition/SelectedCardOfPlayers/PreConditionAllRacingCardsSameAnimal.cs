@@ -2,13 +2,12 @@
 
 namespace TurtleGame.Domain.RacingCards
 {
-
-    public class PreConditionNoMoreThanFour : PreConditionRaicingCards
+    public class PreConditionAllRacingCardsSameAnimal : PreConditionRaicingCards
     {
  
         public override bool Validate(IRacingCards racingCards)
         {
-            if (racingCards.Count() > 4)
+            if (!racingCards.AllCardAreTheSameAnimal())
                 return false;
 
             return base.Validate(racingCards);

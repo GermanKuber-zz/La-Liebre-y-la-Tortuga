@@ -6,6 +6,6 @@ namespace TurtleGame.Domain.RacingCards
 {
     public interface IRacingCards : ICollectionsBase<IRacingCard>
     {
-
+        bool AllCardAreTheSameAnimal();
     }
 }

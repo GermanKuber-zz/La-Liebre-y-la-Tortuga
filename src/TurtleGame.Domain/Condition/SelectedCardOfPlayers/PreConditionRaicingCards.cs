@@ -7,6 +7,15 @@ namespace TurtleGame.Domain.RacingCards
     {
 
         private IPreConditionRaicingCards _next;
+
+        public PreConditionRaicingCards(IPreConditionRaicingCards nextCondition)
+        {
+            SetNext(nextCondition);
+        }
+        public PreConditionRaicingCards()
+        {
+
+        }
         public void SetNext(IPreConditionRaicingCards next)
         {
             _next = next;
