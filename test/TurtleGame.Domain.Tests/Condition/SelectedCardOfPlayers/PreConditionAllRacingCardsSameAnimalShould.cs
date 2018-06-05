@@ -22,7 +22,6 @@ namespace TurtleGame.Domain.RacingCards
         {
             Sut.Validate(_mockRacingCards.Object);
             _mockRacingCards.Verify(x => x.AllCardAreTheSameAnimal(), Times.Once);
-
         }
     }
 

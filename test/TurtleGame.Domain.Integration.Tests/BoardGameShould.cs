@@ -36,7 +36,7 @@ namespace TurtleGame.Domain.Integration.Tests
                                                                                                         new SideOfTrackDown(),
                                                                                                         new LineBorderTrack()),
                                                                         x => x.ToList().First(),
-                                                                        x => RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0,4)).ToList())),
+                                                                        x => RacingCards.RacingCards.Create(x.ToList().GetRange(0, random.Next(0,2)).ToList())),
                                     BetCardsPlayerManager.Create(),
                                     new RacingCardManager(new RacingCardsFactory(),
                                     new RandomMixStrategy()),
