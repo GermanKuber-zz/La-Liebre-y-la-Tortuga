@@ -7,8 +7,9 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
 {
     public interface IPlayers : ICollectionsBase<IPlayer>
     {
+        IPlayer GiveMeNextTo(IPlayer currentFirstPlayer);
     }
-    public interface ICollectionsBase<TEntity> : IEntitiesCollectionsBase<TEntity>,IEnumerable<TEntity>, IEnumerator<TEntity>
+    public interface ICollectionsBase<TEntity> : IEntitiesCollectionsBase<TEntity>, IEnumerable<TEntity>, IEnumerator<TEntity>
     {
         void Each(Action<TEntity> eachCallBack);
         void Each(Action<TEntity> eachCallBack, int quantityOfEach);

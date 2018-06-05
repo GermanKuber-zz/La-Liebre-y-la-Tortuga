@@ -10,9 +10,23 @@ namespace TurtleGame.Domain.RacingCards
         protected EntitiesCollectionsBase(List<TEntity> entitiesList) : base(entitiesList)
         {
         }
+        public TEntity GiveMeNextTo(TEntity previousEntity)
+        {
+            var enumerator = EntitiesList.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                if (enumerator.Current.Equals(previousEntity))
+                {
+                    if (enumerator.MoveNext())
+                        return enumerator.Current;
+                    break;
+                }
+            }
+            return EntitiesList.First();
+        }
         public void Add(TEntity entityCard) => EntitiesList.Add(entityCard);
         public void Remove(TEntity entityCard) => EntitiesList.Remove(entityCard);
-
+        public TEntity First() => EntitiesList.First();
         public void Each(Action<TEntity> eachCallBack) => EntitiesList.ForEach(eachCallBack);
         public void Each(Action<TEntity> eachCallBack, int quantityOfEach)
         {

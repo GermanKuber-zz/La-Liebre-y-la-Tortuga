@@ -51,7 +51,7 @@ namespace TurtleGame.Domain.Player
         }
 
         public IPlayersManager CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback,
-            DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback)
+                                         DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback)
         {
             var finishCardTurns = true;
             while (finishCardTurns)
@@ -60,7 +60,7 @@ namespace TurtleGame.Domain.Player
                 finishCardTurns = deskIsValidForTheNextPlayerCallback();
             }
             return this;
-        }     
+        }
 
     }
 }

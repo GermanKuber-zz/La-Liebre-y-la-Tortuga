@@ -12,8 +12,9 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType.Interfaces
         /// </summary>
         void TakeCard();
         int NumberOfPlayers { get; }
-        IPlayers Players { get; }
+        IPlayer CurrentFirstPlayer { get; }
         void ChooseSecondBet();
         void CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback);
+        void ChangeFirstPlayer();
     }
 }

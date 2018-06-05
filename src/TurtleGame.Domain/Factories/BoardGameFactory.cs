@@ -16,7 +16,7 @@ namespace TurtleGame.Domain.Factories
         }
         public BoardGame ToTwoPlayer(IPlayer playerOne, IPlayer playerTwo)
             => new BoardGame(playerOne, playerTwo, _playersManagerFactory, _racingCardManager);
-        public BoardGame ToThreePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
+        public BoardGame ToThreePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree)
             => new BoardGame(playerOne, playerTwo, playerThree, _playersManagerFactory, _racingCardManager);
         public BoardGame ToFourPlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree, IPlayer playerFour)
             => new BoardGame(playerOne, playerTwo, playerFour, _playersManagerFactory, _racingCardManager);
