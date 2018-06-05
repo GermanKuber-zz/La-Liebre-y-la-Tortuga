@@ -1,29 +1,774 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TurtleGame.Domain.BoardGame">
-    <Position X="2.5" Y="2.5" Width="1.5" />
+  <Class Name="TurtleGame.Domain.BetCards.Fox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAgAAAAAAAAQgAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>BoardGame.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\Fox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.BetCards.Hare" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\Hare.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.BetCards.Lamb" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\Lamb.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.BetCards.SecondBetCard" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\SecondBetCard.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Players" />
+      <Field Name="_racingCard" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="TurtleGame.Domain.Player.PlayersManager">
-    <Position X="8" Y="4.75" Width="1.5" />
+  <Class Name="TurtleGame.Domain.BetCards.Turtle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\Turtle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.BetCards.Wolf" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\Wolf.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.EntitiesCollectionsBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="15.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAAAAABAAAAAAAAAAAACAAEABAAAA=</HashCode>
+      <FileName>Common\EntitiesCollectionsBase`1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.EnumeratorBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABBAAAACAAAEAAAAAAAAEoAAAgAAAAAA=</HashCode>
+      <FileName>Common\EnumeratorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.PreConditionAllRacingCardsSameAnimal" Collapsed="true">
+    <Position X="2.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\SelectedCardOfPlayers\PreConditionAllRacingCardsSameAnimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.PreConditionNoMoreThanFour" Collapsed="true">
+    <Position X="4.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\SelectedCardOfPlayers\PreConditionNoMoreThanFour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.PreConditionRaicingCards" Collapsed="true">
+    <Position X="3.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAgAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\SelectedCardOfPlayers\PreConditionRaicingCards.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.RacingCardManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQABAAAAAAAAIAAgAAgAAAAA=</HashCode>
+      <FileName>RacingCards\Managers\RacingCardManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.RacingCardOnDeskManager" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAgAAAAAgAAAAAAAAAAIAAEAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Managers\RacingCardOnDeskManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_cardsInDeck" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.RacingCards" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAI=</HashCode>
+      <FileName>RacingCards\RacingCards.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Common.Entity" Collapsed="true">
+    <Position X="6" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Common.ValueObject&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAQAAIAAAAAAAAAABiA=</HashCode>
+      <FileName>Common\ValueObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Condition.Factories.PreConditionRaicingCardsFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\Factories\PreConditionRaicingCardsFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Factories.BoardGameFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAMAAAAAAAAAAAAAAAAAAAAAgAAAAAUAAAAAAAAAA=</HashCode>
+      <FileName>Factories\BoardGameFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Factories.PlayersManagerFactory" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIAAAAAAAAAAAQAAAQAAAAAgAAAAAEAAAEAAAAAA=</HashCode>
+      <FileName>Factories\PlayersManagerFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_genericMixStrategy" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.Factories.PlayerFactory" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAA=</HashCode>
+      <FileName>Player\Factories\PlayerFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_preConditionRaicingCardsFactory" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.PlayersQuantityType.PlayersQuantityType" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAEAAAAAAAABABCAAAABAIgAAAAAAAA=</HashCode>
+      <FileName>Player\PlayersQuantityType\PlayersQuantityType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_players" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.PlayersQuantityType.Players" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Players.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.Types.BetCards.BetCardsPlayerManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAABAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Types\BetCards\BetCardsPlayerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.Types.UserCallbacksNotifications" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAEAAACABAAAAAAA=</HashCode>
+      <FileName>Player\Types\UserNotificationsDelegates\UserCallbacksNotifications.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ChooseSecondBet" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.Types.NonePlayer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAEEAAAAAEAAAACAAEAAAKAAAIAAAAA=</HashCode>
+      <FileName>Player\Types\NonePlayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.Types.RegularPlayer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAASAAIAAAEEAAQAAEAAAACAAAAAACAAAIAAAAA=</HashCode>
+      <FileName>Player\Types\RegularPlayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Player.PlayersManager" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAEAAAAABABAABCAAAAAAIAABAAAAAA=</HashCode>
       <FileName>Player\PlayersManager.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mixStrategy" />
+      <Field Name="_players" />
+      <Field Name="_racingCardManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Factories.RacingCardsFactory" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Factories\RacingCardsFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_racingCards" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Types.FoxRacingCard" Collapsed="true">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Types\FoxRacingCard.cs</FileName>
+    </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="TurtleGame.Domain.Interfaces.IPlayersManager">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+  <Class Name="TurtleGame.Domain.RacingCards.Types.HareRacingCard" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Types\HareRacingCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Types.LambRacingCard" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Types\LambRacingCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Types.RacingCardBase&lt;TRacindCard&gt;" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>RacingCards\Types\RacingCardBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Types.TurtleRacingCard" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Types\TurtleRacingCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.RacingCards.Types.WolfRacingCard" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Types\WolfRacingCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.RoundBorderTrack" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\BorderOfTracFirstAssert.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.LineBorderTrack" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\BorderOfTracFirstAssert.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Border" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.SideBoderSelected" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\SideBoderSelect.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BorderOfTrack" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.SideOfTrackDown" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\SideOfTrackDown.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SideType" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.SideOfTrackSelector" Collapsed="true">
+    <Position X="31.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAQAACAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Side\SideOfTrackSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Side.SideOfTrackUp" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\SideOfTrackUp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SideType" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Chain.DecideSide.DecideMaxCountDownSideChain" Collapsed="true">
+    <Position X="5.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Tracks\Chain\DecideSide\DecideMaxCountDownSideChain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Chain.DecideSide.DecideMaxCountUpSideChain" Collapsed="true">
+    <Position X="8" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Tracks\Chain\DecideSide\DecideMaxCountUpSideChain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Chain.DecideSide.DecideSameCountSideChain" Collapsed="true">
+    <Position X="10.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Tracks\Chain\DecideSide\DecideSameCountSideChain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Chain.DecideSide.DecideSideChain" Collapsed="true">
+    <Position X="8" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAABAAAAA=</HashCode>
+      <FileName>Tracks\Chain\DecideSide\DecideSideChain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Factories.TracksFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Factories\TracksFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Strategies.DecideSideFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Strategies\DecideSideFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Strategies.MixTrackRandomStrategy" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAA=</HashCode>
+      <FileName>Tracks\Strategies\MixTrackRandomStrategy.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_genericMixStrategy" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Types.CommonTrack" Collapsed="true">
+    <Position X="5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Types\CommonTrack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Types.FinalLineTrack" Collapsed="true">
+    <Position X="7.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Types\FinalLineTrack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Types.StartingLineTrack" Collapsed="true">
+    <Position X="9.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Types\StartingLineTrack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Types.TrackBase" Collapsed="true">
+    <Position X="6" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Types\TrackBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.Types.TrackWithStream" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Types\TrackWithStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.TrackContainerToPlay" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\TrackContainerToPlay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Next" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TurtleGame.Domain.Tracks.TrackManager">
+    <Position X="0.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAQEEAAAACAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\TrackManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_allTracks" />
+      <Field Name="_decideSideFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TurtleGame.Domain.BoardGame">
+    <Position X="7.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAgAAAAQAAAQgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BoardGame.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Players" />
+      <Property Name="BetCards" />
+      <Property Name="RaicingCardsOnDesk" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Collections.Generic.List(Of T)" Collapsed="true">
+    <Position X="3.5" Y="18" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="TurtleGame.Domain.BetCards.IBetCard" Collapsed="true">
+    <Position X="26" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BetCards\IBetCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IEntitiesCollectionsBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="14.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAAAAABAAAAAAAAAAAAAAAEABAAAA=</HashCode>
+      <FileName>Common\IEntitiesCollectionsBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IPreConditionRaicingCards" Collapsed="true">
+    <Position X="31.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\SelectedCardOfPlayers\IPreConditionRaicingCards.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IRacingCardManager">
+    <Position X="11.5" Y="19.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAAgAAAAA=</HashCode>
+      <FileName>RacingCards\Managers\IRacingCardManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IRacingCardOnDeskManager" Collapsed="true">
+    <Position X="12.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Managers\IRacingCardOnDeskManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IMixDiscartCards" Collapsed="true">
+    <Position X="12.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Managers\IRacingCardOnDeskManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.IRacingCards" Collapsed="true">
+    <Position X="15.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>RacingCards\IRacingCards.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Condition.Factories.IPreConditionRaicingCardsFactory" Collapsed="true">
+    <Position X="23.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Condition\Factories\IPreConditionRaicingCardsFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Factories.Interfaces.IBoardGameFactory" Collapsed="true">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Factories\Interfaces\IBoardGameFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Factories.Interfaces.IPlayersManagerFactory" Collapsed="true">
+    <Position X="29.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Factories\Interfaces\IPlayersManagerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IMixTrackStrategy" Collapsed="true">
+    <Position X="31.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Interfaces\IPlaceTrackStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IPlayersManager" Collapsed="true">
+    <Position X="2.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayersManager.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IPlayersManagerFirstStep" Collapsed="true">
+    <Position X="2.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPlayersManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IPlayersManagerSecondStep" Collapsed="true">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPlayersManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IPlayersManagerThirdStep" Collapsed="true">
+    <Position X="14.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPlayersManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IRacingCardsFactory" Collapsed="true">
+    <Position X="26" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRacingCardsFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IRaicingCardsFactory" Collapsed="true">
+    <Position X="27.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRaicingCardsFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.ITracksFactory" Collapsed="true">
+    <Position X="27.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITracksFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Interfaces.IValueObject" Collapsed="true">
+    <Position X="31.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IValueObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.Factories.Interfaces.IPlayerFactory" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Factories\Interfaces\IPlayerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.Interfaces.IPlayer" Collapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAEEAAAAAEAAAACAAAAAACAAAIAAAAA=</HashCode>
+      <FileName>Player\Interfaces\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.PlayersQuantityType.Interfaces.IPlayersQuantityType">
+    <Position X="14.5" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAEAAAAAAAABAACAAAABAIgAAAAAAAA=</HashCode>
+      <FileName>Player\PlayersQuantityType\Interfaces\IPlayersQuantityType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.PlayersQuantityType.IPlayers" Collapsed="true">
+    <Position X="13.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Player\IPlayers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.PlayersQuantityType.ICollectionsBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="14.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Player\IPlayers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.Types.BetCards.IBetCardsPlayerManager" Collapsed="true">
+    <Position X="27.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Types\BetCards\IBetCardsPlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Player.Types.UserNotificationsDelegates.IUserCallbacksNotifications" Collapsed="true">
+    <Position X="29.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACABAAAAAAA=</HashCode>
+      <FileName>Player\Types\UserNotificationsDelegates\IUserCallbacksNotifications.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.RacingCards.Interfaces.IRacingCard" Collapsed="true">
+    <Position X="20.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RacingCards\Interfaces\IRacingCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Side.Interfaces.IBorderOfTrack" Collapsed="true">
+    <Position X="21.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\Interfaces\IBorderOfTrack.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Side.Interfaces.ISideOfTrack" Collapsed="true">
+    <Position X="31.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\Interfaces\ISideOfTrack.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Side.ISideBoderSelected" Collapsed="true">
+    <Position X="29.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\ISideBoderSelected.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Tracks.Interfaces.ITrack" Collapsed="true">
+    <Position X="26" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Interfaces\ITrack.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Tracks.Interfaces.ITrackContainerToPlay" Collapsed="true">
+    <Position X="7.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Interfaces\ITrackContainerToPlay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.Domain.Tracks.Strategies.Interfaces.IDecideSideFactory">
+    <Position X="0.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tracks\Strategies\Interfaces\IDecideSideFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TurtleGame.SharedKernel.Strategies.Interfaces.IGenericMixStrategy" Collapsed="true">
+    <Position X="17.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IReadOnlyCollection(Of T)" Collapsed="true">
+    <Position X="7.5" Y="16" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="TurtleGame.Domain.Side.Enum.BorderOfTrackEnum" Collapsed="true">
+    <Position X="19.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAEAAAI=</HashCode>
+      <FileName>Side\Enum\BorderOfTrackEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TurtleGame.Domain.Side.Enum.SideOfTrackEnum" Collapsed="true">
+    <Position X="18.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Side\Enum\SideOfTrackEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="TurtleGame.Domain.Player.Interfaces.SelectedCardsConfirmationDelegate" Collapsed="true">
+    <Position X="29.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Interfaces\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TurtleGame.Domain.Player.Interfaces.DeskIsValidForTheNextPlayerDelegate" Collapsed="true">
+    <Position X="27.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Interfaces\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TurtleGame.Domain.Player.Types.UserNotificationsDelegates.ChooseSecondBetDelagate" Collapsed="true">
+    <Position X="4.5" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Types\UserNotificationsDelegates\ChooseSecondBetDelagate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TurtleGame.Domain.Player.Types.UserNotificationsDelegates.ChooseSideOfTrackDelagate" Collapsed="true">
+    <Position X="26" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Types\UserNotificationsDelegates\ChooseSideOfTrackDelagate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TurtleGame.Domain.Player.Types.UserNotificationsDelegates.SelectRacingCardDelagate" Collapsed="true">
+    <Position X="31.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player\Types\UserNotificationsDelegates\SelectRacingCardDelagate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
