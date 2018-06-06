@@ -14,54 +14,43 @@ namespace TurtleGame.Domain.Factories
     {
 
         private readonly IGenericMixStrategy _genericMixStrategy;
-        private readonly IRacingCardsFactory _racingCardsFactory;
-        private readonly IMixDiscartCards _mixDiscartCards;
+        private readonly IRacingCardManager _racingCardManager;
 
         public PlayersManagerFactory(IGenericMixStrategy genericMixStrategy,
-            IRacingCardsFactory racingCardsFactory,
-            IMixDiscartCards mixDiscartCards)
+            IRacingCardManager racingCardManager)
         {
             _genericMixStrategy = genericMixStrategy;
-            _racingCardsFactory = racingCardsFactory;
-            _mixDiscartCards = mixDiscartCards;
+            _racingCardManager = racingCardManager;
         }
         public IPlayersManager ToTwoPlayer(IPlayer playerOne, IPlayer playerTwo)
             => new PlayersManager(
                 new PlayersQuantityType(new Players(_genericMixStrategy.Mix(new List<IPlayer>
             {
                 playerOne, playerTwo
-            }))), new RacingCardManager(_racingCardsFactory,
-                                        new RandomMixStrategy(),
-                                        _mixDiscartCards),
-                new RandomMixStrategy());
+            }))), _racingCardManager,
+                _genericMixStrategy);
 
         public IPlayersManager ToThreePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree)
             => new PlayersManager(new PlayersQuantityType(new Players(_genericMixStrategy.Mix(new List<IPlayer>
             {
                 playerOne, playerTwo, playerThree
-                      }))), new RacingCardManager(_racingCardsFactory,
-                                        new RandomMixStrategy(),
-                                        _mixDiscartCards),
-                new RandomMixStrategy());
+                      }))), _racingCardManager,
+                _genericMixStrategy);
 
         public IPlayersManager ToFourPlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree,
             IPlayer playerFour)
             => new PlayersManager(new PlayersQuantityType(new Players(_genericMixStrategy.Mix(new List<IPlayer>
             {
                 playerOne, playerTwo, playerThree, playerFour
-                     }))), new RacingCardManager(_racingCardsFactory,
-                                        new RandomMixStrategy(),
-                                        _mixDiscartCards),
-                new RandomMixStrategy());
+                     }))), _racingCardManager,
+                _genericMixStrategy);
 
         public IPlayersManager ToFivePlayer(IPlayer playerOne, IPlayer playerTwo, IPlayer playerThree,
             IPlayer playerFour, IPlayer playerFive)
             => new PlayersManager(new PlayersQuantityType(new Players(_genericMixStrategy.Mix(new List<IPlayer>
                 {
                     playerOne, playerTwo, playerThree, playerFour, playerFive
-                           }))), new RacingCardManager(_racingCardsFactory,
-                                        new RandomMixStrategy(),
-                                        _mixDiscartCards),
-                new RandomMixStrategy());
+                           }))), _racingCardManager,
+                _genericMixStrategy);
     }
 }

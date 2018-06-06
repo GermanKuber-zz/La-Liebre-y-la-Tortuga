@@ -54,21 +54,17 @@ namespace TurtleGame.Domain.Player.Types
                 selectedCards = _userCallbacksNotifications.SelectRacingCard(MyRacingCards);
                 valid = selectedCardsConfirmation(selectedCards) && _preConditionRaicingCards.Validate(selectedCards);
             }
-
             selectedCards.ToList().ForEach(x => MyRacingCards.Remove(x));
 
             Enumerable.Range(0, selectedCards.Count())
                       .ToList()
                       .ForEach(x => MyRacingCards.Add(_racingCardManager.TakeCard()));
-
         }
-
         public void ChooseSecondBet()
         {
             var choosedSecondBetCard = _userCallbacksNotifications.ChooseSecondBet.Invoke(MyRacingCards);
             MyRacingCards.Remove(choosedSecondBetCard);
             _betCardsPlayerManager.GiveCard(new SecondBetCard(choosedSecondBetCard));
         }
-
     }
 }

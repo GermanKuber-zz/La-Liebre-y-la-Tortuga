@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.RacingCards.Interfaces;
@@ -33,7 +34,11 @@ namespace TurtleGame.Domain.RacingCards
             }
             else
             {
-                _cards.Add(_mixDiscartCards.MixAll().ToList());
+                var cardsToAdd = _mixDiscartCards.MixAll().ToList();
+                //TODO: Remove null posibility
+                if (cardsToAdd.Count() == 0)
+                    throw new ApplicationException();
+                _cards.Add(cardsToAdd);
                 var itemToReturn = _cards.FirstOrDefault();
                 _cards.Remove(itemToReturn);
                 return itemToReturn;

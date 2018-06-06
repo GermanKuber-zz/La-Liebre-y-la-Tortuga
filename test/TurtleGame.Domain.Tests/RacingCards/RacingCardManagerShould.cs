@@ -13,6 +13,7 @@ using Xunit;
 public class RacingCardManagerShould
 {
     private RacingCardManager _sut;
+    private List<IRacingCard> _returnList;
     private readonly Mock<IRacingCardsFactory> _mockRacingCardsFactory = new Mock<IRacingCardsFactory> { DefaultValue = DefaultValue.Mock };
     private readonly Mock<IGenericMixStrategy> _mockGenericMixStrategy = new Mock<IGenericMixStrategy> { DefaultValue = DefaultValue.Mock };
     private readonly Mock<IMixDiscartCards> _mockMixDiscartCards = new Mock<IMixDiscartCards> { DefaultValue = DefaultValue.Mock };
@@ -22,11 +23,11 @@ public class RacingCardManagerShould
     public RacingCardManagerShould()
     {
 
-        var returnList = new List<IRacingCard> { _firstCard.Object, _secondCard.Object, _thirdCard.Object };
-        _mockRacingCardsFactory.Setup(x => x.Create()).Returns(returnList);
+       _returnList = new List<IRacingCard> { _firstCard.Object, _secondCard.Object, _thirdCard.Object };
+        _mockRacingCardsFactory.Setup(x => x.Create()).Returns(_returnList);
 
-        _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(returnList))
-            .Returns(new ReadOnlyCollection<IRacingCard>(returnList));
+        _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(_returnList))
+            .Returns(new ReadOnlyCollection<IRacingCard>(_returnList));
 
         _sut = new RacingCardManager(_mockRacingCardsFactory.Object,
                                      _mockGenericMixStrategy.Object,
@@ -64,6 +65,8 @@ public class RacingCardManagerShould
     [Fact]
     private void Execute_MixAll_From_Discart_Cards()
     {
+        _mockMixDiscartCards.Setup(x => x.MixAll())
+                            .Returns(_returnList);
         _sut.TakeCard();
         _sut.TakeCard();
         _sut.TakeCard();

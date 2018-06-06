@@ -5,7 +5,7 @@ namespace TurtleGame.Domain.RacingCards
 {
     public interface IRacingCardOnDeskManager: IMixDiscartCards
     {
-        int QuantityOfCards { get; }
+        int QuantityOfCardsToPlay { get; }
         bool FallCardsToDeck(IRacingCards racingCard);
         bool IsValid();
     }

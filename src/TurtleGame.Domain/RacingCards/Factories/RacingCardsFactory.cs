@@ -20,6 +20,8 @@ namespace TurtleGame.Domain.RacingCards.Factories
                 _racingCards.AddRange(Enumerable.Range(1, 16).Select(x => new WolfRacingCard()));
                 _racingCards.AddRange(Enumerable.Range(1, 15).Select(x => new FoxRacingCard()));
                 _racingCards.AddRange(Enumerable.Range(1, 15).Select(x => new LambRacingCard()));
+                //_racingCards.AddRange(Enumerable.Range(1, 20).Select(x => new HareRacingCard()));
+ 
 
                 return _racingCards;
             }

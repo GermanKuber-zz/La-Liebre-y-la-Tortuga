@@ -29,12 +29,12 @@ namespace TurtleGame.Domain.Integration.Tests
         private IRacingCardOnDeskManager _racingCardOnDeskManager = new RacingCardOnDeskManager();
         public BoardGameShould()
         {
+
             _racingCardManager = new RacingCardManager(_racingCardsFactory,
-                                                          new RandomMixStrategy(),
-                                                          _racingCardOnDeskManager);
-            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(),
-                                                                               new RacingCardsFactory(),
-                                                                               _racingCardOnDeskManager),
+                                                       new RandomMixStrategy(),
+                                                       _racingCardOnDeskManager);
+
+            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(), _racingCardManager),
                                                      _racingCardOnDeskManager);
             _playerOne = CreateUser();
             _playerTwo = CreateUser();
@@ -78,8 +78,5 @@ namespace TurtleGame.Domain.Integration.Tests
             _playerTwo.MyRacingCards.Count().Should().Be(6);
             _playerThree.MyRacingCards.Count().Should().Be(6);
         }
-
-
-
     }
 }
