@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using FluentAssertions;
@@ -23,7 +24,7 @@ public class RacingCardManagerShould
     public RacingCardManagerShould()
     {
 
-       _returnList = new List<IRacingCard> { _firstCard.Object, _secondCard.Object, _thirdCard.Object };
+        _returnList = new List<IRacingCard> { _firstCard.Object, _secondCard.Object, _thirdCard.Object };
         _mockRacingCardsFactory.Setup(x => x.Create()).Returns(_returnList);
 
         _mockGenericMixStrategy.Setup(x => x.Mix<IRacingCard>(_returnList))
@@ -78,6 +79,18 @@ public class RacingCardManagerShould
     private void Return_First_Card_From_The_List()
     {
         _sut.TakeCard().Should().Be(_firstCard.Object);
+    }
+    [Fact]
+    private void Produce_Exception_Without_Cards_For_Mix()
+    {
+        _mockMixDiscartCards.Setup(x => x.MixAll())
+                    .Returns(new List<IRacingCard>());
+        _sut.TakeCard();
+        _sut.TakeCard();
+        _sut.TakeCard();
+        Action act = () => _sut.TakeCard();
+
+        act.Should().ThrowExactly<ApplicationException>();
     }
     [Fact]
     private void Return_Second_Card_From_The_List()

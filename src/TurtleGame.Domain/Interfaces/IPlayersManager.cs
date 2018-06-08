@@ -4,11 +4,11 @@ using TurtleGame.Domain.Player.Interfaces;
 
 namespace TurtleGame.Domain.Interfaces
 {
-    public interface IPlayersManager : IPlayersManagerFirstStep, IPlayersManagerSecondStep, IPlayersManagerThirdStep
+    public interface IPlayersManager : IPlayersManagerFirstStep, IPlayersManagerSecondStep, IPlayersManagerThirdStep, IReadyToRaceFourthStep
     {
         int NumberOfPlayers { get; }
 
-        IPlayersManager CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallbac,
+        IReadyToRaceFourthStep CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallbac,
             DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback);
     }
     public interface IPlayersManagerFirstStep
@@ -23,6 +23,9 @@ namespace TurtleGame.Domain.Interfaces
     {
         IPlayersManager ChooseSecondBet();
     }
-
-   
+    public interface IReadyToRaceFourthStep
+    {
+        void StartRace();
+    }
+    
 }

@@ -8,6 +8,7 @@ namespace TurtleGame.Domain.RacingCards
         int QuantityOfCardsToPlay { get; }
         bool FallCardsToDeck(IRacingCards racingCard);
         bool IsValid();
+        IEnumerable<IRacingCard> TakeAllDesktCard();
     }
     public interface IMixDiscartCards
     {

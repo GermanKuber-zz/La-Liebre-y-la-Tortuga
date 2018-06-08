@@ -80,5 +80,7 @@ namespace TurtleGame.Domain.Tests.Player
             _mockPlayers.Verify(x => x.CardsTurn(callback.Object), Times.Exactly(quantityOfCalls));
 
         }
+
+    
     }
 }

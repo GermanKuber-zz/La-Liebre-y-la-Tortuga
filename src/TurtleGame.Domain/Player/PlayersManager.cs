@@ -50,17 +50,20 @@ namespace TurtleGame.Domain.Player
             return this;
         }
 
-        public IPlayersManager CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback,
+        public IReadyToRaceFourthStep CardsTurn(SelectedCardsConfirmationDelegate cardsTurnCallback,
                                          DeskIsValidForTheNextPlayerDelegate deskIsValidForTheNextPlayerCallback)
         {
-            var finishCardTurns = true;
-            while (finishCardTurns)
+            var validForTheNextPlayer = true;
+            while (validForTheNextPlayer)
             {
                 _players.CardsTurn(cardsTurnCallback);
-                finishCardTurns = deskIsValidForTheNextPlayerCallback();
+                validForTheNextPlayer = deskIsValidForTheNextPlayerCallback();
             }
             return this;
         }
 
+        public void StartRace()
+        {
+        }
     }
 }

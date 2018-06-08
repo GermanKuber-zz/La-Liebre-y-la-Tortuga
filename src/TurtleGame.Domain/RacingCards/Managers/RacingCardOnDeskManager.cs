@@ -22,6 +22,6 @@ namespace TurtleGame.Domain.RacingCards
 
         public IEnumerable<IRacingCard> MixAll() => _cardDiscarted.Clear();
 
-
+        public IEnumerable<IRacingCard> TakeAllDesktCard() => _cardsInDeck.Clear();
     }
 }

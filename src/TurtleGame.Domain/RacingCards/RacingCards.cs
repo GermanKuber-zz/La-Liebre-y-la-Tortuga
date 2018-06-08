@@ -23,5 +23,8 @@ namespace TurtleGame.Domain.RacingCards
         public bool AllCardAreTheSameAnimal() => EntitiesList.GroupBy(x => x.GetType())
                                                              .Count() == 1;
 
+
+        
+
     }
 }

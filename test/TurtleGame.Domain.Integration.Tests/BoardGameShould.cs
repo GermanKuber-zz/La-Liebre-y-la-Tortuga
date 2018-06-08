@@ -34,8 +34,9 @@ namespace TurtleGame.Domain.Integration.Tests
                                                        new RandomMixStrategy(),
                                                        _racingCardOnDeskManager);
 
-            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(), _racingCardManager),
-                                                     _racingCardOnDeskManager);
+            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(), 
+                                                                               _racingCardManager),
+                                                                               _racingCardOnDeskManager);
             _playerOne = CreateUser();
             _playerTwo = CreateUser();
             _sut = _boardGameFactory.ToTwoPlayer(_playerOne, _playerTwo);
@@ -78,5 +79,7 @@ namespace TurtleGame.Domain.Integration.Tests
             _playerTwo.MyRacingCards.Count().Should().Be(6);
             _playerThree.MyRacingCards.Count().Should().Be(6);
         }
+
+       
     }
 }
