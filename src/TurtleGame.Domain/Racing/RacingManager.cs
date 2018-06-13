@@ -20,8 +20,13 @@ namespace TurtleGame.Domain.Racing
             var cardsInDesk = _racingCardOnDeskManager.TakeAllDesktCard();
             var group = cardsInDesk.GroupBy(x => x.GetType());
 
-            group.ToList().ForEach(x => _racingCardOnDeskManager
-                                        .FallCardsToDeck(RacingCards.RacingCards.Create(x.ToList())));
+            group.ToList().ForEach(x =>
+            {
+                var cardsToFall = x.ToList();
+                //Raise Domain Event, With the list of the cards, need to Use MediatR
+                //Fall the group of the cards, with the same animals, to the desktop again
+                _racingCardOnDeskManager.FallCardsToDeck(RacingCards.RacingCards.Create(cardsToFall));
+            });
         }
     }
 }

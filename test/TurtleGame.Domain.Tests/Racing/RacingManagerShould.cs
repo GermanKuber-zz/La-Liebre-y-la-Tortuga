@@ -38,5 +38,6 @@ namespace TurtleGame.Domain.Racing
             _sut.StartRace();
             _racingCardOnDeskManager.Verify(x => x.FallCardsToDeck(It.IsAny<IRacingCards>()), Times.Exactly(3));
         }
+
     }
 }
