@@ -1,7 +1,13 @@
-﻿using FluentAssertions;
+﻿using Autofac;
+using FluentAssertions;
+using MediatR;
+using MediatR.Pipeline;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using TurtleGame.Domain.Condition.Factories;
 using TurtleGame.Domain.Factories;
 using TurtleGame.Domain.Factories.Interfaces;
@@ -80,6 +86,79 @@ namespace TurtleGame.Domain.Integration.Tests
             _playerThree.MyRacingCards.Count().Should().Be(6);
         }
 
-       
+        [Fact]
+        public async Task MediatRAsync()
+        {
+            _playerThree = CreateUser();
+            _sut = _boardGameFactory.ToThreePlayer(_playerOne, _playerTwo, _playerThree);
+            _sut.Start();
+            var mediator = BuildMediator();
+            var response = await mediator.Send(new Ping());
+            _sut.Players.NumberOfPlayers.Should().Be(3);
+            _playerOne.BetCardsQuantity.Should().Be(2);
+            _playerOne.MyRacingCards.Count().Should().Be(6);
+            _playerTwo.MyRacingCards.Count().Should().Be(6);
+            _playerThree.MyRacingCards.Count().Should().Be(6);
+        }
+
+        private IMediator BuildMediator( )
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly).AsImplementedInterfaces();
+
+            var mediatrOpenTypes = new[]
+            {
+                typeof(IRequestHandler<,>),
+                typeof(INotificationHandler<>),
+            };
+
+            foreach (var mediatrOpenType in mediatrOpenTypes)
+            {
+                builder
+                    .RegisterAssemblyTypes(typeof(WrappingWriter).GetTypeInfo().Assembly)
+                    .AsClosedTypesOf(mediatrOpenType)
+                    .AsImplementedInterfaces();
+            }
+
+            //builder.RegisterInstance(writer).As<TextWriter>();
+
+            // It appears Autofac returns the last registered types first
+            builder.RegisterGeneric(typeof(RequestPostProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+            builder.RegisterGeneric(typeof(RequestPreProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+            //builder.RegisterGeneric(typeof(GenericRequestPreProcessor<>)).As(typeof(IRequestPreProcessor<>));
+            //builder.RegisterGeneric(typeof(GenericRequestPostProcessor<,>)).As(typeof(IRequestPostProcessor<,>));
+            //builder.RegisterGeneric(typeof(GenericPipelineBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+            //builder.RegisterGeneric(typeof(ConstrainedRequestPostProcessor<,>)).As(typeof(IRequestPostProcessor<,>));
+            //builder.RegisterGeneric(typeof(ConstrainedPingedHandler<>)).As(typeof(INotificationHandler<>));
+
+            builder.Register<ServiceFactory>(ctx =>
+            {
+                var c = ctx.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
+            });
+
+            var container = builder.Build();
+
+            // The below returns:
+            //  - RequestPreProcessorBehavior
+            //  - RequestPostProcessorBehavior
+            //  - GenericPipelineBehavior
+
+            //var behaviors = container
+            //    .Resolve<IEnumerable<IPipelineBehavior<Ping, Pong>>>()
+            //    .ToList();
+
+            var mediator = container.Resolve<IMediator>();
+
+            return mediator;
+        }
+    }
+    public class Ping : IRequest<string> { }
+    public class PingHandler : IRequestHandler<Ping, string>
+    {
+        public Task<string> Handle(Ping request, CancellationToken cancellationToken)
+        {
+            return Task.FromResult("Pong");
+        }
     }
 }
