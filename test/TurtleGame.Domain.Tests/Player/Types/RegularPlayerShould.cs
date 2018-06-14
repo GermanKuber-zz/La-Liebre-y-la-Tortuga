@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using Moq;
+using TurtleGame.Domain.Condition.SelectedCardOfPlayers;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
 using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.RacingCards.Managers;
 using TurtleGame.Domain.Tracks.Interfaces;
 using Xunit;
 

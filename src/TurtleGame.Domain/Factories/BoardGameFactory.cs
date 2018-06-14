@@ -1,6 +1,8 @@
 using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards;
+using TurtleGame.Domain.RacingCards.Managers;
+using TurtleGame.Domain.Tracks;
 
 namespace TurtleGame.Domain.Factories
 {
@@ -9,10 +11,11 @@ namespace TurtleGame.Domain.Factories
         private readonly IPlayersManagerFactory _playersManagerFactory;
         private readonly IRacingCardOnDeskManager _racingCardManager;
 
-        public BoardGameFactory(IPlayersManagerFactory playersManagerFactory, IRacingCardOnDeskManager racingCardManager)
+        public BoardGameFactory(IPlayersManagerFactory playersManagerFactory,
+            IRacingCardOnDeskManager racingCardManager)
         {
             _playersManagerFactory = playersManagerFactory;
-            _racingCardManager = racingCardManager;
+            _racingCardManager = racingCardManager; 
         }
         public BoardGame ToTwoPlayer(IPlayer playerOne, IPlayer playerTwo)
             => new BoardGame(playerOne, playerTwo, _playersManagerFactory, _racingCardManager);

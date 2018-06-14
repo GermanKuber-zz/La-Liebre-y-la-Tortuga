@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Common
 {
     public interface IEntitiesCollectionsBase<TEntity>
     {

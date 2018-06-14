@@ -14,10 +14,16 @@ using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
+using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
+using TurtleGame.Domain.Racing;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Factories;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.RacingCards.Managers;
 using TurtleGame.Domain.Side;
+using TurtleGame.Domain.Tracks;
+using TurtleGame.Domain.Tracks.Factories;
+using TurtleGame.Domain.Tracks.Strategies;
 using TurtleGame.SharedKernel.Strategies;
 using Xunit;
 
@@ -40,7 +46,7 @@ namespace TurtleGame.Domain.Integration.Tests
                                                        new RandomMixStrategy(),
                                                        _racingCardOnDeskManager);
 
-            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(), 
+            _boardGameFactory = new BoardGameFactory(new PlayersManagerFactory(new RandomMixStrategy(),
                                                                                _racingCardManager),
                                                                                _racingCardOnDeskManager);
             _playerOne = CreateUser();
@@ -89,11 +95,17 @@ namespace TurtleGame.Domain.Integration.Tests
         [Fact]
         public async Task MediatRAsync()
         {
+            //TODO: Refactor this implementation of Static Property
+            BoardGame.Mediator = BuildMediator();
+
             _playerThree = CreateUser();
             _sut = _boardGameFactory.ToThreePlayer(_playerOne, _playerTwo, _playerThree);
+
+            ITrackManager trackManager = new TrackManager(new TracksFactory(), new DecideSideFactory());
             _sut.Start();
-            var mediator = BuildMediator();
-            var response = await mediator.Send(new Ping());
+            new RacingManager(_racingCardOnDeskManager,
+                              trackManager).StartRace();
+
             _sut.Players.NumberOfPlayers.Should().Be(3);
             _playerOne.BetCardsQuantity.Should().Be(2);
             _playerOne.MyRacingCards.Count().Should().Be(6);
@@ -101,7 +113,7 @@ namespace TurtleGame.Domain.Integration.Tests
             _playerThree.MyRacingCards.Count().Should().Be(6);
         }
 
-        private IMediator BuildMediator( )
+        private IMediator BuildMediator()
         {
             var builder = new ContainerBuilder();
             builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly).AsImplementedInterfaces();
@@ -115,7 +127,7 @@ namespace TurtleGame.Domain.Integration.Tests
             foreach (var mediatrOpenType in mediatrOpenTypes)
             {
                 builder
-                    .RegisterAssemblyTypes(typeof(WrappingWriter).GetTypeInfo().Assembly)
+                    .RegisterAssemblyTypes(typeof(BoardGame).GetTypeInfo().Assembly)
                     .AsClosedTypesOf(mediatrOpenType)
                     .AsImplementedInterfaces();
             }
@@ -152,13 +164,5 @@ namespace TurtleGame.Domain.Integration.Tests
 
             return mediator;
         }
-    }
-    public class Ping : IRequest<string> { }
-    public class PingHandler : IRequestHandler<Ping, string>
-    {
-        public Task<string> Handle(Ping request, CancellationToken cancellationToken)
-        {
-            return Task.FromResult("Pong");
-        }
-    }
+    }    
 }

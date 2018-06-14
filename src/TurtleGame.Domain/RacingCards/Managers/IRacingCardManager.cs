@@ -1,6 +1,6 @@
 ﻿using TurtleGame.Domain.RacingCards.Interfaces;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.RacingCards.Managers
 {
     public interface IRacingCardManager
     {

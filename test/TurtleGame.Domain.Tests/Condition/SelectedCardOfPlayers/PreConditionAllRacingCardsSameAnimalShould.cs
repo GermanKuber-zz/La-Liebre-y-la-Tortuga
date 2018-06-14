@@ -1,12 +1,9 @@
-﻿using FluentAssertions;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using TurtleGame.Domain.RacingCards.Interfaces;
+﻿using Moq;
+using TurtleGame.Domain.Condition.SelectedCardOfPlayers;
+using TurtleGame.Domain.RacingCards;
 using Xunit;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Tests.Condition.SelectedCardOfPlayers
 {
     public class PreConditionAllRacingCardsSameAnimalShould: PreconditionShouldBase
     {

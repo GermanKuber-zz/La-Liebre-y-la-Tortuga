@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
-using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.RacingCards.Managers;
 using TurtleGame.SharedKernel.Generators;
 using Xunit;
 

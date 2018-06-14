@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Common
 {
 
     public class EnumeratorBase<TEntity> : IEnumerable<TEntity>, IEnumerator<TEntity>

@@ -5,7 +5,7 @@ using TurtleGame.Domain.Player.Factories;
 using TurtleGame.Domain.Player.Factories.Interfaces;
 using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
-using TurtleGame.Domain.RacingCards;
+using TurtleGame.Domain.RacingCards.Managers;
 using Xunit;
 
 namespace TurtleGame.Domain.Tests.Player.Factories

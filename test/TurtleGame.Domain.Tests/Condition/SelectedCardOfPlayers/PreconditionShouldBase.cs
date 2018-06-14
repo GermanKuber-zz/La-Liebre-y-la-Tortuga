@@ -1,7 +1,6 @@
-﻿using Moq;
-using Xunit;
+﻿using TurtleGame.Domain.Condition.SelectedCardOfPlayers;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Tests.Condition.SelectedCardOfPlayers
 {
     public class PreconditionShouldBase
     {

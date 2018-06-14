@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
-using System.Collections.Generic;
+using TurtleGame.Domain.Player;
 using TurtleGame.Domain.Player.Interfaces;
 using Xunit;
 
-namespace TurtleGame.Domain.Player.PlayersQuantityType
+namespace TurtleGame.Domain.Tests.Player
 {
     public class PlayerShould
     {
@@ -16,7 +17,7 @@ namespace TurtleGame.Domain.Player.PlayersQuantityType
         public PlayerShould()
         {
             _mockListOfPlayers = new List<IPlayer> { _firstPlayer.Object, _secondPlayer.Object };
-            _sut = new Players(_mockListOfPlayers);
+            _sut = new Domain.Player.Players(_mockListOfPlayers);
         }
 
         [Fact]

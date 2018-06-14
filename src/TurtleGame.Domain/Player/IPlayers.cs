@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using TurtleGame.Domain.Common;
 using TurtleGame.Domain.Player.Interfaces;
-using TurtleGame.Domain.RacingCards;
 
-namespace TurtleGame.Domain.Player.PlayersQuantityType
+namespace TurtleGame.Domain.Player
 {
     public interface IPlayers : ICollectionsBase<IPlayer>
     {

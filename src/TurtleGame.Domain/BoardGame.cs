@@ -1,16 +1,21 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using MediatR;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Factories.Interfaces;
 using TurtleGame.Domain.Interfaces;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.RacingCards;
+using TurtleGame.Domain.RacingCards.Managers;
+using TurtleGame.Domain.Tracks;
 
 namespace TurtleGame.Domain
 {
 
     public class BoardGame
     {
+        public static IMediator Mediator { get; set; }
+        public ITrackManager Tracks { get; set; }
         public IPlayersManager Players { get; private set; }
         public IRacingCardOnDeskManager RaicingCardsOnDesk { get; set; }
 
@@ -22,9 +27,12 @@ namespace TurtleGame.Domain
 
         public BoardGame()
         {
-            _beatsCards = new List<IBetCard> { new Fox(), new Hare(), new Lamb(), new Turtle(), new Wolf() };
+            _beatsCards = new List<IBetCard> { new FoxBetCard(), new HareBetCard(), new LambBetCard(), new TurtleBetCard(), new WolfBetCard() };
         }
-        public BoardGame(IPlayer playerOne, IPlayer playerTwo, IPlayersManagerFactory playersManagerFactory, IRacingCardOnDeskManager racingCardManager) : this()
+        public BoardGame(IPlayer playerOne, 
+            IPlayer playerTwo,
+            IPlayersManagerFactory playersManagerFactory,
+            IRacingCardOnDeskManager racingCardManager) : this()
         {
             Players = playersManagerFactory.ToTwoPlayer(playerOne, playerTwo);
             RaicingCardsOnDesk = racingCardManager;

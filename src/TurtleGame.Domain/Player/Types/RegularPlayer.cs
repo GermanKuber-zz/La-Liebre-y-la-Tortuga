@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TurtleGame.Domain.BetCards;
+using TurtleGame.Domain.Condition.SelectedCardOfPlayers;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.Types.BetCards;
 using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
 using TurtleGame.Domain.RacingCards.Interfaces;
+using TurtleGame.Domain.RacingCards.Managers;
 using TurtleGame.Domain.Side;
 using TurtleGame.Domain.Tracks.Interfaces;
 

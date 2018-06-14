@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using TurtleGame.Domain.RacingCards;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Condition.SelectedCardOfPlayers
 {
 
     public abstract class PreConditionRaicingCards : IPreConditionRaicingCards

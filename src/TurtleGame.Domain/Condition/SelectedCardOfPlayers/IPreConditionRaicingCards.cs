@@ -1,4 +1,6 @@
-﻿namespace TurtleGame.Domain.RacingCards
+﻿using TurtleGame.Domain.RacingCards;
+
+namespace TurtleGame.Domain.Condition.SelectedCardOfPlayers
 {
     public interface IPreConditionRaicingCards
     {

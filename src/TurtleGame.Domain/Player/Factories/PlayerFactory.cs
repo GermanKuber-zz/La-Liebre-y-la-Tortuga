@@ -5,6 +5,7 @@ using TurtleGame.Domain.Player.Types;
 using TurtleGame.Domain.Player.Types.BetCards;
 using TurtleGame.Domain.Player.Types.UserNotificationsDelegates;
 using TurtleGame.Domain.RacingCards;
+using TurtleGame.Domain.RacingCards.Managers;
 
 namespace TurtleGame.Domain.Player.Factories
 {

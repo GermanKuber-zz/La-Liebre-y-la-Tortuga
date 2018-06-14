@@ -43,7 +43,7 @@ namespace TurtleGame.Domain.Tests.Player.Players
             if (countOfUsers < 2 || countOfUsers > 5)
                 throw new ArgumentException(nameof(countOfUsers));
 
-            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(ListOfPlayers.Take(countOfUsers).Select(x => x.Object)));
+            Sut = new PlayersQuantityType(new Domain.Player.Players(ListOfPlayers.Take(countOfUsers).Select(x => x.Object)));
 
         }
 

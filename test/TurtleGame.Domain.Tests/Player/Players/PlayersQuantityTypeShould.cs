@@ -1,14 +1,10 @@
-using System.Collections.Generic;
 using FluentAssertions;
 using Moq;
 using TurtleGame.Domain.BetCards;
 using TurtleGame.Domain.Player.Interfaces;
 using TurtleGame.Domain.Player.PlayersQuantityType;
-using TurtleGame.Domain.Player.Types;
 using Xunit;
 using System.Linq;
-using TurtleGame.Domain.Player.PlayersQuantityType.Interfaces;
-using System;
 using TurtleGame.Domain.RacingCards;
 
 namespace TurtleGame.Domain.Tests.Player.Players
@@ -69,7 +65,7 @@ namespace TurtleGame.Domain.Tests.Player.Players
         [Fact]
         private void Give_One_Cards_Every_Player()
         {
-            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(ListOfPlayers.Select(x => x.Object)));
+            Sut = new PlayersQuantityType(new Domain.Player.Players(ListOfPlayers.Select(x => x.Object)));
             Sut.GiveCards(BetCards);
             ListOfPlayers.ForEach(player => player.Verify(x => x.GiveCard(It.IsAny<IBetCard>()), Times.Exactly(1)));
         }
@@ -79,7 +75,7 @@ namespace TurtleGame.Domain.Tests.Player.Players
         [InlineData(10, 2)]
         private void Execute_Each_CardTurn_Of_All_Players(int quantitOfExecutionOfCardsTurn, int quantityExecutionOfPlayersCallBack)
         {
-            Sut = new PlayersQuantityType(new Domain.Player.PlayersQuantityType.Players(ListOfPlayers.Select(x => x.Object)));
+            Sut = new PlayersQuantityType(new Domain.Player.Players(ListOfPlayers.Select(x => x.Object)));
             var callback = new Mock<SelectedCardsConfirmationDelegate>();
             callback.Setup(x => x(It.IsAny<IRacingCards>())).Returns(true);
 

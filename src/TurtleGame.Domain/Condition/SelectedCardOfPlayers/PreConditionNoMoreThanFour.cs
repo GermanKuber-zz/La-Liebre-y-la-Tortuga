@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using TurtleGame.Domain.RacingCards;
 
-namespace TurtleGame.Domain.RacingCards
+namespace TurtleGame.Domain.Condition.SelectedCardOfPlayers
 {
 
     public class PreConditionNoMoreThanFour : PreConditionRaicingCards
