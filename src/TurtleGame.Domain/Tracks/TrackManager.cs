@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using TurtleGame.Domain.Anajajimals.Types;
 using TurtleGame.Domain.Animals;
 using TurtleGame.Domain.Animals.Types;
 using TurtleGame.Domain.BetCards;

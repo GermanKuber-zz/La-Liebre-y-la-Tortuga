@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TurtleGame.Domain.Tracks.Interfaces;
+﻿using TurtleGame.Domain.Tracks;
 
 namespace TurtleGame.Domain.Animals.Types
 {
@@ -7,7 +6,7 @@ namespace TurtleGame.Domain.Animals.Types
     {
       
 
-        public HareAnimal(IReadOnlyCollection<ITrackContainerToPlay> track) : base(track)
+        public HareAnimal(ITrackContainerToPlays track) : base(track)
         {
         }
     }

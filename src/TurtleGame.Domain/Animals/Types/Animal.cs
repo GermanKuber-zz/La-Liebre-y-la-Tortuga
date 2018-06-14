@@ -1,14 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using TurtleGame.Domain.Tracks;
 using TurtleGame.Domain.Tracks.Interfaces;
 
 namespace TurtleGame.Domain.Animals.Types
 {
     public abstract class Animal
     {
-        protected IReadOnlyCollection<ITrackContainerToPlay> Track;
-        protected Animal(IReadOnlyCollection<ITrackContainerToPlay> track)
+        public ITrackContainerToPlay CurrentTrack;
+        protected ITrackContainerToPlays Track;
+        protected Animal(ITrackContainerToPlays track)
         {
             Track = track;
+        }
+
+        public void PrepareToStart()
+        {
+            Track.Reset();
+            if (Track.MoveNext())
+                CurrentTrack = Track.Current;
+        }
+
+        public void Run()
+        {
         }
     }
 }

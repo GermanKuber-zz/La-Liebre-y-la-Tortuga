@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using TurtleGame.Domain.Animals.Types;
-using TurtleGame.Domain.Tracks.Interfaces;
+﻿using TurtleGame.Domain.Tracks;
 
-namespace TurtleGame.Domain.Anajajimals.Types
+namespace TurtleGame.Domain.Animals.Types
 {
     public class FoxAnimal : Animal
     {
 
 
-        public FoxAnimal(IReadOnlyCollection<ITrackContainerToPlay> track) : base(track)
+        public FoxAnimal(ITrackContainerToPlays track) : base(track)
         {
         }
     }
